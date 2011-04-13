@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>magento_easy_lightbox</name>
+    <version>1.0</version>
+    <stability>stable</stability>
+    <license uri="http://creativecommons.org/licenses/by/3.0/">Creative Commons License</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Magento Easy Lightbox Community Module</summary>
+    <description>This small extension will help  to install Lighbox widget. Installation and configuration will take approximately 5 minutes.</description>
+    <notes>Magento Easy Lightbox Community Module</notes>
+    <authors><author><name>TemplatesMaster</name><user>auto-converted</user><email>support@templates-master.com</email></author></authors>
+    <date>2010-02-08</date>
+    <time>16:15:06</time>
+    <contents><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="css"><file name="easylightbox.css" hash="df44ddaab6696fb39ca13eaa319608e6"/></dir><dir name="images"><dir name="lightbox"><file name="closelabel.gif" hash="0e5462b0b4f00432eac4b33d5fa31c5a"/><file name="loading.gif" hash="7e99e1159a3686f6aa4f90043c554483"/><file name="nextlabel.gif" hash="110afaaaf901f67fee2357c5df88a1aa"/><file name="prevlabel.gif" hash="fb5fff30d471cc603589578015d36864"/></dir></dir><dir name="js"><file name="lightbox.js" hash="16d9dc383b9472bd01b78166dd655343"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="easylightbox.xml" hash="5231dc2d594750347ccfecbccc7ac064"/></dir><dir name="template"><dir name="easylightbox"><file name="media.phtml" hash="86c28b2663fa724ee8d60b02f4eee158"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="TM_EasyLightbox.xml" hash="25657df6d40903b2028907f6563acb27"/></dir></target><target name="magecommunity"><dir name="TM"><dir name="EasyLightbox"><dir name="etc"><file name="config.xml" hash="bd62d3319d13142b6b8a747c5cc8c124"/><file name="system.xml" hash="eb76f538a000713288960199981a79af"/></dir><dir name="Helper"><file name="Data.php" hash="c68f53965fca3f1431a919c51df163f9"/></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies/>
+</package>

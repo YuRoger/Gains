@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Gains_Catalog>
+            <version>0.1.0</version>
+        </Gains_Catalog>
+    </modules>
+    <global>
+    <blocks>
+    <catalog>
+        	<rewrite>
+        		<product_featured>Gains_Catalog_Block_Product_Featured</product_featured>
+        	</rewrite>
+        	<rewrite>
+        		<product_view_scrollview>Gains_Catalog_Block_Product_View_Scrollview</product_view_scrollview>
+        	</rewrite>
+    </catalog>
+    </blocks>
+    </global>
+</config>

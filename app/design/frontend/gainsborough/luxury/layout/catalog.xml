@@ -196,7 +196,7 @@ Product view
             <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
 
 			<action method="addItem"><type>js</type><name>gainsborough/scrollview/jquery.jcarousel.min.js</name></action>
-			<action method="addItem"><type>js_css</type><name>gainsborough/scrollview/scrollview.css</name></action>
+			<action method="addCss"><stylesheet>css/scrollview/scrollview.css</stylesheet></action>
 
         </reference>
         <reference name="content">

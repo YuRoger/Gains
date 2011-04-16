@@ -82,7 +82,6 @@ $_helper = $this->helper('catalog/output');
 <h2><?php echo $this->__('More Views') ?></h2>
 <ul>
     <?php foreach ($this->getGalleryImages() as $_image): ?>
-        <?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>
         <li><a href="#"
 		onclick="loadImage('<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(300) ?>','<?php echo $this->htmlEscape($_image->getLabel())?>','<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>');return false;"
 		title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"><img
@@ -106,16 +105,12 @@ $_helper = $this->helper('catalog/output');
             jQuery('#spinning').append(loadingimg);
             
             jQuery(img).hide();
-            jQuery.ajax({
-               	success:function()
-            	{
-    			 jQuery('#loader').remove();
-    			 jQuery('#spinning').remove();
-           		 jQuery('#BaseImage').append('<div id="loader"></div>');
-            	 jQuery('#loader').append(img);
-                 jQuery(img).fadeIn('slow');
-            	}
-            });
+            jQuery('#loader').remove();
+			 jQuery('#spinning').remove();
+     		 jQuery('#BaseImage').append('<div id="loader"></div>');
+      	 	jQuery('#loader').append(img);
+           jQuery(img).fadeIn('slow');
+   
         }).attr('src', url).attr('id',"image");
     } ;   
 </script>

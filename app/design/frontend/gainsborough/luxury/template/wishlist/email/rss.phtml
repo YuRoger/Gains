@@ -24,10 +24,8 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="footer-container">
-    <div class="footer">
-        <?php echo $this->getChildHtml() ?>
-        <p class="bugs"><?php echo $this->__('Help Us to Keep Magento Healthy') ?> - <a href="http://www.magentocommerce.com/bug-tracking" onclick="this.target='_blank'"><strong><?php echo $this->__('Report All Bugs') ?></strong></a> <?php echo $this->__('(ver. %s)', Mage::getVersion()) ?></p>
-        <address><?php echo $this->getCopyright() ?></address>
-    </div>
-</div>
+<p style="font-size:12px; line-height:16px; margin:0 0 16px;">
+    <?php echo $this->__("RSS link to %s's wishlist",$this->helper('wishlist')->getCustomerName()) ?>
+    <br />
+    <a href="<?php echo $this->helper('wishlist')->getRssUrl(); ?>"><?php echo $this->helper('wishlist')->getRssUrl(); ?></a>
+</p>

@@ -19,7 +19,7 @@
  * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category    design
- * @package     default_modern
+ * @package     base_default
  * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
@@ -39,25 +39,20 @@
 <div class="wrapper">
     <?php echo $this->getChildHtml('global_notices') ?>
     <div class="page">
-    	<div class="page-content">
         <?php echo $this->getChildHtml('header') ?>
-        <div class="main-container col2-left-layout">
-           <div class="main-top"> <?php echo $this->getChildHtml('breadcrumbs') ?></div>
+        <div class="main-container col2-right-layout">
+        <div class="main-top"> <?php echo $this->getChildHtml('breadcrumbs') ?></div>
             <div class="main">
-                <?php /*<div class="col-wrapper">*/ ?>
-                    <div class="col-main">
-                        <?php echo $this->getChildHtml('global_messages') ?>
-                        <?php echo $this->getChildHtml('content') ?>
-                    </div>
-                    <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
+                <div class="col-main">
+                    <?php echo $this->getChildHtml('global_messages') ?>
+                    <?php echo $this->getChildHtml('content') ?>
                 </div>
-                <?php /*<div class="col-right sidebar"><?php echo $this->getChildHtml('right') ?></div>*/ ?>
-            <?php /*</div>*/ ?>
-            <div class="main-bottom">&nbsp;</div>
+                <div class="col-right sidebar"><?php echo $this->getChildHtml('right') ?></div>
+            </div>
+        <div class="main-bottom">&nbsp;</div>
         </div>
         <?php echo $this->getChildHtml('footer') ?>
         <?php echo $this->getChildHtml('before_body_end') ?>
-        </div>
     </div>
 </div>
 <?php echo $this->getAbsoluteFooter() ?>

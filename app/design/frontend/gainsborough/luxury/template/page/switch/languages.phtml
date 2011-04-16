@@ -24,10 +24,21 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="footer-container">
-    <div class="footer">
-        <?php echo $this->getChildHtml() ?>
-        <p class="bugs"><?php echo $this->__('Help Us to Keep Magento Healthy') ?> - <a href="http://www.magentocommerce.com/bug-tracking" onclick="this.target='_blank'"><strong><?php echo $this->__('Report All Bugs') ?></strong></a> <?php echo $this->__('(ver. %s)', Mage::getVersion()) ?></p>
-        <address><?php echo $this->getCopyright() ?></address>
-    </div>
+<?php
+/**
+ * Language switcher template
+ *
+ * @see Mage_Page_Block_Switch
+ */
+?>
+<?php if(count($this->getStores())>1): ?>
+<div class="form-language">
+    <label for="select-language"><?php echo $this->__('Your Language:') ?></label>
+    <select id="select-language" title="<?php echo $this->__('Your Language') ?>" onchange="window.location.href=this.value">
+    <?php foreach ($this->getStores() as $_lang): ?>
+        <?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' selected="selected"' : '' ?>
+        <option value="<?php echo $_lang->getCurrentUrl() ?>"<?php echo $_selected ?>><?php echo $this->htmlEscape($_lang->getName()) ?></option>
+    <?php endforeach; ?>
+    </select>
 </div>
+<?php endif; ?>

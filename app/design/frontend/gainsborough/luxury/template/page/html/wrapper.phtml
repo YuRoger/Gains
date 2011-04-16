@@ -24,10 +24,27 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="footer-container">
-    <div class="footer">
-        <?php echo $this->getChildHtml() ?>
-        <p class="bugs"><?php echo $this->__('Help Us to Keep Magento Healthy') ?> - <a href="http://www.magentocommerce.com/bug-tracking" onclick="this.target='_blank'"><strong><?php echo $this->__('Report All Bugs') ?></strong></a> <?php echo $this->__('(ver. %s)', Mage::getVersion()) ?></p>
-        <address><?php echo $this->getCopyright() ?></address>
-    </div>
-</div>
+<?php
+/**
+ * @deprecated  after 1.4.0.0-alpha3
+ */
+
+/**
+ * This template is for generic wrapper purposes, including ajax.updater loaded blocks
+ *
+ * Usage in layout xml files:
+ * <block type="core/template" template="page/html/wrapper.phtml">
+ *    <action method="setId"><id>some-custom-identificator</id></action>
+ *
+ *    <!-- optional -->
+ *    <action method="setTag"><tag>span</tag></action> <!-- div is used if not specified -->
+ *    <action method="setParams"><params>class="custom-class"</params></action>
+ *
+ *    <!-- insert wrapped blocks here -->
+ * </block>
+ */
+?>
+<?php $_tag = $this->hasTag() ? $this->getTag() : "div" ?>
+<<?php echo $_tag?> id="<?php echo $this->getId()?>" <?php echo $this->getParams()?>>
+<?php echo $this->getChildHtml()?>
+</<?php echo $_tag?>>

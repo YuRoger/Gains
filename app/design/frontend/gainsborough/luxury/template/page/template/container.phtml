@@ -24,10 +24,12 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="footer-container">
-    <div class="footer">
-        <?php echo $this->getChildHtml() ?>
-        <p class="bugs"><?php echo $this->__('Help Us to Keep Magento Healthy') ?> - <a href="http://www.magentocommerce.com/bug-tracking" onclick="this.target='_blank'"><strong><?php echo $this->__('Report All Bugs') ?></strong></a> <?php echo $this->__('(ver. %s)', Mage::getVersion()) ?></p>
-        <address><?php echo $this->getCopyright() ?></address>
-    </div>
+<?php 
+/**
+ * @see Mage_Page_Block_Template_Container
+ */
+?>
+<div class="page-title">
+    <h1><?php echo $this->getTitle() ?></h1>
 </div>
+<?php echo $this->getChildHtml() ?>

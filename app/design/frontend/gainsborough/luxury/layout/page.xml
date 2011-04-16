@@ -76,11 +76,7 @@ Default layout, loads most of the pages
                 </block>
                 <block type="page/switch" name="store_language" as="store_language" template="page/switch/languages.phtml"/>
                 <block type="page/template_links" name="top.links" as="topLinks"/>
-                <block type="page/html_wrapper" name="top.bar" as="topBar" translate="label">
-                    <label>Breadcrumbs</label>
-                    <action method="setElementClass"><value>top-bar</value></action>
-                    <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
-                </block>
+                <block type="page/html_wrapper" name="top.bar" as="topBar" translate="label"/>
                 <block type="page/html_wrapper" name="top.container" as="topContainer" translate="label">
                     <label>Page Header</label>
                     <action method="setElementClass"><value>top-container</value></action>
@@ -93,8 +89,9 @@ Default layout, loads most of the pages
 
             <block type="core/messages" name="global_messages" as="global_messages"/>
             <block type="core/messages" name="messages" as="messages"/>
-
+              <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
             <block type="core/text_list" name="content" as="content" translate="label">
+           
                 <label>Main Content Area</label>
             </block>
 

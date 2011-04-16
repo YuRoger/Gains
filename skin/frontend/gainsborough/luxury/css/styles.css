@@ -26,7 +26,7 @@
 /* Reset ================================================================================= */
 * { margin:0; padding:0; }
 
-body          { background:#f2f2f2 url(../images/bkg_body.gif) 0 0 repeat; font:11px/1.55 arial, helvetica, sans-serif; color:#444; text-align:center; }
+body          { background:#f2f2f2 url(../images/gains/GB-bkg.gif) 0 0 repeat; font:13px/18px Georgia; color:#C2C2C2; text-align:center; }
 
 img           { border:0; vertical-align:top; }
 
@@ -91,12 +91,16 @@ ul,ol         { list-style:none; }
 
 /* Layout ================================================================================ */
 .wrapper {}
-.page { width:960px; margin:15px auto 0; text-align:left; }
+.page { width:970px; margin:15px auto 0; text-align:left;}
+.page-content {width:970px;margin:auto;}
 .page-print { background:#fff; padding:25px 30px; text-align:left; }
 .page-empty { background:#fff; padding:20px; text-align:left; }
 .page-popup { background:#fff; padding:25px 30px; text-align:left; }
-.main-container {}
-.main { background:#fff; border:1px solid #bbb; border-top:0; border-bottom-color:#666; padding:16px 16px 50px; min-height:350px; }
+.main-container {background:url(../images/gains/GB-MAIN-BAK.png) repeat-y;}
+.main-top{ height:22px; }
+.main { padding:16px 16px 50px; min-height:350px; }
+.main-bottom{height:22px;}
+.main-container-bottom {background:url(../images/gains/GB-BOT-BAK.png) no-repeat;height:12px;}
 
 /* Base Columns */
 .col-left { float:left; width:220px; padding:0 0 1px; }
@@ -149,7 +153,7 @@ input.qty { width:2.5em !important; }
 button.button::-moz-focus-inner { padding:0; border:0; } /* FF Fix */
 button.button { -webkit-border-fit:lines; } /* <- Safari & Google Chrome Fix */
 button.button { overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer; }
-button.button span { float:left; height:28px; background:transparent url(../images/bkg_btn.png) 0 0 no-repeat; padding:0 0 0 6px; font:bold 11px/25px Tahoma, Verdana, Arial, sans-serif; text-transform:uppercase; text-align:center; white-space:nowrap; color:#555; }
+button.button span { float:left; height:28px;  padding:0 0 0 6px; font:bold 11px/25px Tahoma, Verdana, Arial, sans-serif; text-transform:uppercase; text-align:center; white-space:nowrap; color:#555; }
 button.button span span { background-position:100% 0; padding:0 15px 0 9px; }
 button.disabled span { color:#bbb !important; }
 
@@ -290,10 +294,10 @@ p.required { font-size:11px; text-align:right; color:#EB340A; }
 .note-msg,
 .notice-msg { border-color:#fcd344; background-color:#fafaec; color:#3d6611; }
 
-/* BreadCrumbs */
-.breadcrumbs a { color:#7f7f7f; }
-.breadcrumbs li { display:inline; }
-.breadcrumbs li strong { font-weight:bold; }
+/*  */
+. a { color:#7f7f7f; }
+. li { display:inline; }
+. li strong { font-weight:bold; }
 
 /* Page Heading */
 .page-title { width:100%; overflow:hidden; margin:0 0 16px; }
@@ -456,16 +460,16 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Header ================================================================================ */
 .logo { float:left; }
-.header-container {}
+.header-container {background:url(../images/gains/GB-TOP-BAK.gif) 0 0 repeat-x; width:950px; margin:auto;}
 
-.header { margin:0 0 12px; }
-.header .logo { float:left; text-decoration:none !important; }
+.header { }
+.header .logo { float:left; text-decoration:none !important;padding:15px 0 0 22px;}
 .header .logo strong { position:absolute; top:-999em; left:-999em; width:0; height:0; font-size:0; line-height:0; text-indent:-999em; overflow:hidden; }
 
 .header .top-promo { float:left; width:117px; height:30px; margin:12px 10px 0; background:url(../images/bkg_top-promo.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
 
-.quick-access { background:#444; color:#fff; padding:7px 13px; text-align:right; }
-.quick-access .welcome-msg { display:inline; margin:0; color:#fff; }
+.quick-access { padding:15px 20px 1px 20px; text-align:right; }
+.quick-access .welcome-msg { display:inline; margin:0; color:#fff; font-style:oblique;}
 .quick-access .form-language { float:left; }
 .quick-access .form-language label { font-weight:bold; padding-right:5px; color:#fff; vertical-align:middle; }
 .quick-access .form-language select { padding:0; }
@@ -479,12 +483,12 @@ tr.summary-details-excluded { font-style:italic; }
 .quick-access .links li.last a { padding:0; background:none; }
 
 .top-bar { padding:3px 12px 2px 12px; border:1px solid #bbb; border-bottom-color:#dedede; background:#efefef; line-height:21px; }
-.top-bar .breadcrumbs { float:left; width:580px; overflow:hidden; }
-.form-search { float:right; }
-.form-search label { float:left; font-size:12px; font-weight:bold; padding:0 5px 0 0; }
-.form-search input.input-text { float:left; width:212px; margin-right:5px; }
-.form-search button.button { float:left; }
-.form-search button.button span { height:23px; background-image:url(../images/bkg_btn-small.png); line-height:21px; }
+.top-bar . { float:left; width:580px; overflow:hidden; }
+.form-search { float:right; padding-right:20px;}
+.form-search label { float:left; font-size:12px; padding:0 5px 0 0; }
+.form-search input.input-text { float:left; width:212px; margin-right:5px; background:#c2c2c2;border-color:#c2c2c2;}
+.form-search button.button { float:left; background:transparent url(../images/gains/search-but-on.gif) 0 0 no-repeat; width:20px;}
+.form-search button.button span { height:23px;  line-height:21px; }
 .form-search .search-autocomplete { z-index:999; }
 .form-search .search-autocomplete ul { border:1px solid #999; background-color:#f9f5f0; }
 .form-search .search-autocomplete li { text-align:left; border-bottom:1px solid #f4eee7; padding:2px 8px 1px 8px; cursor:pointer; }
@@ -495,8 +499,8 @@ tr.summary-details-excluded { font-style:italic; }
 .header-container .top-container { padding:5px 12px; background:#fff; border:1px solid #bbb; border-width:0 1px 1px; text-align:right; }
 
 /********** < Navigation */
-.nav-container {}
-#nav { float:left; margin:15px 0 0 15px; font-size:12px; }
+.nav-container {height:26px;}
+#nav { float:left; margin:0 0 0 22px; font-size:12px; }
 
 /* All Levels */ /* Style consistent throughout all nav levels */
 #nav li { position:relative;text-transform:uppercase; text-align:left;	}
@@ -507,13 +511,13 @@ tr.summary-details-excluded { font-style:italic; }
 #nav li ul span {white-space:normal; }
 
 /* 0 Level */
-#nav li { float:left; margin:1px 8px 11px 1px; padding:3px 8px; }
-#nav li.active a { color:#444; }
-#nav a { float:left; background:url(../images/bkg_nav_top.gif) no-repeat 100% 50%; padding-right:11px; color:#444; font-weight:bold; }
+#nav li { float:left; margin:1px 8px 0px 1px; padding:3px 8px 0 8px; }
+#nav li.active a { color:#C2C2C2; }
+#nav a { float:left; background:url(../images/bkg_nav_top.gif) no-repeat 100% 50%; padding-right:11px; color:#C2C2C2; }
 #nav li.over a,
-#nav a:hover { color:#444; }
+#nav a:hover { color:#B5DEEB; }
 #nav li.over,
-#nav li.active { margin:0 7px 10px 0; border:1px solid #bbb; background:#ececec; }
+#nav li.active { margin:1px 8px 0px 1px;  }
 
 /* 1st Level */
 #nav ul li,
@@ -1071,7 +1075,7 @@ f/********** Product Prices > */
 .advanced-search-summary p { clear:both; font-weight:bold; margin:0; }
 
 /* CMS Home Page */
-.cms-home .main { padding:8px; }
+.cms-home .main { padding:0 32px 0 32px; }
 .cms-home .subtitle {}
 .cms-index-index .subtitle {}
 
@@ -1667,5 +1671,14 @@ f/********** Product Prices > */
 .send-friend .form-list li p:after { display:block; content:"."; clear:both; font-size:0; line-height:0; height:0; overflow:hidden; }
 /* ======================================================================================= */
 
-/**/
+/*Gains*/
 #loader.loading {img: url(../images/bkg_top-promo.gif);}
+.gains-toplinks {float:right; width:450px; padding-top:20px;}
+.gains-welcome-msg{float:left; padding-right:10px;}
+.gains-searchbar {margin-top:-24px;}
+.gains-breadcrumb{float:left;}
+.breadcrumbs{font-size:0.90em;height:22px;padding:0 0 0 32px;}
+.breadcrumbs ul {padding-top:2px;}
+.breadcrumbs li {display:inline; }
+.breadcrumbs li a{color:#B5DEEB;}
+.breadcrumbs li strong{color:#c2c2c2;}

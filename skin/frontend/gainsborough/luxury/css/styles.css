@@ -462,7 +462,7 @@ tr.summary-details-excluded { font-style:italic; }
 .logo { float:left; }
 .header-container {background:url(../images/gains/GB-TOP-BAK.gif) 0 0 repeat-x; width:950px; margin:auto;}
 
-.header { }
+.header { height:115px;}
 .header .logo { float:left; text-decoration:none !important;padding:15px 0 0 22px;}
 .header .logo strong { position:absolute; top:-999em; left:-999em; width:0; height:0; font-size:0; line-height:0; text-indent:-999em; overflow:hidden; }
 
@@ -484,7 +484,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 .top-bar { padding:3px 12px 2px 12px; border:1px solid #bbb; border-bottom-color:#dedede; background:#efefef; line-height:21px; }
 .top-bar . { float:left; width:580px; overflow:hidden; }
-.form-search { float:right; padding-right:20px;}
+.form-search { float:right; padding-right:20px; width:284px;}
 .form-search label { float:left; font-size:12px; padding:0 5px 0 0; }
 .form-search input.input-text { float:left; width:212px; margin-right:5px; background:#c2c2c2;border-color:#c2c2c2;}
 .form-search button.button { float:left; background:transparent url(../images/gains/search-but-on.gif) 0 0 no-repeat; width:20px;}

@@ -523,7 +523,7 @@ tr.summary-details-excluded { font-style:italic; }
 /* 1st Level */
 #nav ul li,
 #nav ul li.active,
-#nav ul li.over { float:none; border-bottom:1px solid #575963;; background:none; margin:0; padding:0; padding-bottom:1px; text-transform:none; }
+#nav ul li.over { float:none; border-bottom:1px solid #575963;; background:none; margin:0; padding:0; padding-bottom:1px; text-transform:none; border-right:none;}
 #nav ul li.parent { background:url(../images/bkg_nav_parent.gif) no-repeat 100% 50%; }
 #nav ul li.last { padding-bottom:0; }
 #nav ul li.active { margin:0; border-bottom:1px solid #575963;; background:none; }

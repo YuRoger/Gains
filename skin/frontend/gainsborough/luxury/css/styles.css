@@ -140,7 +140,7 @@ ul,ol         { list-style:none; }
 /* Global Styles ========================================================================= */
 /* Form Elements */
 input,select,textarea,button { font:12px/15px Arial, Helvetica, sans-serif; vertical-align:middle; color:#2f2f2f; }
-input.input-text,select,textarea { background:#fff; border:1px solid #b6b6b6; }
+input.input-text,select,textarea { background:#fff; border:1px solid #5f6168; }
 input.input-text,textarea { padding:2px; }
 select { padding:1px; }
 select option { padding-right:10px; }
@@ -519,6 +519,8 @@ tr.summary-details-excluded { font-style:italic; }
 #nav a:hover { color:#B5DEEB; }
 #nav li.over,
 #nav li.active { margin:1px 8px 0px 1px;  }
+#nav a.over span { color:#B5DEEB; }
+#nav a span { color:#ffffff; }
 
 /* 1st Level */
 #nav ul li,
@@ -795,11 +797,11 @@ tr.summary-details-excluded { font-style:italic; }
 .price { white-space:nowrap !important; }
 
 .price-box { margin:5px 0 10px; }
-.price-box .price { font-size:13px; font-weight:bold; color:#396f00; }
+.price-box .price { font-size:13px;  color:#c2c2c2; }
 
 /* Regular price */
 .regular-price { color:#396f00; }
-.regular-price .price { font-size:13px; font-weight:bold; color:#396f00; }
+.regular-price .price { font-size:13px;  color:#c2c2c2; }
 
 /* Old price */
 .old-price { margin:0; }
@@ -1565,8 +1567,8 @@ f/********** Product Prices > */
 
 /* Footer ================================================================================ */
 .footer-container {}
-.footer { margin:15px 0 40px; }
-.footer a { color:#444; }
+.footer { margin:15px 10px 40px 10px; }
+.footer a { color:#c2c2c2; }
 
 .footer .f-left { width:520px; }
 .footer .f-right { width:429px; }
@@ -1579,13 +1581,13 @@ f/********** Product Prices > */
 .footer address { color:#666; }
 .footer address a { color:#444; }
 
-.footer .form-subscribe { margin:8px 0; }
+.footer .form-subscribe { }
 .footer .form-subscribe label,
 .footer .form-subscribe .input-box,
 .footer .form-subscribe button.button { float:left; }
-.footer .form-subscribe label { padding-top:2px; font-weight:bold; color:#555; }
+.footer .form-subscribe label { padding-top:2px; font-size:12px;color:#c2c2c2; }
 .footer .form-subscribe .input-box { width:186px; margin:0 5px; }
-.footer .form-subscribe input.input-text { width:180px; }
+.footer .form-subscribe input.input-text { width:180px; background:#5f6168;}
 .footer .form-subscribe button.button span { height:23px; background-image:url(../images/bkg_btn-small.png); line-height:20px; }
 
 .footer .footer-callout { display:block; margin:-10px 0 10px; position:relative; }
@@ -1685,3 +1687,4 @@ f/********** Product Prices > */
 .breadcrumbs li {display:inline; }
 .breadcrumbs li a{color:#B5DEEB;}
 .breadcrumbs li strong{color:#c2c2c2;}
+.footer-newsletter {float:right; height:23px;}

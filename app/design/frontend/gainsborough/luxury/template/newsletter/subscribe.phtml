@@ -24,15 +24,17 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+<div class="footer-newsletter">
 <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
     <div class="form-subscribe">
-        <label for="newsletter"><?php echo $this->__('Newsletter Sign-up:') ?></label>
+        <label for="newsletter"><?php echo $this->__('JOIN OUR E-NEWS:') ?></label>
         <div class="input-box">
            <input type="text" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text required-entry validate-email" />
         </div>
         <button type="submit" title="<?php echo $this->__('Submit') ?>" class="button"><span><span><?php echo $this->__('Submit') ?></span></span></button>
     </div>
 </form>
+</div>
 <script type="text/javascript">
 //<![CDATA[
     var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');

@@ -1,0 +1,41 @@
+<?php if (count($this->getGalleryImages()) > 0): ?>
+<div>
+<div class="gains-complete-look-header"><?php echo $this->__('complete the look...') ?></div>
+<ul class="gains-complete-look-container">
+    <?php foreach ($this->getGalleryImages() as $_image): ?>
+        <li class="gains-complete-look"><a href="#"
+		onclick="loadImage('<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize(300); ?>','<?php echo $this->htmlEscape($_image->getLabel())?>','<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())?>');return false;"
+		title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"><img
+		src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(90); ?>"
+		width="90" height="90"
+		alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" /></a></li>
+    <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>
+
+<script type="text/javascript">
+
+    function loadImage(url,name,bigimage) {
+        var img = new Image();
+        var bigimage = jQuery('<a/>').attr('href',bigimage).attr('class',"jzoomin");
+        jQuery(img).load(function () 
+        {
+            jQuery('#loader').remove();
+			jQuery('#BaseImage').append('<div id="loader" class="loading"></div>');
+      	 	jQuery('#loader').append(bigimage);
+      	 	bigimage.append(img);
+      	 	jQuery('.jzoomin').jqzoom({
+                zoomType: 'reverse',
+                preloadImages: true,
+    			preloadText:'Loading...', 
+                imageOpacity:0.4,
+                position:'right',
+                zoomWidth:400,
+                zoomHeight:300,
+                title:false,
+                lens:true	
+            });
+        }).attr('src', url).attr('id',"image");
+    } ;   
+</script>

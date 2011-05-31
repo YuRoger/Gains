@@ -1,0 +1,12 @@
+<?php 
+$_product = $this->getProduct();
+$_description = $_product->_getData('returndescription');
+?>
+<?php if ($_description): ?>
+    <div class="product_tabs_description">
+        <?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), $_description, 'returndescription') ?>
+    </div>
+<?php endif; ?>
+         
+
+                            

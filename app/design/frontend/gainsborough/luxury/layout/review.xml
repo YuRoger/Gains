@@ -77,6 +77,7 @@ Product reviews page
         </reference>
         <reference name="content">
             <block type="review/product_view" name="product.info" template="catalog/product/view.phtml">
+                
                 <block type="catalog/product_view_media" name="product.info.media" as="media" template="catalog/product/view/media.phtml">
                     <action method="disableGallery"/>
                 </block>

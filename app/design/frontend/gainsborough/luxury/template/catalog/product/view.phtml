@@ -39,24 +39,26 @@
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 <div class="product-view">
     <div class="product-essential">
+    <div>
     <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
         <div class="no-display">
             <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
             <input type="hidden" name="related_product" id="related-products-field" value="" />
         </div>
-
-        <div class="product-shop">
-            <div class="product-name">
+		<div class="product-name">
                 <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
-            </div>
-
-            <?php if ($this->canEmailToFriend()): ?>
-                <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
-            <?php endif; ?>
-
-            <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+        </div>
+          <?php echo $this->getChildHtml('product_type_data') ?>
+        <div class="product-shop">
+            
+            <?php //if ($this->canEmailToFriend()): ?>
+                <!--  <p class="email-friend"><a href="<?php //echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>">
+                <?php //echo $this->__('Email to a Friend') ?></a></p>-->
+            <?php //endif; ?>
+			
+            <?php //echo $this->getReviewsSummaryHtml($_product, false, true)?>
             <?php echo $this->getChildHtml('alert_urls') ?>
-            <?php echo $this->getChildHtml('product_type_data') ?>
+          
             <?php echo $this->getTierPriceHtml() ?>
             <?php echo $this->getChildHtml('extrahint') ?>
 
@@ -71,29 +73,42 @@
                     <?php echo $this->getChildHtml('addto') ?>
                 </div>
             <?php endif; ?>
-            
             <?php if ($_product->getShortDescription()):?>
+                <!-- 
                 <div class="short-description">
-                    <h2><?php echo $this->__('Quick Overview') ?></h2>
-                    <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+                    <h2><?php //echo $this->__('Quick Overview') ?></h2>
+                    <div class="std"><?php //echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
                 </div>
+                 -->
             <?php endif;?>
 
             <?php echo $this->getChildHtml('other');?>
             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
                 <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
             <?php endif;?>
-
         </div>
 
         <div class="product-img-box">
             <?php echo $this->getChildHtml('media') ?>
         </div>
-
+        <div class="gain-product-info">
+        <div>
+        <?php echo $this->getChildHtml('info_tabs') ?>
+        </div>
+        <div>
+        <?php echo $this->getChildHtml('product_options_wrapper') ?>
+		<?php echo $this->getChildHtml('product_options_wrapper_bottom') ?>
+        </div>
+		<div>
+		<?php echo $this->getChildHtml('completelook')?>
+		</div>
+		</div>
+		 </div>
         <div class="clearer"></div>
-        <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-            <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
-        <?php endif;?>
+        <!-- Will not call container2 which include the wrapper and wrapper bottom. These blocks are added above -->
+        <?php //if ($_product->isSaleable() && $this->hasOptions()):?>
+            <?php //echo $this->getChildChildHtml('container2', '', true, true) ?>
+        <?php //endif;?>
     </form>
     <script type="text/javascript">
     //<![CDATA[
@@ -142,7 +157,6 @@
     </div>
 
     <div class="product-collateral">
-        <?php echo $this->getChildHtml('info_tabs') ?>
         <?php echo $this->getChildHtml('product_additional_data') ?>
     </div>
 </div>

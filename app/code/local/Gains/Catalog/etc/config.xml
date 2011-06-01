@@ -14,6 +14,9 @@
         	<rewrite>
         		<product_view_scrollview>Gains_Catalog_Block_Product_View_Scrollview</product_view_scrollview>
         	</rewrite>
+        	<rewrite>
+        		<product_view_type_configurable>Gains_Catalog_Block_Product_View_Type_Configurable</product_view_type_configurable>
+        	</rewrite>
     </catalog>
     </blocks>
     </global>

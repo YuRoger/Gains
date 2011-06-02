@@ -484,9 +484,9 @@ tr.summary-details-excluded { font-style:italic; }
 
 .top-bar { padding:3px 12px 2px 12px; border:1px solid #bbb; border-bottom-color:#dedede; background:#efefef; line-height:21px; }
 .top-bar . { float:left; width:580px; overflow:hidden; }
-.form-search { float:right; width:304px;}
+.form-search { float:right; width:300px;}
 .form-search label { float:left; font-size:12px; padding:0 5px 0 0; }
-.form-search input.input-text { float:left; width:212px; margin-right:5px; background:#c2c2c2;border-color:#c2c2c2;}
+.form-search input.input-text { float:left; width:200px; margin-right:5px; background:#c2c2c2;border-color:#c2c2c2;}
 .form-search button.button { float:left; background:transparent url(../images/gains/search-but-on.gif) 0 0 no-repeat; width:20px;}
 .form-search button.button span { height:23px;  line-height:21px; }
 .form-search .search-autocomplete { z-index:999; }
@@ -714,10 +714,10 @@ tr.summary-details-excluded { font-style:italic; }
 .products-grid .product-image { display:block; width:170px; height:170px; border:1px solid #ddd; border-width:1px 1px 1px 0; margin:0 0 10px; }
 .products-grid.first .product-image { border-top:0; }
 .products-grid li.last .product-image { border-right:0; }
-.products-grid .product-name { font-size:12px; margin:0 0 6px; }
+.products-grid .product-name { font-size:11px; margin:0 0 6px; }
 .products-grid .product-name a { color:#dedede; text-decoration:none; }
 .products-grid .product-name a:hover { text-decoration:none; }
-.products-grid .price-box { margin:5px 0; }
+.products-grid .price-box { margin:-6px 0 5px 0; }
 .products-grid .availability { line-height:21px; }
 .products-grid .actions { position:absolute; bottom:20px; }
 .col2-left-layout .products-grid,
@@ -725,7 +725,7 @@ tr.summary-details-excluded { font-style:italic; }
 .col1-layout .products-grid,
 .page-empty .products-grid { width:910px; margin:0 auto; }
 .grid-product-image {width: 200px;}
-.grid-product-name {padding-top: 5px;}
+.grid-product-name {}
 
 /* View Type: List */
 .products-list li.item { border-bottom:1px solid #d9ddd3; padding:12px 10px; }
@@ -797,7 +797,7 @@ tr.summary-details-excluded { font-style:italic; }
 .price { white-space:nowrap !important; }
 
 .price-box { margin:5px 0 10px; }
-.price-box .price { font-size:13px;  color:#c2c2c2; }
+.price-box .price { font-size:12px;  color:#c2c2c2; }
 
 /* Regular price */
 .regular-price { color:#396f00; }
@@ -1682,7 +1682,7 @@ f/********** Product Prices > */
 #loader.loading {img: url(../images/bkg_top-promo.gif);}
 .gains-toplinks {float:right; width:450px; padding-top:20px;}
 .gains-welcome-msg{float:left; padding-right:10px;}
-.gains-searchbar {margin-top:-24px;}
+.gains-searchbar {margin:-24px -8px 0 0;}
 .gains-breadcrumb{float:left;}
 .gain-product-info {width:400px; float:right;}
 .gains-options {height:55px;}

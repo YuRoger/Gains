@@ -1,7 +1,8 @@
-<div>
 <?php 
 $_productCollection = $this->getProductlistinCurrentCategory();
 ?>
+<?php if($_productCollection!= null):?>
+<div>
 
 <script type="text/javascript">
 
@@ -25,3 +26,4 @@ jQuery(document).ready(function() {
 <?php endforeach; ?>
 </ul>
 </div>
+<?php endif;?>

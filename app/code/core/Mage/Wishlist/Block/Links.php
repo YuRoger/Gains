@@ -43,18 +43,19 @@ class Mage_Wishlist_Block_Links extends Mage_Page_Block_Template_Links_Block
     /**
      * Set link title, label and url
      */
+    
     public function __construct()
     {
         if ($this->helper('wishlist')->isAllow()) {
             $count = $this->helper('wishlist')->getItemCount();
             if ($count > 1) {
-                $text = $this->__('My Wishlist (%d items)', $count);
+                $text = $this->__('Wishlist (%d items)', $count);
             }
             else if ($count == 1) {
-                $text = $this->__('My Wishlist (%d item)', $count);
+                $text = $this->__('Wishlist (%d item)', $count);
             }
             else {
-                $text = $this->__('My Wishlist');
+                $text = $this->__('Wishlist');
             }
             $this->_label = $text;
             $this->_title = $text;

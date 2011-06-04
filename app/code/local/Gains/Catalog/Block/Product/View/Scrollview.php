@@ -5,7 +5,12 @@ class Gains_Catalog_Block_Product_View_Scrollview extends Mage_Catalog_Block_Pro
 	{
 		$_currentCategory = $this->getCurrentCategory();
 		//$categoryModel = Mage::getModel('catalog/category');
-		return $_currentCategory->getName();	
+		if($_currentCategory == null)
+		{
+			return "sdds";
+		}
+		else
+			return $_currentCategory->getName();	
 	}
 	
     /**
@@ -28,12 +33,19 @@ class Gains_Catalog_Block_Product_View_Scrollview extends Mage_Catalog_Block_Pro
     {
     	 $product = Mage::getModel('catalog/product');
     	 $currentCategory = $this->getCurrentCategory();
-    	 $collection = $product->getCollection()
+   		 if($currentCategory == null)
+   		 {
+   		 	return null;
+   		 }
+   		 else 
+   		 {
+   		 	$collection = $product->getCollection()
                 ->addAttributeToSelect('name')
                 ->addAttributeToSelect('small_image')
                 ->addAttributeToSelect('status')
                 ->addAttributeToSort('name','asc');
               
-       	return  $collection->addCategoryFilter($currentCategory);
+       		return  $collection->addCategoryFilter($currentCategory);	
+   		 }
     }
 }

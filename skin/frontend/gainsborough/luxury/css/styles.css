@@ -991,7 +991,7 @@ f/********** Product Prices > */
 .product-view .grouped-items-table .price-box { margin:0; padding:0; }
 
 /* Product Tabs */
-.product-tabs { border-bottom:1px solid #474a52;}
+.product-tabs { }
 .product-tabs li { float:left;margin-right:5px; }
 .product-tabs li.first { border-left:0; }
 .product-tabs li.last { border-right:0; }
@@ -1694,7 +1694,7 @@ f/********** Product Prices > */
 .gains-complete-look-header {padding-top:5px;color:#fff;font-style:italic}
 .gains-complete-look-container{padding-top:7px;}
 .gains-complete-look {display:inline;padding-right:10px;}
-.gains-add-to-links{float:right; margin-top:-25px; padding-right:70px;}
+.gains-add-to-links{float:right; margin-top:-25px; padding-right:60px;}
 .gains-add-to-links .add-to-links li a { color:#555555; background:#82C7DB; border:1px solid #969999;text-decoration:none;}
 .gains-add-to-links .button.button {height:20px;}
 .gains-add-to-links .button.button span {background-color:#82C7DB;border:1px solid #969999;padding:3px 5px 3px 5px}

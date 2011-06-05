@@ -228,6 +228,7 @@ Product view
 				
                 <block type="catalog/product_view_tabs" name="product.info.tabs" as="info_tabs" template="catalog/product/view/tabs.phtml" >
                     <action method="addTab" translate="title" module="catalog"><alias>description</alias><title>Details</title><block>catalog/product_view_description</block><template>catalog/product/view/description.phtml</template></action>
+                    <action method="addTab" translate="title" module="catalog"><alias>featureddescription</alias><title>Featured</title><block>catalog/product_view_description</block><template>catalog/product/view/featureddescription.phtml</template></action>
                     <action method="addTab" translate="title" module="catalog"><alias>shippingdescription</alias><title>Shipping</title><block>catalog/product_view_description</block><template>catalog/product/view/shipping.phtml</template></action>
                     <action method="addTab" translate="title" module="catalog"><alias>returndescription</alias><title>Return</title><block>catalog/product_view_description</block><template>catalog/product/view/return.phtml</template></action>
                     <!-- <action method="addTab" translate="title" module="catalog"><alias>upsell_products</alias><title>We Also Recommend</title><block>catalog/product_list_upsell</block><template>catalog/product/list/upsell.phtml</template></action>

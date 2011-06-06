@@ -40,6 +40,9 @@ Default layout, loads most of the pages
                 <action method="setBlockId"><block_id>footer_links</block_id></action>
             </block>
         </reference>
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="cms"><label>Catalogue</label><url>gainsboroughhome-catalogue</url><prepare/><urlParams/><position>30</position></action>
+        </reference>
     </default>
     
     <cms_page translate="label">

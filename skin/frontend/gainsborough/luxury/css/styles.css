@@ -503,7 +503,7 @@ tr.summary-details-excluded { font-style:italic; }
 #nav { float:left; margin:0 0 0 22px; font-size:12px; }
 
 /* All Levels */ /* Style consistent throughout all nav levels */
-#nav li { position:relative;text-transform:uppercase; text-align:left;	}
+#nav li { position:relative;text-transform:uppercase; text-align:left;	letter-spacing:1px;}
 #nav li.over { z-index:998; }
 #nav a,
 #nav a:hover { display:block; line-height:1.3em; text-decoration:none; }
@@ -802,7 +802,7 @@ tr.summary-details-excluded { font-style:italic; }
 /* Regular price */
 .regular-price { color:#396f00; }
 .regular-price .price { font-size:13px;  color:#c2c2c2; }
-
+.regular-price .pricelabel { font-size:13px;  color:#c2c2c2; }
 /* Old price */
 .old-price { margin:0; }
 .old-price .price-label { font-size:12px; white-space:nowrap; }
@@ -992,10 +992,10 @@ f/********** Product Prices > */
 
 /* Product Tabs */
 .product-tabs { }
-.product-tabs li { float:left;margin-right:5px; }
+.product-tabs li { float:left;margin-right:5px;width:95px; }
 .product-tabs li.first { border-left:0; }
-.product-tabs li.last { border-right:0; }
-.product-tabs a { display:block; padding:6px 15px; background-color:#474a52;color:#969999;font-style:italic}
+.product-tabs li.last { width:100px; margin-right:0px;}
+.product-tabs a { display:block; padding:6px 15px; background-color:#474a52;color:#969999;font-style:italic;text-align:center;}
 .product-tabs a:hover { text-decoration:none; color:#fff; }
 .product-tabs li.active a,
 .product-tabs li.active a:hover { background-color:#969999; color:#474a52; font-style:italic}
@@ -1570,14 +1570,14 @@ f/********** Product Prices > */
 /* Footer ================================================================================ */
 .footer-container {}
 .footer { margin:15px 10px 40px 10px; }
-.footer a { color:#c2c2c2; }
+.footer a { color:#c2c2c2; letter-spacing:1px;}
 
 .footer .f-left { width:520px; }
 .footer .f-right { width:429px; }
 
 .footer ul { display:inline; }
-.footer li { display:inline; background:url(../images/bkg_pipe1.gif) 100% 50% no-repeat; padding:0 5px 0 0; margin:0 3px 0 0; }
-.footer .links li.last { background:none !important; padding-right:0 !important; }
+.footer li { display:inline; background:url(../images/bkg_pipe1.gif) 100% 50% no-repeat; padding:0 5px 0 0; margin:0 3px 0 0; font-size:11px;}
+.footer li.last { background:none !important; padding-right:0 !important; }
 .footer .bugs { margin:0; color:#666; }
 .footer .bugs a { font-weight:bold; color:#444; }
 .footer address { color:#666; }
@@ -1588,8 +1588,8 @@ f/********** Product Prices > */
 .footer .form-subscribe .input-box,
 .footer .form-subscribe button.button { float:left; }
 .footer .form-subscribe label { padding-top:2px; font-size:12px;color:#c2c2c2; }
-.footer .form-subscribe .input-box { width:186px; margin:0 5px; }
-.footer .form-subscribe input.input-text { width:180px; background:#5f6168;}
+.footer .form-subscribe .input-box { width:166px; margin:0 5px; }
+.footer .form-subscribe input.input-text { width:160px; background:#5f6168;color:#c2c2c2;}
 .footer .form-subscribe button.button span { height:23px; background-image:url(../images/bkg_btn-small.png); line-height:20px; }
 
 .footer .footer-callout { display:block; margin:-10px 0 10px; position:relative; }
@@ -1709,5 +1709,5 @@ f/********** Product Prices > */
 .breadcrumbs li {display:inline; }
 .breadcrumbs li a{color:#B5DEEB;}
 .breadcrumbs li strong{color:#c2c2c2;}
-.footer-newsletter {float:right; height:23px;}
+.footer-newsletter {float:right; height:23px;width:309px;}
 

@@ -187,7 +187,7 @@
                 </span>
             <?php else: ?>
                 <span class="regular-price" id="product-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
-                   <span class="price">PRICE:</span><?php echo $_coreHelper->currency($_price,true,true) ?>
+                   <span class="pricelabel"><?php echo $this->__('PRICE:') ?></span><?php echo $_coreHelper->currency($_price,true,true) ?>
                 </span>
             <?php endif; ?>
         <?php endif; ?>

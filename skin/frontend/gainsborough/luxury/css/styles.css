@@ -1398,9 +1398,12 @@ f/********** Product Prices > */
 
 
 /* Account Login/Create Pages ============================================================ */
-.account-login .content { min-height:200px; padding:0 10px; }
-.account-login .content h2 { margin:0 -10px 12px; background:#f1f1f1; padding:2px 10px; font-size:13px; line-height:1.25; }
+.account-login .content { min-height:475px; }
+.account-login .content h2 { background:#f1f1f1; padding:2px 10px; font-size:13px; line-height:1.25; }
 .account-login .buttons-set {}
+.account-login { min-height: 475px; padding-top: 50px; padding-bottom: 25px;}
+.account-login .login-col2-set .col-1{width: 400px; float: left; padding-left:5px; padding-right:25px;}
+.account-login .login-col2-set .col-2{width: 475px; float: left}
 
 .account-create {}
 /* Account Login/Create Pages ============================================================ */

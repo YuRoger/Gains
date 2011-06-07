@@ -711,6 +711,7 @@ tr.summary-details-excluded { font-style:italic; }
 .products-grid { position:relative;}
 .products-grid.last { border-bottom:0; }
 .products-grid li.item { float:left; width:200px; height: 180px;margin-right: 20px; padding: 5px;  background: #56585f;}
+.products-grid li.item.last{margin-right:0px;}
 .products-grid .product-image { display:block; width:170px; height:170px; border:1px solid #ddd; border-width:1px 1px 1px 0; margin:0 0 10px; }
 .products-grid.first .product-image { border-top:0; }
 .products-grid li.last .product-image { border-right:0; }
@@ -720,10 +721,11 @@ tr.summary-details-excluded { font-style:italic; }
 .products-grid .price-box { margin:-6px 0 5px 0; }
 .products-grid .availability { line-height:21px; }
 .products-grid .actions { position:absolute; bottom:20px; }
+
 .col2-left-layout .products-grid,
 .col2-right-layout .products-grid { width:684px; margin:0 auto; }
 .col1-layout .products-grid,
-.page-empty .products-grid { width:910px; margin:0 auto; }
+.page-empty .products-grid { width:910px; margin:0 auto;padding-bottom:20px; }
 .grid-product-image {width: 200px;}
 .grid-product-name {}
 

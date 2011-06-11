@@ -42,8 +42,8 @@
                 <connection>
                     <host><![CDATA[127.0.0.1:8889]]></host>
                     <username><![CDATA[root]]></username>
-                    <password><![CDATA[111111]]></password>
-                    <dbname><![CDATA[gainsboroughecommerce]]></dbname>
+                    <password><![CDATA[root]]></password>
+                    <dbname><![CDATA[gains-svn]]></dbname>
                     <active>1</active>
                 </connection>
             </default_setup>

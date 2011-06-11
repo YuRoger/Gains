@@ -51,6 +51,7 @@ Default layout, loads most of the pages
         <reference name="top.links">
             <action method="addLink" translate="label title" module="customer"><label>My Account</label><url helper="customer/getAccountUrl"/><title>My Account</title><prepare/><urlParams/><position>2</position></action>
         </reference>
+        
     </default>
 
 <!--
@@ -87,7 +88,16 @@ Layout for customer login page
         <!-- Mage_Customer -->
         <remove name="right"/>
         <remove name="left"/>
-
+		<reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbName>Home</crumbName>
+                <crumbInfo><label>Home</label><title>Home</title><link>/</link></crumbInfo>
+            </action>
+            <action method="addCrumb">
+                <crumbName>Login</crumbName>
+                <crumbInfo><label>Login</label><title>Log In</title></crumbInfo>
+            </action>
+        </reference>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>
@@ -126,6 +136,16 @@ New customer registration
 
         <reference name="head">
             <block type="core/template" name="optional_zip_countries" as="optional_zip_countries" template="directory/js/optional_zip_countries.phtml" />
+        </reference>
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbName>Home</crumbName>
+                <crumbInfo><label>Home</label><title>Home</title><link>/</link></crumbInfo>
+            </action>
+            <action method="addCrumb">
+                <crumbName>Create An Account</crumbName>
+                <crumbInfo><label>Create An Account</label><title>Create An Account</title></crumbInfo>
+            </action>
         </reference>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>

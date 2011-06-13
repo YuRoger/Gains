@@ -42,16 +42,17 @@
             </div>
             <div class="col-2 registered-users">
                 <div class="content">
-					<div class="login-signup-title"> <h2><?php echo $this->__('ALREADY A MEMBER') ?></h2> </div>
-					<div class="login-signup-description"> <p><?php echo $this->__('Already a member? Welcome back please fill in your account sign in below to continue your shopping.') ?></p> </div>
-					<div class="buttons-set">
-						<button type="button" title="<?php echo $this->__('Create an Account') ?>" class="button" onclick="window.location='<?php echo $this->getCreateAccountUrl() ?>';"><span><span><?php echo $this->__('Create an Account') ?></span></span></button>
+					<div class="login-signup-title"> <h2><?php echo $this->__('WELCOME TO GAINSBOROUGH LUXURY') ?></h2> </div>
+					<div class="login-signup-description"> <p><?php echo $this->__('You are on your way to joining one of Australia\'s most loved online bedlinen brands. And to show you how much we love our customers, you\'ll receive 15% off your first online purchase*') ?></p> </div>
+					<div class="buttons-div" id="but-signup">
+						<button type="button" title="<?php echo $this->__('Create an Account') ?>" class="button" onclick="window.location='<?php echo $this->getCreateAccountUrl() ?>';"><div><?php echo $this->__('Sign Up') ?></div></button>
 					</div>
+					<div id="apart-div"> <hr/> </div>
 					<div class="login-title"> <h2><?php echo $this->__('ALREADY A MEMBER') ?></h2> </div>
 					<div class="login-description"> <p><?php echo $this->__('Already a member? Welcome back please fill in your account sign in below to continue your shopping.') ?></p> </div>
                     <ul class="form-list">
                         <li>
-                            <label for="email" class="required"><?php echo $this->__('Email Address') ?></label>
+                            <label for="email" class="required"><?php echo $this->__('Email') ?></label>
                             <div class="input-box">
                                 <input type="text" name="login[username]" value="<?php echo $this->htmlEscape($this->getUsername()) ?>" id="email" class="input-text required-entry validate-email" title="<?php echo $this->__('Email Address') ?>" />
                             </div>
@@ -61,14 +62,13 @@
                             <div class="input-box">
                                 <input type="password" name="login[password]" class="input-text required-entry validate-password" id="pass" title="<?php echo $this->__('Password') ?>" />
                             </div>
-							<a href="<?php echo $this->getForgotPasswordUrl() ?>" class="f-left"><?php echo $this->__('Forgot Your Password?') ?></a>
                         </li>
                     </ul>
+					<div id="forget-pass"> <a href="<?php echo $this->getForgotPasswordUrl() ?>"><?php echo $this->__('Forgot Your Password?') ?></a> </div>
 
-					<div class="buttons-set">
-						<button type="submit" class="button" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
+					<div class="buttons-div" id="but-login">
+						<button type="submit" class="button" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><div><?php echo $this->__('Login') ?></div></button>
 					</div>
-                    <p class="required"><?php echo $this->__('* Required Fields') ?></p>
                 </div>
             </div>
         </div>

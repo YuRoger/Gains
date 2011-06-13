@@ -41,7 +41,7 @@ Default layout, loads most of the pages
             </block>
         </reference>
         <reference name="top.links">
-            <action method="addLink" translate="label title" module="cms"><label>Catalogue</label><url>gainsboroughhome-catalogue</url><prepare/><urlParams/><position>30</position></action>
+            <action method="addLink" translate="label title" module="cms"><label>Catalogue</label><url>/gainsboroughhome/gainsboroughhome-catalogue</url><prepare/><urlParams/><position>30</position></action>
         </reference>
     </default>
     

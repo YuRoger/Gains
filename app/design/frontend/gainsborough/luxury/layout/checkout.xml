@@ -60,6 +60,16 @@ Default layout, loads most of the pages
         <label>Shopping Cart</label>
         <remove name="right"/>
         <remove name="left"/>
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbName>Home</crumbName>
+                <crumbInfo><label>Home</label><title>Home</title><link>/</link></crumbInfo>
+            </action>
+            <action method="addCrumb">
+                <crumbName>Shoppingcart</crumbName>
+                <crumbInfo><label>Shoppingcart</label><title>Shopping Cart</title></crumbInfo>
+            </action>
+        </reference>
         <!-- Mage_Checkout -->
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
@@ -303,7 +313,7 @@ One page checkout main layout
         <remove name="right"/>
 
         <reference name="root">
-            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>
         <reference name="left">
             <action method="unsetChildren"></action>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Gains_Checkout>
+            <version>0.1.0</version>
+        </Gains_Checkout>
+    </modules>
+    <global>
+    <blocks>
+    <checkout>
+        	<rewrite>
+        		<links>Gains_Checkout_Block_Links</links>
+        	</rewrite>
+    </checkout>
+    </blocks>
+    </global>
+</config>

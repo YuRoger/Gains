@@ -1416,7 +1416,7 @@ f/********** Product Prices > */
 
 
 .account-login { min-height: 475px; padding-top: 50px; padding-bottom: 25px; }
-.account-login .login-col2-set .col-1{width: 400px; float: left; padding-left:5px; padding-right:25px;}
+.account-login .login-col2-set .col-1{width: 400px; float: left; padding-right:25px;}
 .account-login .login-col2-set .col-2{width: 475px; float: left}
 .account-login .content .login-signup-description {height: 80px; padding: 25px 20px 0px 10px; color: white; font-style:italic;}
 .account-login .content .login-description {height: 50px; color: white; font-style: italic; padding-left: 10px; padding-right: 20px; padding-top: 5px;}
@@ -1428,7 +1428,7 @@ f/********** Product Prices > */
 #forget-pass a{float: right; color: #e5e8e8; font-style: italic; text-decoration: none;}
 
 
-.account-create #left-image{width: 400px; height: 475px; float: left; padding-left: 5px;}
+.account-create #left-image{width: 400px; height: 475px; float: left; }
 .account-create .fieldset{width: 475px; float: left; margin: 0px; padding-left: 25px;}
 .account-create #form-validate label{color:#e5e8e8; text-transform: uppercase; font-weight: normal;}
 .account-create .fieldset li {margin: 0px;}

@@ -484,7 +484,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 .top-bar { padding:3px 12px 2px 12px; border:1px solid #bbb; border-bottom-color:#dedede; background:#efefef; line-height:21px; }
 .top-bar . { float:left; width:580px; overflow:hidden; }
-.form-search { float:right; width:300px;}
+.form-search { float:right; width:295px;}
 .form-search label { float:left; font-size:12px; padding:0 5px 0 0; }
 .form-search input.input-text { float:left; width:200px; margin-right:5px; background:#c2c2c2;border-color:#c2c2c2;}
 .form-search button.button { float:left; background:transparent url(../images/gains/search-but-on.gif) 0 0 no-repeat; width:20px;}
@@ -1415,7 +1415,7 @@ f/********** Product Prices > */
 .account-login #but-login{height: 25px;}
 
 
-.account-login { min-height: 475px; padding-top: 50px; padding-bottom: 25px; }
+.account-login { min-height: 475px; padding-bottom: 25px; }
 .account-login .login-col2-set .col-1{width: 400px; float: left; padding-right:25px;}
 .account-login .login-col2-set .col-2{width: 475px; float: left}
 .account-login .content .login-signup-description {height: 80px; padding: 25px 20px 0px 10px; color: white; font-style:italic;}

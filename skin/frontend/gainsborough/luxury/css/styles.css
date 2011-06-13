@@ -181,8 +181,8 @@ p.control input.radio { margin-right:6px; }
 .form-list li.control input.checkbox { margin-top:-1px; margin-right:4px; }
 .form-list li.control .input-box { clear:none; display:inline; width:auto; }
 /*.form-list li.fields { margin-right:-15px; }*/
-.form-list .input-box { display:block; clear:both; width:260px; }
-.form-list .field { float:left; width:275px; }
+.form-list .input-box { display:block; clear:both; width:450px; }
+.form-list .field { float:left;}
 .form-list input.input-text { width:254px; }
 .form-list textarea { width:254px; height:10em; }
 .form-list select { width:260px; }
@@ -1440,6 +1440,8 @@ f/********** Product Prices > */
 .account-create .fieldset input[type=text]{width: 235px;}
 .account-create .fieldset input[type=password]{width: 235px;}
 .account-create .fieldset select {width: 235px;}
+.account-create .input-box div{width: 200px;float: right; font-size: 10px;}
+.account-create #birthday-img {position: absolute; left: 870px; top: 330px; width: 200px;}
 
 /* Account Login/Create Pages ============================================================ */
 

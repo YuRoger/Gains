@@ -181,8 +181,8 @@ p.control input.radio { margin-right:6px; }
 .form-list li.control input.checkbox { margin-top:-1px; margin-right:4px; }
 .form-list li.control .input-box { clear:none; display:inline; width:auto; }
 /*.form-list li.fields { margin-right:-15px; }*/
-.form-list .input-box { display:block; clear:both; width:260px; }
-.form-list .field { float:left; width:275px; }
+.form-list .input-box { display:block; clear:both; width:450px; }
+.form-list .field { float:left;}
 .form-list input.input-text { width:254px; }
 .form-list textarea { width:254px; height:10em; }
 .form-list select { width:260px; }
@@ -1401,7 +1401,7 @@ f/********** Product Prices > */
 .account-login .content { min-height:475px; }
 .account-login .content .login-signup-title,
 .account-login .content .login-title,
-.account-create .fieldset .register-title { background: #474a51; height: 50px; text-align: center; }
+.account-create .fieldset .register-title { background: #474a51; height: 50px; text-align: center;}
 .account-create .fieldset .register-title { margin-bottom:25px;}
 .account-login .content h2,
 .account-create .fieldset h2{font-size:16px; color: white; padding-top: 17px}
@@ -1440,17 +1440,37 @@ f/********** Product Prices > */
 .account-create .fieldset input[type=text]{width: 235px;}
 .account-create .fieldset input[type=password]{width: 235px;}
 .account-create .fieldset select {width: 235px;}
+.account-create .input-box div{width: 200px;float: right; font-size: 10px;}
+.account-create #birthday-img {position: absolute; left: 870px; top: 330px; width: 200px;}
 
 /* Account Login/Create Pages ============================================================ */
 
+/* Contact Page */
+.contact-title{ background: #474a51; width: 475px; height: 50px; text-align: center; margin-bottom: 25px;}
+.contact-title h1{font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50px;}
+#left-image{width: 400px; height: 475px; float: left}
+#contact-form {width: 475px; float: right}
+#contact-form .fieldset{margin: 0px;}
+#contact-form form p{font-style: italic; font-size: 18px; text-align: center; color: white; margin-bottom: 20px;}
+#contact-form form h6{font-size: 14px; font-weight: normal; text-align: center; color: white; width: 475px; line-height: 1.15; margin-bottom:0px;}
+#contact-form form ul{width: 275px; margin-left: 100px; margin-top: 10px;}
+#contact-form form li{margin: 0px;}
+#contact-form form label{color: white; font-size: 12px;}
+#contact-form form .field {width: 275px; height: 40px;}
+#contact-form form #telephon-div {width: 275px; height: 40px;}
+#contact-form form textarea{width: 255px; height: 70px;}
+
+#contact-form .buttons-div { text-align: left; margin-left: 100px; padding-top: 15px;}
+#contact-form .buttons-div div {width: 120px; height: 25px; background: #7dcbd9; color: #616161; font:italic 13px/25px Georgia; }
+
+/* Contact Page */
 
 /* My Account ============================================================================= */
 .my-account .title-buttons .link-rss { float:none; margin:0; }
 
 /********** < Dashboard */
 .dashboard .welcome-msg { margin:0 8em 1.5em 0; }
-.dashboard .welcome-msg p { margin:0; }
-.dashboard .col2-set { margin:0 0 15px; }
+.dashboard .welcome-msg p { margin:0; } .dashboard .col2-set { margin:0 0 15px; }
 
 /* General Box */
 .box-account { margin:0 0 15px; }

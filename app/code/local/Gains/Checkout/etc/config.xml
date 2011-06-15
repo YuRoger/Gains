@@ -6,12 +6,22 @@
         </Gains_Checkout>
     </modules>
     <global>
+    <models>
+    <checkout>
+         <rewrite>
+	    <cart>Gains_Checkout_Model_Cart</cart>
+	 </rewrite>
+    </checkout>
+    </models>    
     <blocks>
     <checkout>
         	<rewrite>
         		<links>Gains_Checkout_Block_Links</links>
         	</rewrite>
-    </checkout>
-    </blocks>
+		<rewrite>
+			<cart_promotion>Gains_Checkout_Block_Cart_Promotion</cart_promotion>
+		</rewrite>
+   </checkout>
+   </blocks>
     </global>
 </config>

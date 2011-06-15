@@ -1,0 +1,28 @@
+<div style="width:400px;" id="AdPromotion">
+
+<?php if($this->containsBedlinen() && $this->containsBedlinen()):?>
+<a href="http://127.0.0.1/xampp/pdt_workspace/magento/index.php/checkout/cart/">
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Both.jpg"  id="AdBoth"/>
+</a>
+
+<?php elseif($this->containsQuilt()):?>
+<a href="http://127.0.0.1/xampp/pdt_workspace/magento/index.php/checkout/cart/">
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Quilts.jpg" id="AdFreePillow"/>
+</a>
+
+<?php elseif($this->containsBedlinen()):?>
+<a href="http://127.0.0.1/xampp/pdt_workspace/magento/index.php/checkout/cart/">
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Bedlinen.jpg" id="AdFreeCushion"/>
+</a>
+
+<?php else:?>
+<a href="http://127.0.0.1/xampp/pdt_workspace/magento/index.php/checkout/cart/">
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_General.jpg" id="AdDefault"/>
+</a>
+<?php endif;?>
+<div style="height:50px;width:400px;"></div>
+<a href="http://127.0.0.1/xampp/pdt_workspace/magento/index.php/checkout/cart/">
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Thin.jpg" id="Thin"/>
+</a>
+<div style="height:50px;width:400px;"></div>
+</div>

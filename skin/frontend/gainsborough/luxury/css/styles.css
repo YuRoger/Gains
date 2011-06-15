@@ -1765,3 +1765,24 @@ f/********** Product Prices > */
 .fb_like iframe {
 	padding-left:315px;
 }
+
+/*gain cart css*/
+.shopping-cart-collaterals .col2-set .gaincartcol-1{width:400px;  float:left; }
+.shopping-cart-collaterals .col2-set .gaincartcol-2{width:475px;  float:right; }
+.gaincartsummary{width:475px;  height:50px; background-color:rgb(71,76,82);}
+.gains-cart-item td{background-color:#82C7DB; width:254px;}
+.gains-cart-item td .button span{background-color:#82C7DB;padding:3px 5px 3px 5px}
+..gains-shopping-cart-data-table { width:100%; }
+.gains-shopping-cart-data-table tr{  border-bottom:1px solid #d9dde3;  }
+.gains-shopping-cart-data-table th {  border-bottom:1px solid #d9dde3; padding:3px 8px; }
+.gains-shopping-cart-data-table td { padding:3px 8px; }
+
+.gains-shopping-cart-data-table thead,
+.gains-shopping-cart-data-table thead tr { border-bottom:1 !important; padding:3px 8px;  }
+
+.gains-shopping-cart-data-table tfoot { border-bottom:1px solid #d9dde3; }
+.gains-shopping-cart-data-table tfoot tr { }
+.gains-shopping-cart-data-table tbody th { padding:3px 8px; font-size:11px; font-weight:bold; text-transform:none; white-space:normal; }
+.gains-shopping-cart-data-table tbody th,
+.gains-shopping-cart-data-table tbody td { border-bottom:1px solid #d9dde3; }
+.gains-shopping-cart-data-table tfoot strong { font-size:14px; }

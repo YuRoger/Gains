@@ -30,11 +30,5 @@
     <?php if ($this->hasRequiredOptions()):?>
         <p class="required"><?php echo $this->__('* Required Fields') ?></p>
     <?php endif;?>
-    <?php if ($_product->isAvailable()): ?>
-    <p class="gains-availability in-stock"><?php echo $this->__('In stock') ?></p>
-<?php else: ?>
-    <p class="gains-availability out-of-stock"><?php echo $this->__('Out of stock') ?></p>
-<?php endif; ?>
-
 </div>
 <script type="text/javascript">decorateGeneric($$('#product-options-wrapper dl'), ['last']);</script>

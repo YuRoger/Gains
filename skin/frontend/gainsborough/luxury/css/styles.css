@@ -1810,3 +1810,6 @@ f/********** Product Prices > */
 .gains-shopping-cart-data-table tbody td { border-bottom:1px solid #d9dde3; }
 .gains-shopping-cart-data-table tfoot strong { font-size:14px; }
 .gains-add-to-cart {float:right;margin-top:-35px;}
+.gains-download-catalog {padding-top:10px;}
+.gains-download-catalog button.button {height:30px;}
+.gains-download-catalog button.button span{background-color:#82c7db; padding:3px 18px 3px 18px; border:1px solid #969999;height:25px;}

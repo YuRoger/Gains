@@ -1093,7 +1093,7 @@ f/********** Product Prices > */
 .page-sitemap .links a { text-decoration:none; position:relative; }
 .page-sitemap .links a:hover { text-decoration:underline; }
 .page-sitemap .sitemap { margin:12px; }
-.page-sitemap .sitemap a { color:#444; }
+.page-sitemap .sitemap a { color:white; }
 .page-sitemap .sitemap li { margin:3px 0; }
 .page-sitemap .sitemap li.level-0 { margin:10px 0 0; font-weight:bold; }
 .page-sitemap .sitemap li.level-0 a { color:#4f8100; }
@@ -1462,8 +1462,16 @@ f/********** Product Prices > */
 
 #contact-form .buttons-div { text-align: left; margin-left: 100px; padding-top: 15px;}
 #contact-form .buttons-div div {width: 120px; height: 25px; background: #7dcbd9; color: #616161; font:italic 13px/25px Georgia; }
-
 /* Contact Page */
+
+/* Site Map Page*/
+#left-image{padding-right: 25px; float: left}
+#sitemap-content{width: 475px; float: left}
+#sitemap-content #title{ background: #474a51; width: 475px; height: 50px; text-align: center; margin-bottom: 25px;
+font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50px;}
+#sitemap{padding-left: 50px;}
+#sitemap a{ text-decoration: none; color: white}
+/* Site Map Page*/
 
 /* My Account ============================================================================= */
 .my-account .title-buttons .link-rss { float:none; margin:0; }

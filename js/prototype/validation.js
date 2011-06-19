@@ -345,7 +345,7 @@ Object.extend(Validation, {
         }
         catch(e){}
 
-        advice = '<div class="validation-advice" id="advice-' + name + '-' + Validation.getElmID(elm) +'" style="display:none">' + errorMsg + '</div>'
+        advice = '<div class="validation-advice" id="advice-' + name + '-' + Validation.getElmID(elm) +'" style="display:none">' + /*errorMsg*/'*' + '</div>'
 
 
         Validation.insertAdvice(elm, advice);

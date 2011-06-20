@@ -38,11 +38,11 @@
 		<div id="left-image">
 			<img src="<?php echo $this->getSkinUrl()?>/images/gains/login.jpg" width="400" height="475"/>
 		</div>
-		<img id="birthday-img" src="<?php echo $this->getSkinUrl()?>/images/gains/birthday.png" />
         <div class="fieldset">
 			<div class="register-title"> <h2><?php echo $this->__('CREATE AN ACCOUNT') ?></h2> </div>
             <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
             <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
+			<img id="birthday-img" src="<?php echo $this->getSkinUrl()?>/images/gains/birthday.png" />
             <ul class="form-list">
                 <li class="fields">
                     <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->toHtml() ?>

@@ -400,9 +400,10 @@ SEO Site Map
         </reference>
         <reference name="content">
             <block type="page/template_container" name="seo.sitemap.container" template="catalog/seo/sitemap/container.phtml">
-                <block type="page/template_links" name="seo.sitemap.links" as="links" template="page/template/links.phtml"/>
-                <block type="page/html_pager" name="seo.sitemap.pager.top" as="pager_top" template="page/html/pager.phtml"/>
+				<!-- <block type="page/template_links" name="seo.sitemap.links" as="links" template="page/template/links.phtml"/>
+				<block type="page/html_pager" name="seo.sitemap.pager.top" as="pager_top" template="page/html/pager.phtml"/>
                 <block type="page/html_pager" name="seo.sitemap.pager.bottom" as="pager_bottom" template="page/html/pager.phtml"/>
+				-->
             </block>
         </reference>
     </catalog_seo_sitemap>
@@ -428,10 +429,10 @@ SEO Site Map
         <reference name="seo.sitemap.container">
             <remove name="seo.sitemap.pager.top" />
             <remove name="seo.sitemap.pager.bottom" />
-            <block type="catalog/seo_sitemap_tree_pager" name="seo.sitemap.tree.pager.top" as="pager_top" template="page/html/pager.phtml"/>
+			<block type="catalog/seo_sitemap_tree_pager" name="seo.sitemap.tree.pager.top" as="pager_top" template="page/html/pager.phtml"/>
             <block type="catalog/seo_sitemap_tree_pager" name="seo.sitemap.tree.pager.bottom" as="pager_bottom" template="page/html/pager.phtml"/>
             <remove name="seo.sitemap.sitemap" />
-            <block type="catalog/seo_sitemap_tree_category" name="seo.sitemap.sitemap_tree" as="sitemap" after="pager_top" template="catalog/seo/tree.phtml">
+			<block type="catalog/seo_sitemap_tree_category" name="seo.sitemap.sitemap_tree" as="sitemap" after="pager_top" template="catalog/seo/tree.phtml">
                 <action method="bindPager"><pager>seo.sitemap.tree.pager.top</pager></action>
                 <action method="bindPager"><pager>seo.sitemap.tree.pager.bottom</pager></action>
             </block>

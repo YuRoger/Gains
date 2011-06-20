@@ -267,7 +267,7 @@ p.control input.radio { margin-right:6px; }
 .fieldset .legend { margin:0 -10px 12px; background:#f1f1f1; padding:2px 10px; font-size:13px; line-height:1.25; }
 
 /* Form Validation */
-.validation-advice { clear:both; min-height:13px; margin:3px 0 0; padding-left:5px; font-size:11px; line-height:13px; color:#82C7DB; }
+.validation-advice { width: 10px; clear:both; min-height:13px; margin:3px 0 0; padding-left:5px; font-size:11px; line-height:13px; color:#82C7DB; float: right}
 .validation-failed { border:1px solid #82C7DB !important;}
 .validation-passed {}
 p.required { font-size:11px; text-align:right; color:#82C7DB; }
@@ -1436,13 +1436,17 @@ f/********** Product Prices > */
 .account-create .fieldset .name-firstname {height: 40px;}
 .account-create .fieldset .name-lastname {height: 40px;}
 .account-create .fieldset .control {height: 40px; padding-bottom: 50px}
-.account-create .fieldset .field {height: 40px;}
+.account-create .fieldset .field{height: 40px;}
 .account-create .fieldset .field-outline{height: 40px; vertical-align: middle}
 .account-create .fieldset input[type=text]{width: 235px;}
 .account-create .fieldset input[type=password]{width: 235px;}
-.account-create .fieldset select {width: 235px;}
-.account-create .input-box div{width: 200px;float: right; font-size: 10px;}
-.account-create #birthday-img {position: absolute; left: 870px; top: 330px; width: 200px;}
+.account-create .fieldset select {width: 240px;}
+.account-create .fieldset .control{width: 245px;}
+/*.account-create .input-box div{width: 200px;float: right; font-size: 10px;}
+ */
+.account-create .input-box {width: 265px;float: right; font-size: 10px;}
+.account-create #birthday-img {float:right; width: 200px; padding-top: 95px; padding-right: 10px;}
+.account-create ul{width: 265px; float: left;}
 
 /* Account Login/Create Pages ============================================================ */
 

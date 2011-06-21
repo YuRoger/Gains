@@ -1405,7 +1405,7 @@ f/********** Product Prices > */
 .account-create .fieldset .register-title { background: #474a51; height: 50px; text-align: center;}
 .account-create .fieldset .register-title { margin-bottom:25px;}
 .account-login .content h2,
-.account-create .fieldset h2{font-size:16px; color: white; padding-top: 17px}
+.account-create .fieldset h2{font-size:16px; color: white; padding-top: 17px; font-weight: normal; letter-spacing:1px;}
 
 /* Button*/
 .account-login .buttons-div { text-align: right;}
@@ -1461,7 +1461,7 @@ f/********** Product Prices > */
 
 /* Contact Page */
 .contact-title{ background: #474a51; width: 475px; height: 50px; text-align: center; margin-bottom: 25px;}
-.contact-title h1{font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50px;}
+.contact-title h1{font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 50px; line-height: 50px;}
 #left-image{width: 400px; height: 475px; float: left}
 #contact-form {width: 475px; float: right}
 #contact-form .fieldset{margin: 0px;}
@@ -1485,7 +1485,7 @@ f/********** Product Prices > */
 #left-image{padding-right: 25px; float: left}
 #sitemap-content{width: 475px; float: left}
 #sitemap-content #title{ background: #474a51; width: 475px; height: 50px; text-align: center; margin-bottom: 25px;
-font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50px;}
+font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 50px; line-height: 50px;}
 .sitemap{padding-left: 50px;}
 .sitemap{list-style: disc}
 .sitemap a{ text-decoration: none; color: white}
@@ -1507,7 +1507,7 @@ font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50p
 /* Noitem */
 #noitem-div{width: 475px; float: left}
 #noitem-title { background: #474a51; width: 475px; height: 50px; text-align: center; margin-bottom: 25px;
-font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50px;}
+font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 50px; line-height: 50px;}
 .cart-empty p{color: white; font-size: 14px;}
 .cart-empty a{font-size: 14px; text-decoration: none;}
 /* Noitem */

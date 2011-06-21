@@ -267,7 +267,7 @@ p.control input.radio { margin-right:6px; }
 .fieldset .legend { margin:0 -10px 12px; background:#f1f1f1; padding:2px 10px; font-size:13px; line-height:1.25; }
 
 /* Form Validation */
-.validation-advice { width: 10px; clear:both; min-height:13px; margin:3px 0 0; padding-left:5px; font-size:11px; line-height:13px; color:#82C7DB; float: right}
+.validation-advice { width: 7px; clear:both; min-height:13px; margin:3px 0 0; padding-left:5px; font-size:11px; line-height:13px; color:#82C7DB; float: right}
 .validation-failed { border:1px solid #82C7DB !important;}
 .validation-passed {}
 p.required { font-size:11px; text-align:right; color:#82C7DB; }
@@ -1411,10 +1411,11 @@ f/********** Product Prices > */
 .account-login .buttons-div { text-align: right;}
 .account-login .buttons-div div,
 .account-create .buttons-div div{width: 160px; height: 25px; background: #7dcbd9; color: #616161; font:italic 13px/25px Georgia; }
-.account-create .buttons-div div{margin-left: 25px;}
+.account-create .buttons-div div{margin-left: 0px;}
 .account-login #but-signup{height: 25px; padding-top: 20px;}
 .account-login #but-login{height: 25px;}
 
+.account-create .buttons-div{float: left; width: 160px;}
 
 .account-login { min-height: 475px; padding-bottom: 25px; }
 .account-login .login-col2-set .col-1{width: 400px; float: left; padding-right:25px;}
@@ -1445,8 +1446,16 @@ f/********** Product Prices > */
 /*.account-create .input-box div{width: 200px;float: right; font-size: 10px;}
  */
 .account-create .input-box {width: 265px;float: right; font-size: 10px;}
-.account-create #birthday-img {float:right; width: 200px; padding-top: 95px; padding-right: 10px;}
+.account-create #birthday-img {float:right; width: 200px; padding-top: 80px; padding-right: 10px;}
 .account-create ul{width: 265px; float: left;}
+
+.account-create #birthday-li div{float: left;}
+.account-create #birthday-li .input-box{width: 470px;}
+.account-create #birthday-li .validation-advice{float: right; margin-top: -17px;}
+.account-create .messages {float: right}
+.account-create .messages .error-msg{height: 70px; margin-top: 30px;}
+.account-create .dob-year + div + div{width: 200px;}
+.account-create #birthday-li {width: 400px;}
 
 /* Account Login/Create Pages ============================================================ */
 

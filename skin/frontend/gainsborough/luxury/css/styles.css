@@ -1465,8 +1465,8 @@ f/********** Product Prices > */
 #left-image{width: 400px; height: 475px; float: left}
 #contact-form {width: 475px; float: right}
 #contact-form .fieldset{margin: 0px;}
-#contact-form form p{font-style: italic; font-size: 18px; text-align: center; color: white; margin-bottom: 20px;}
-#contact-form form h6{font-size: 14px; font-weight: normal; text-align: center; color: white; width: 475px; line-height: 1.15; margin-bottom:0px;}
+#contact-form form p{font-style: italic; font-size: 18px; text-align: left; color: white; margin-bottom: 20px; padding-left: 100px;}
+#contact-form form h6{font-size: 14px; font-weight: normal; text-align: left; color: white; width: 475px; line-height: 1.15; margin-bottom:0px; padding-left: 100px}
 #contact-form form ul{width: 275px; margin-left: 100px; margin-top: 10px;}
 #contact-form form li{margin: 0px;}
 #contact-form form label{color: white; font-size: 12px;}
@@ -1491,6 +1491,7 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 .sitemap a{ text-decoration: none; color: white}
 #sitemap{padding-left: 50px;}
 #sitemap a{ text-decoration: none; color: white}
+.sitemap .level--1{display: none}
 /* Site Map Page*/
 
 

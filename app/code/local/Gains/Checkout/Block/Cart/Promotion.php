@@ -13,7 +13,8 @@ class Gains_Checkout_Block_Cart_Promotion extends Mage_Checkout_Block_Cart_Abstr
 	public function containsBedlinen()
 	{
 		$cartModel=$this->_getCheckoutCart();
-		return $cartModel->getSpecialQty("bedlinen")>0;
+		$bedlinenAmount=$cartModel->getSpecialTotalQtyAmount(11);
+		return 	$bedlinenAmount[0]>0;
 	}
 		/**
 	Decide is there any bedlinen product in cart, based on QUILT_CATEGORY_ID
@@ -21,6 +22,7 @@ class Gains_Checkout_Block_Cart_Promotion extends Mage_Checkout_Block_Cart_Abstr
 	public function containsQuilt()
 	{
 		$cartModel=$this->_getCheckoutCart();
-		return $cartModel->getSpecialQty("quilt")>0;
+		$quiltAmount=$cartModel->getSpecialTotalQtyAmount(4);
+		return $quiltAmount[0]>0;
 	}
 }

@@ -27,7 +27,9 @@
 <?php $_product = $this->getProduct() ?>
 <div class="product-options" id="product-options-wrapper">
     <?php echo $this->getChildHtml('', true, true);?>
-    <?php if ($this->hasRequiredOptions()):?>
+</div>
+<div class="gains-products-required-field">
+ <?php if ($this->hasRequiredOptions()):?>
         <p class="required"><?php echo $this->__('* Required Fields') ?></p>
     <?php endif;?>
 </div>

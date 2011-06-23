@@ -25,6 +25,8 @@
  */
 ?>
 <?php if($this->getItems()->getSize()): ?>
+<?php $related_products_count = 1;?>
+<?php $total_related_products = sizeof($this->getItems())?>
 <div class="gains-related-block">
     <div class="block-title">
         <span><?php echo $this->__('Complete the look...') ?></span>
@@ -33,13 +35,17 @@
        <!--   <p class="block-subtitle"><?php //echo $this->__('Check items to add to the cart or') ?>&nbsp;<a href="#" onclick="selectAllRelated(this); return false;"><?php //echo $this->__('select all') ?></a></p>-->
         <ul>
         <?php foreach($this->getItems() as $_item): ?>
-            <li>
+            <?php if($related_products_count!=$total_related_products):?>
+            <li class="normal">
+            <?php else:?>
+            <li class="last">
+            <?php endif;?>
                 <?php if(!$_item->isComposite() && $_item->isSaleable()): ?>
                     <?php if (!$_item->getRequiredOptions()): ?>
-                        <input type="checkbox" class="checkbox related-checkbox" id="related-checkbox<?php echo $_item->getId() ?>" name="related_products[]" value="<?php echo $_item->getId() ?>" />
+                       <!--   <input type="checkbox" class="checkbox related-checkbox" id="related-checkbox<?php //echo $_item->getId() ?>" name="related_products[]" value="<?php //echo $_item->getId() ?>" />-->
                     <?php endif; ?>
                 <?php endif; ?>  
-                    <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(95) ?>" width="95" height="95" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
+                    <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(90) ?>" width="90" height="90" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
                    <!--  
                     <div class="product-details">
                         <p class="product-name"><a href="<?php //echo $_item->getProductUrl() ?>"><?php //echo $this->htmlEscape($_item->getName()) ?></a></p>
@@ -50,6 +56,7 @@
                     </div>
                     -->
             </li>
+            <?php $related_products_count++;?>
         <?php endforeach ?>
         </ul>
         <script type="text/javascript">decorateList('block-related', 'none-recursive')</script>

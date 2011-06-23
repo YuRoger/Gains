@@ -716,7 +716,7 @@ tr.summary-details-excluded { font-style:italic; }
 .products-grid .product-image { display:block; width:170px; height:170px; border:1px solid #ddd; border-width:1px 1px 1px 0; margin:0 0 10px; }
 .products-grid.first .product-image { border-top:0; }
 .products-grid li.last .product-image { border-right:0; }
-.products-grid .product-name { font-size:11px; margin:0 0 6px; }
+.products-grid .product-name { font-size:10.5px; margin:0 0 6px; }
 .products-grid .product-name a { color:#dedede; text-decoration:none; }
 .products-grid .product-name a:hover { text-decoration:none; }
 .products-grid .price-box { margin:-6px 0 5px 0; }
@@ -952,7 +952,7 @@ f/********** Product Prices > */
 .product-view .product-shop .product-options-bottom .paypal-logo { float:left; }
 
 /* Product Options */
-.product-options { margin:7px 0 0; position:relative; }
+.product-options { margin:7px 0 0; position:relative;width:350px; }
 .product-options dt { padding:10px 0 0; font-weight:normal; }
 .product-options dt label { font-weight:bold; }
 .product-options dt label.required em { color:#eb340a; margin-left:5px; }
@@ -1808,10 +1808,11 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 .gains-add-to-links .button.button span {background-color:#82C7DB;border:1px solid #969999;padding:3px 5px 3px 5px}
 .gains-availability {color:#82C7DB;font-size:13px;margin:0px 0px -6px 0px;}
 .gains-related-block {width:400px;float:right; padding-right:10px; margin-top:-140px;}
-.gains-related-block .block-title {padding-bottom:2px;color:#fff;font-style:italic;}
-.gains-related-block .block-content{}
-.gains-related-block .block-content ul {}
-.gains-related-block .block-content ul li{padding-right:10px;display:inline;}
+.gains-related-block .block-title {padding-bottom:6px;color:#fff;font-style:italic;padding-left:10px;}
+.gains-related-block .block-content{padding-left:10px;}
+.gains-related-block .block-content ul {width:400px;}
+.gains-related-block .block-content ul li.normal{padding-right:10px;display:inline;}
+.gains-related-block .block-content ul li.last{display:inline;padding-right:0px;}
 .breadcrumbs{font-size:0.90em;height:22px;padding:0 0 0 35px;}
 .breadcrumbs ul {padding-top:2px;}
 .breadcrumbs li {display:inline; }
@@ -1860,3 +1861,5 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 .gains-download-catalog {padding-top:10px;}
 .gains-download-catalog button.button {height:30px;}
 .gains-download-catalog button.button span{background-color:#82c7db; padding:3px 18px 3px 18px; border:1px solid #969999;height:25px;}
+.gains-products-required-field {float:left;margin-top:-55px;margin-left:340px;}
+.gains-products-required-field p.required{color:#c2c2c2;}

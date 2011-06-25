@@ -267,7 +267,7 @@ p.control input.radio { margin-right:6px; }
 .fieldset .legend { margin:0 -10px 12px; background:#f1f1f1; padding:2px 10px; font-size:13px; line-height:1.25; }
 
 /* Form Validation */
-.validation-advice { width: 10px; clear:both; min-height:13px; margin:3px 0 0; padding-left:5px; font-size:11px; line-height:13px; color:#82C7DB; float: right}
+.validation-advice { width: 7px; clear:both; min-height:13px; margin:3px 0 0; padding-left:5px; font-size:11px; line-height:13px; color:#82C7DB; float: right}
 .validation-failed { border:1px solid #82C7DB !important;}
 .validation-passed {}
 p.required { font-size:11px; text-align:right; color:#82C7DB; }
@@ -1405,16 +1405,17 @@ f/********** Product Prices > */
 .account-create .fieldset .register-title { background: #474a51; height: 50px; text-align: center;}
 .account-create .fieldset .register-title { margin-bottom:25px;}
 .account-login .content h2,
-.account-create .fieldset h2{font-size:16px; color: white; padding-top: 17px}
+.account-create .fieldset h2{font-size:16px; color: white; padding-top: 17px; font-weight: normal; letter-spacing:1px;}
 
 /* Button*/
 .account-login .buttons-div { text-align: right;}
 .account-login .buttons-div div,
 .account-create .buttons-div div{width: 160px; height: 25px; background: #7dcbd9; color: #616161; font:italic 13px/25px Georgia; }
-.account-create .buttons-div div{margin-left: 25px;}
+.account-create .buttons-div div{margin-left: 0px;}
 .account-login #but-signup{height: 25px; padding-top: 20px;}
 .account-login #but-login{height: 25px;}
 
+.account-create .buttons-div{float: left; width: 160px;}
 
 .account-login { min-height: 475px; padding-bottom: 25px; }
 .account-login .login-col2-set .col-1{width: 400px; float: left; padding-right:25px;}
@@ -1445,19 +1446,27 @@ f/********** Product Prices > */
 /*.account-create .input-box div{width: 200px;float: right; font-size: 10px;}
  */
 .account-create .input-box {width: 265px;float: right; font-size: 10px;}
-.account-create #birthday-img {float:right; width: 200px; padding-top: 95px; padding-right: 10px;}
+.account-create #birthday-img {float:right; width: 200px; padding-top: 80px; padding-right: 10px;}
 .account-create ul{width: 265px; float: left;}
+
+.account-create #birthday-li div{float: left;}
+.account-create #birthday-li .input-box{width: 470px;}
+.account-create #birthday-li .validation-advice{float: right; margin-top: -17px;}
+.account-create .messages {float: right}
+.account-create .messages .error-msg{height: 70px; margin-top: 30px;}
+.account-create .dob-year + div + div{width: 200px;}
+.account-create #birthday-li {width: 400px;}
 
 /* Account Login/Create Pages ============================================================ */
 
 /* Contact Page */
 .contact-title{ background: #474a51; width: 475px; height: 50px; text-align: center; margin-bottom: 25px;}
-.contact-title h1{font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50px;}
+.contact-title h1{font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 50px; line-height: 50px;}
 #left-image{width: 400px; height: 475px; float: left}
 #contact-form {width: 475px; float: right}
 #contact-form .fieldset{margin: 0px;}
-#contact-form form p{font-style: italic; font-size: 18px; text-align: center; color: white; margin-bottom: 20px;}
-#contact-form form h6{font-size: 14px; font-weight: normal; text-align: center; color: white; width: 475px; line-height: 1.15; margin-bottom:0px;}
+#contact-form form p{font-style: italic; font-size: 18px; text-align: left; color: white; margin-bottom: 20px; padding-left: 100px;}
+#contact-form form h6{font-size: 14px; font-weight: normal; text-align: left; color: white; width: 475px; line-height: 1.15; margin-bottom:0px; padding-left: 100px}
 #contact-form form ul{width: 275px; margin-left: 100px; margin-top: 10px;}
 #contact-form form li{margin: 0px;}
 #contact-form form label{color: white; font-size: 12px;}
@@ -1476,12 +1485,13 @@ f/********** Product Prices > */
 #left-image{padding-right: 25px; float: left}
 #sitemap-content{width: 475px; float: left}
 #sitemap-content #title{ background: #474a51; width: 475px; height: 50px; text-align: center; margin-bottom: 25px;
-font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50px;}
+font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 50px; line-height: 50px;}
 .sitemap{padding-left: 50px;}
 .sitemap{list-style: disc}
 .sitemap a{ text-decoration: none; color: white}
 #sitemap{padding-left: 50px;}
 #sitemap a{ text-decoration: none; color: white}
+.sitemap .level--1{display: none}
 /* Site Map Page*/
 
 
@@ -1498,7 +1508,7 @@ font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50p
 /* Noitem */
 #noitem-div{width: 475px; float: left}
 #noitem-title { background: #474a51; width: 475px; height: 50px; text-align: center; margin-bottom: 25px;
-font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50px;}
+font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 50px; line-height: 50px;}
 .cart-empty p{color: white; font-size: 14px;}
 .cart-empty a{font-size: 14px; text-decoration: none;}
 /* Noitem */

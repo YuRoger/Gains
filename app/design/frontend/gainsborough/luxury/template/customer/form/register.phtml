@@ -33,7 +33,6 @@
 ?>
 <div class="account-create">
     <?php echo $this->getChildHtml('form_fields_before')?>
-    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate">
 		<div id="left-image">
 			<img src="<?php echo $this->getSkinUrl()?>/images/gains/login.jpg" width="400" height="475"/>
@@ -42,7 +41,6 @@
 			<div class="register-title"> <h2><?php echo $this->__('CREATE AN ACCOUNT') ?></h2> </div>
             <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
             <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
-			<img id="birthday-img" src="<?php echo $this->getSkinUrl()?>/images/gains/birthday.png" />
             <ul class="form-list">
                 <li class="fields">
                     <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->toHtml() ?>
@@ -71,7 +69,7 @@
                 </li>
             <?php $_dob = $this->getLayout()->createBlock('customer/widget_dob') ?>
 				<?php if ($_dob->isEnabled()): ?>
-					<li><div class="field-outline"><?php echo $_dob->setDate($this->getFormData()->getDob())->toHtml() ?></div></li>
+					<li id="birthday-li"><div class="field-outline"><?php echo $_dob->setDate($this->getFormData()->getDob())->toHtml() ?></div></li>
 				<?php endif ?>
             <?php $_gender = $this->getLayout()->createBlock('customer/widget_gender') ?>
 				<?php if ($_gender->isEnabled()): ?>
@@ -92,7 +90,12 @@
                 <li><?php echo $_taxvat->setTaxvat($this->getFormData()->getTaxvat())->toHtml() ?></li>
             <?php endif ?>
             </ul>
+			<img id="birthday-img" src="<?php echo $this->getSkinUrl()?>/images/gains/birthday.png" />
         </div>
+			<div class="buttons-div">
+				<button type="submit" title="<?php echo $this->__('Submit') ?>" class="button"><div><?php echo $this->__('Submit') ?></div></button>
+			</div>
+			<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <?php if($this->getShowAddressFields()): ?>
         <div class="fieldset">
             <input type="hidden" name="create_address" value="1" />
@@ -166,9 +169,6 @@
             <input type="hidden" name="default_shipping" value="1" />
         </div>
     <?php endif; ?>
-        <div class="buttons-div">
-            <button type="submit" title="<?php echo $this->__('Submit') ?>" class="button"><div><?php echo $this->__('Submit') ?></div></button>
-        </div>
     </form>
     <script type="text/javascript">
     //<![CDATA[

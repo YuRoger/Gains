@@ -1833,9 +1833,9 @@ font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50p
 .gaincartsummary{width:475px;  height:50px; background-color:rgb(71,76,82);}
 .gains-cart-item td{background-color:#82C7DB; width:254px;}
 .gains-cart-item td .button span{background-color:#82C7DB;padding:3px 5px 3px 5px}
-..gains-shopping-cart-data-table { width:100%; }
-.gains-shopping-cart-data-table tr{  border-bottom:1px solid #d9dde3;  }
-.gains-shopping-cart-data-table th {  border-bottom:1px solid #d9dde3; padding:3px 8px; }
+.gains-shopping-cart-data-table { width:100%; }
+.gains-shopping-cart-data-table tr{  border-bottom:1px solid #474C52;  }
+.gains-shopping-cart-data-table th {  border-bottom:1px solid #474C52; padding:3px 8px; }
 .gains-shopping-cart-data-table td { padding:3px 8px; }
 
 .gains-shopping-cart-data-table thead,
@@ -1845,7 +1845,8 @@ font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50p
 .gains-shopping-cart-data-table tfoot tr { }
 .gains-shopping-cart-data-table tbody th { padding:3px 8px; font-size:11px; font-weight:bold; text-transform:none; white-space:normal; }
 .gains-shopping-cart-data-table tbody th,
-.gains-shopping-cart-data-table tbody td { border-bottom:1px solid #d9dde3; }
+.gains-shopping-cart-data-table tbody td { border-bottom:1px solid #474C52; }
+.gains-shopping-cart-data-table tbody td  h4 a{color: #C2C2C2;}
 .gains-shopping-cart-data-table tfoot strong { font-size:14px; }
 .gains-add-to-cart {float:right;margin-top:-35px;}
 .gains-download-catalog {padding-top:10px;}
@@ -1853,3 +1854,4 @@ font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50p
 .gains-download-catalog button.button span{background-color:#82c7db; padding:3px 18px 3px 18px; border:1px solid #969999;height:25px;}
 .gains-products-required-field {float:left;margin-top:-55px;margin-left:340px;}
 .gains-products-required-field p.required{color:#c2c2c2;}
+#test.validation-advice {float:right;}

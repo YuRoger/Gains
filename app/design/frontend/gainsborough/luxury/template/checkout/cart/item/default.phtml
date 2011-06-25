@@ -26,7 +26,8 @@
 ?>
 
 <?php $_item = $this->getItem()?>
-<tr>
+<tr  style="height:10px"/>
+<tr style="height:113px">
     <td style="width:15%">
     <a href="<?php echo $this->getProductUrl() ?>"><img src="<?php echo $this->getProductThumbnail()->resize(70); ?>" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" width="70px" /></a>
 	</td>
@@ -34,22 +35,10 @@
         <h4 class="title"><a href="<?php echo $this->getProductUrl() ?>"><?php echo $this->getProductName() ?></a></h4>
         <!-- item custom options -->
         <?php if ($_options = $this->getOptionList()):?>
-        <dl class="item-options">
-            <?php foreach ($_options as $_option) : ?>
+          <?php foreach ($_options as $_option) : ?>
             <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>
-            <dt><?php echo $this->htmlEscape($_option['label']) ?></dt>
-            <dd<?php if (isset($_formatedOptionValue['full_view'])): ?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?>
-                <?php if (isset($_formatedOptionValue['full_view'])): ?>
-                <div class="truncated_full_value">
-                    <dl class="item-options">
-                        <dt><?php echo $this->htmlEscape($_option['label']) ?></dt>
-                        <dd><?php echo $_formatedOptionValue['full_view'] ?></dd>
-                    </dl>
-                </div>
-                <?php endif; ?>
-            </dd>
-            <?php endforeach; ?>
-        </dl>
+            <?php echo $this->htmlEscape($_option['label']) ?>&nbsp;:&nbsp;<?php echo $_formatedOptionValue['value'] ?>
+          <?php endforeach; ?>
         <?php endif;?>
         <!-- / -->
         <?php if ($messages = $this->getMessages()): ?>

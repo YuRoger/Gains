@@ -6,8 +6,6 @@
 class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
 {
 		const DISCOUNT_PERCENT = 20;
-		const FREE_CUSHION="Chair";
-		const FREE_PILLOW="Couch";
     /**
      * Quote item discount calculation process
      *
@@ -259,6 +257,10 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
 		return $result;
 	}
 	public function applyGainsDiscount($item){
+		$bedlinenCategory=11;
+		$quiltCategory=4;
+		$freePillowCategory=35;
+		$freeCushionCategory=34;
 		$itemPrice  = $this->_getItemPrice($item);
 		$baseItemPrice = $this->_getItemBasePrice($item);
 		Mage::log("applyGainsDiscount");
@@ -266,27 +268,38 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
 		$baseDiscountAmount=0;
 		//bedlinen
 		$cart=Mage::getSingleton('checkout/cart');
-		$bedlinenQty=$cart->getSpecialQty('bedlinen');
-		Mage::Log("bedlinenQty");
-		Mage::Log($bedlinenQty);
-		$freeCushionQty=min($cart->getSpecialQty("cushion"),$bedlinenQty/2);
-		if($item->getProduct()->getName()==Gains_SalesRule_Model_Validator::FREE_CUSHION){
+		$freePillowCollection=$cart->getProductsByCategoryId($freePillowCategory);
+		$freeCushionCollection=$cart->getProductsByCategoryId($freeCushionCategory);
+		$bedlinen=$cart->getSpecialTotalQtyAmount($bedlinenCategory);
+		Mage::Log("bedlinen");
+		Mage::Log($bedlinen);
+		Mage::Log(intval($bedlinen[1]/300));
+		$cartCushion=$cart->getSpecialTotalQtyAmount($freeCushionCategory);
+		$freeCushionQty=min($cartCushion[0],intval($bedlinen[1]/300));
+		if($cart->isItemInArray($item,$freeCushionCollection)){
 			$discountAmount += $itemPrice*$freeCushionQty;
 			$baseDiscountAmount += $baseItemPrice*$freeCushionQty;
 		}
+		Mage::Log("freeCushionQty");
+		Mage::Log($freeCushionQty);
 		//quilt
-		$quiltQty=$cart->getSpecialQty('quilt');
-		Mage::Log("quiltQty");
-		Mage::Log($quiltQty);
-		$freePillowQty=min($cart->getSpecialQty("pillow"),$quiltQty/2);
-		if($item->getProduct()->getName()==Gains_SalesRule_Model_Validator::FREE_PILLOW){
+		$quilt=$cart->getSpecialTotalQtyAmount($quiltCategory);
+		Mage::Log("quilt");
+		Mage::Log($quilt);
+		$cartPillow=$cart->getSpecialTotalQtyAmount($freePillowCategory);
+		$freePillowQty=min($cartPillow[0],intval($quilt[1]/300));
+		Mage::Log("freePillowQty");
+		Mage::Log($freePillowQty);
+		if($cart->isItemInArray($item,$freePillowCollection)){
+			Mage::Log("itemPrice");
+			Mage::Log($itemPrice);
 			$discountAmount += $itemPrice*$freePillowQty;
 			$baseDiscountAmount += $baseItemPrice*$freePillowQty;
-			$item->setDiscountAmount($discountAmount);
-	        $item->setBaseDiscountAmount($baseDiscountAmount);
 		}
+		Mage::Log("discountAmount");
+		Mage::Log($discountAmount);
 		$item->setDiscountAmount($discountAmount);
-	    $item->setBaseDiscountAmount($baseDiscountAmount);
+	        $item->setBaseDiscountAmount($baseDiscountAmount);
 
 	}
 }

@@ -25,12 +25,10 @@
  */
 ?>
 <?php if ($this->isPossibleOnepageCheckout()):?>
-<div style="width:475px">
-<div style="float:left">To add international postage please proceed to Checkout.</div>
+<div style="float:left;width:355px">To add international postage please proceed to Checkout.</div>
 <?php if ($this->isDisabled()):?>
-<div style="background-color:#82C7DB;height:30px;width:100px;float:right" align="center"><span style="position: relative; top: 20% ">Checkout<span></div>
+<div style="background-color:#82C7DB;height:30px;width:115px;float:right" align="center"><span style="position: relative;top:20%;font-weight:bold;color:#D9DDE3">Checkout<span></div>
 <?php else: ?>
-<div style="background-color:#82C7DB;height:30px;width:100px;float:right" align="center"><a href="<?php echo $this->getCheckoutUrl()?>" style="position: relative; top: 20% ">Checkout</a></div>
+<div style="background-color:#82C7DB;height:30px;width:115px;float:right;" align="center"><a href="<?php echo $this->getCheckoutUrl()?>" style="position: relative;top:20%;font-weight:bold;color:#D9DDE3">Checkout</a></div>
 <?php endif?>
-</div>
 <?php endif?>

@@ -29,11 +29,11 @@
     <fieldset>
     <input type="hidden" name="remove" id="remove-coupone" value="0"/>
     <?php if(!strlen($this->getCouponCode())): ?>
-    <div class="left" style="padding-bottom:5px;"><?php echo $this->__('To redeem your discount enter your code here: ') ?><input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>" />&nbsp;<input onclick="discountForm.submit(false)" type="image" src="<?php echo $this->getSkinUrl();?>images/gains/go-button-subscription.jpg"  value="<?php echo $this->__('Apply Coupon') ?>">
+    <div class="left" style="padding-bottom:5px;"><?php echo $this->__('To redeem your discount enter your code here: ') ?><input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>" style="width:150px"/>&nbsp;<input onclick="discountForm.submit(false)" type="image" src="<?php echo $this->getSkinUrl();?>images/gains/go-button-subscription.jpg"  value="<?php echo $this->__('Apply Coupon') ?>">
 	 </input>
 	</div>
     <?php else: ?>
-    <div style="padding-bottom:5px;"><input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>" style="width:207px;" /></div>
+    <div style="padding-bottom:5px;"><input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>" style="width:170px;" /></div>
     <button class="form-button-alt" onclick="discountForm.submit(false)" type="button"  value="<?php echo $this->__('Apply Coupon') ?>"><span><?php echo $this->__('Apply Coupon') ?></span></button>&nbsp;<button class="form-button-alt" type="button" onclick="discountForm.submit(true)" value="<?php echo $this->__('Cancel Coupon') ?>"><span><?php echo $this->__('Cancel Coupon') ?></span></button>
     <?php endif;?>
     <div class="clear"></div>

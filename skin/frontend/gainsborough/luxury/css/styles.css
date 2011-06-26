@@ -1500,8 +1500,11 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 #forget-pass-title { background: #474a51; width: 475px; height: 50px; text-align: center; margin-bottom: 25px;
 font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50px;}
 .fieldset p{color: white; font-size:14px;}
-.buttons-div .back-link{color: #616161; margin-left: 10px; text-align: center;width: 160px; height: 25px; background: #7dcbd9; color: #616161; font:italic 13px/25px Georgia; }
+#forget-pass-div .buttons-div div{color: #616161; margin-left: 10px; text-align: center;width: 160px; height: 25px; background: #7dcbd9; color: #616161; font:italic 13px/25px Georgia; }
+#forget-pass-div .buttons-div {width: 160px; float: left;}
+#forget-pass-div .buttons-div a{text-decoration: none}
 .form-list li label{ color: white}
+#forget-pass-div #right-button {float:right}
 /* Forget Password */
 
 

@@ -30,7 +30,7 @@ body          { background:#f2f2f2 url(../images/gains/GB-bkg.gif) 0 0 repeat; f
 
 img           { border:0; vertical-align:top; }
 
-a             { color:#4f8100; text-decoration:none; }
+a             { color:#B5DEEB; text-decoration:none; }
 a:hover       { text-decoration:underline; }
 :focus        { outline:0; }
 
@@ -1427,7 +1427,7 @@ f/********** Product Prices > */
 .account-login .form-list label{width: 235px; color:#e5e8e8; text-transform: uppercase; font-weight: normal;}
 .account-login li{height: 40px; margin: 0px;}
 .account-login #forget-pass{height: 15px; width: 235px;}
-#forget-pass a{float: right; color: #e5e8e8; font-style: italic; text-decoration: none;}
+#forget-pass a{float: right; color: #B5DEEB; font-style: italic; text-decoration: none;}
 
 
 .account-create #left-image{width: 400px; height: 475px; float: left; }
@@ -1822,9 +1822,8 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 /* facebook like */
 .fb_like 
 {
-	float:left;
+	float:right;
 	margin-top:-20px;	
-	width:150px;
 }
 .fb_like a {
 	
@@ -1833,7 +1832,6 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 	
 }
 .fb_like iframe {
-	margin-left:315px;
 	background:none;
 }
 

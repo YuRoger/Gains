@@ -10,6 +10,7 @@
 			<salesrule>
 				<rewrite>
 					<validator>Gains_SalesRule_Model_Validator</validator>
+                    <quote_discount>Gains_SalesRule_Model_Quote_Discount</quote_discount>
 				</rewrite>
 			</salesrule>
 		</models>

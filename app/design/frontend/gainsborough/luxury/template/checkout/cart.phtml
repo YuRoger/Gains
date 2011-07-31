@@ -18,10 +18,10 @@
  * versions in the future. If you wish to customize Magento for your
  * needs please refer to http://www.magentocommerce.com for more information.
  *
- * @category    design
- * @package     default_modern
- * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
 <?php
@@ -31,115 +31,86 @@
  * @see Mage_Checkout_Block_Cart
  */
 ?>
-<div class="cart">
-    <div class="page-title title-buttons">
-        <h1><?php echo $this->__('Shopping Cart') ?></h1>
-        <?php if(!$this->hasError()): ?>
-        <ul class="checkout-types">
-        <?php foreach ($this->getMethods('top_methods') as $method): ?>
-            <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-            <li><?php echo $methodHtml; ?></li>
-            <?php endif; ?>
-        <?php endforeach; ?>
-        </ul>
-        <?php endif; ?>
-    </div>
-    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
-    <?php echo $this->getChildHtml('form_before') ?>
-    <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
-        <fieldset>
-            <table id="shopping-cart-table" class="data-table cart-table">
-                <col width="1" />
-                <col />
-                <col width="1" />
-            <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
-                <col width="1" />
-            <?php endif ?>
-            <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
-                <col width="1" />
-            <?php endif; ?>
-            <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
-                <col width="1" />
-            <?php endif; ?>
-                <col width="1" />
-            <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
-                <col width="1" />
-            <?php endif; ?>
-            <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
-                <col width="1" />
-            <?php endif; ?>
-                <col width="1" />
-
-            <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
-                <thead>
-                    <tr>
-                        <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
-                        <th rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Product Name') ?></span></th>
-                        <th rowspan="<?php echo $mergedCells; ?>"></th>
-                        <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
-                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><span class="nobr"><?php echo $this->__('Move to Wishlist') ?></span></th>
-                        <?php endif ?>
-                        <th class="a-center" colspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Unit Price') ?></span></th>
-                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><?php echo $this->__('Qty') ?></th>
-                        <th class="a-center" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Subtotal') ?></th>
-                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center">&nbsp;</th>
-                    </tr>
-                    <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
-                    <tr>
-                        <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
-                        <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
-                        <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
-                        <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
-                    </tr>
-                    <?php endif; ?>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <td colspan="50" class="a-right">
-                            <?php if($this->getContinueShoppingUrl()): ?>
-                                <button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button btn-continue" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
-                            <?php endif; ?>
-                            <button type="submit" title="<?php echo $this->__('Update Shopping Cart') ?>" class="button btn-update"><span><span><?php echo $this->__('Update Shopping Cart') ?></span></span></button>
-                        </td>
-                    </tr>
-                </tfoot>
-                <tbody>
-                <?php foreach($this->getItems() as $_item): ?>
-                    <?php echo $this->getItemHtml($_item) ?>
-                <?php endforeach ?>
-                </tbody>
-            </table>
-            <script type="text/javascript">decorateTable('shopping-cart-table')</script>
-        </fieldset>
-    </form>
-    <div class="cart-collaterals">
-        <div class="col2-set">
-            <div class="col-1">
-                <?php if($_crosssell = $this->getChildHtml('crosssell')): ?>
-                    <?php echo $_crosssell; ?>
-                <?php else: ?>
-                <div class="no-crosssell">
-                    <img src="<?php echo $this->getSkinUrl('images/media/callout1.jpg') ?>" alt="" />
-                    <img src="<?php echo $this->getSkinUrl('images/media/fpo_no_crosssell.gif') ?>" alt="" />
-                </div>
-                <?php endif; ?>
-            </div>
-            <div class="col-2">
-                <?php echo $this->getChildHtml('coupon') ?>
-                <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
-                <div class="totals">
-                    <?php echo $this->getChildHtml('totals'); ?>
-                    <?php if(!$this->hasError()): ?>
-                    <ul class="checkout-types">
-                    <?php foreach ($this->getMethods('methods') as $method): ?>
-                        <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-                        <li><?php echo $methodHtml; ?></li>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                    </ul>
-                    <?php endif; ?>
-                </div>
-            </div>
+<div class="shopping-cart-collaterals">
+    <div class="col2-set">
+        <div class="gaincartcol-1">
+			<?php echo $this->getChildHtml('promotion')?>
+        </div>
+        <div class="gaincartcol-2">
+			<div class="gaincartsummary"  align="center">
+				<h3 style="position: relative; top: 30% ;">
+				<?php echo $this->__('SHOPPING CART SUMMARY') ?>
+				</h3>
+			</div>
+			<div style="height:10px;width:475px;"></div>
+			<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+			<form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
+			<table cellspacing="0" border="0" id="shopping-cart-table" class="box-table shopping-cart gains-shopping-cart-data-table">
+			<?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
+				<thead>
+					<tr>
+						<th rowspan="<?php echo $mergedCells; ?>" class="a-center" style="width:15%"><?php echo $this->__('PRODUCT') ?></th>
+						<th rowspan="<?php echo $mergedCells; ?>" class="a-left" >&nbsp;</th>
+						<th colspan="<?php echo $mergedCells; ?>" class="a-center" style="width:15%"><?php echo $this->__('PRICE') ?></th>
+						<th rowspan="<?php echo $mergedCells; ?>" class="a-center" style="width:15%"><?php echo $this->__('QTY') ?></th>
+						<th class="a-center" colspan="<?php echo $mergedCells; ?>"style="width:15%"><?php echo $this->__('SUBTOTAL') ?></th>
+						<th rowspan="<?php echo $mergedCells; ?>" class="a-right"style="width:10%"><?php echo $this->__('REMOVE') ?></th>
+					</tr>
+					<?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+					<tr>
+						<th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+						<th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+						<th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+						<th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+					</tr>
+					<?php endif; ?>
+				</thead>
+				<tfoot>
+					<tr>
+					<td width=100% colspan=6><div style="height:30px"/></td >
+					</tr>
+					<tr class="gains-cart-item">
+						<td colspan="3" class="a-left">
+							<?php if($this->getContinueShoppingUrl()): ?>
+								<button class="button continue-shopping" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')" type="button"><span><?php echo $this->__('CONTINUE SHOPPING') ?></span></button>
+							<?php endif; ?>
+						</td>
+						<td colspan="3" class="a-right">
+							<button class="button" type="submit"><span><?php echo $this->__('UPDATE SHOPPING CART') ?></span></button>
+						</td>
+					</tr>
+				</tfoot>
+				<tbody>
+				<?php foreach($this->getItems() as $_item): ?>
+					<?php echo $this->getItemHtml($_item) ?>
+				<?php endforeach ?>
+				</tbody>
+			</table>
+			<script type="text/javascript">decorateTable('shopping-cart-table')</script>
+			</form>
+            
         </div>
     </div>
 </div>
+<div class="shopping-cart-collaterals" >
+	<div style="height:20px;border-top:1px solid #d9dde3;"></div>
+    <div class="col2-set">
+        <div class="gaincartcol-1">
+			<div id="Repeditive">
+				<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Repeditive.jpg"/>
+			</div>
+		</div>
+	<div class="gaincartcol-2">
+		<?php echo $this->getChildHtml('coupon') ?>
+		<div style="height:10px;width:475px;"></div>
+		<div class="shopping-cart-totals" style="float:right">
+			<?php echo $this->getChildHtml('totals'); ?>
+			<div style="height:10px;width:475px;"></div>
+			<?php if(!$this->hasError()): ?>
+				<?php echo $this->getChildHtml('methods') ?>
+			<?php endif; ?>
+		</div>
+	</div>
+</div>
+
+<div class="clear"></div>

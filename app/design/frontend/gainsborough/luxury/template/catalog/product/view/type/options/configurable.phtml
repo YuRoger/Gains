@@ -35,7 +35,7 @@ $_attributes = Mage::helper('core')->decorateArray($this->getAllowAttributes());
         <div class="gains-options-label<?php if ($_attribute->decoratedIsLast){?>-last<?php }?>"><label class="required"><?php echo $_attribute->getLabel() ?><em>*</em></label></div>
     <?php endforeach; ?>
     <?php foreach($_attributes as $_attribute): ?>
-        <div class="gains-options-value<?php if ($_attribute->decoratedIsLast){?> last<?php }?>">
+        <div class="gains-options-value<?php if ($_attribute->decoratedIsLast){?>-last<?php }?>">
             <div class="input-box">
                 <select name="super_attribute[<?php echo $_attribute->getAttributeId() ?>]" id="attribute<?php echo $_attribute->getAttributeId() ?>" class="required-entry super-attribute-select gains-dropdown">
                     <option><?php echo $this->__('Please select') ?></option>

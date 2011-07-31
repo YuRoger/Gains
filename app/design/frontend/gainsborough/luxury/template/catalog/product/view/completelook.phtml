@@ -6,8 +6,8 @@
         <li class="gains-complete-look"><a href="#"
 		onclick="loadImage('<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize(300); ?>','<?php echo $this->htmlEscape($_image->getLabel())?>','<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())?>');return false;"
 		title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"><img
-		src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(90); ?>"
-		width="90" height="90"
+		src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(88); ?>"
+		width="88" height="88"
 		alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" /></a></li>
     <?php endforeach; ?>
     </ul>

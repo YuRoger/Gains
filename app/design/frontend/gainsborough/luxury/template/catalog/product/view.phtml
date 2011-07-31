@@ -44,17 +44,18 @@
         <div class="no-display">
             <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
             <input type="hidden" name="related_product" id="related-products-field" value="" />
+            <input type="hidden" name="related_product2" id="related-products-field2" value="" />
         </div>
 		<div class="product-name">
                 <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
                 <?php if ($_product->isAvailable()): ?>
-   		 <p class="gains-availability in-stock"><?php echo $this->__('In stock') ?></p>
+   		 <p class="gains-availability in-stock"><?php echo $this->__('In Stock') ?></p>
 			<?php else: ?>
-   			 <p class="gains-availability out-of-stock"><?php echo $this->__('Out of stock') ?></p>
+   			 <p class="gains-availability out-of-stock"><?php echo $this->__('Sold Out') ?></p>
 			<?php endif; ?>
         </div>
         <?php echo $this->getChildHtml('addto') ?>
-        <?php echo $this->getChildHtml('product_type_data') ?>
+
         <div class="product-shop">
             
             <?php //if ($this->canEmailToFriend()): ?>
@@ -92,9 +93,11 @@
         </div>
         <div>
         <?php echo $this->getChildHtml('product_options_wrapper') ?>
+  
         <!-- this is for configurable product -->
         <?php if ($this->hasOptions()):?>
         	<?php echo $this->getChildHtml('addtocart') ?>
+        	<?php echo $this->getChildHtml('product_type_data') ?>
         <?php endif;?>
         <!-- this is for simple product -->
         <?php if (!$this->hasOptions()):?>
@@ -105,15 +108,16 @@
                             <span class="or"><?php echo $this->__('OR') ?></span>
                         <?php endif; ?>
                     <?php endif; ?>
+                    <?php echo $this->getChildHtml('product_type_data') ?>
                 </div>
             <?php endif; ?>
+   
 		<?php //echo $this->getChildHtml('product_options_wrapper_bottom') ?>
         </div>
 		<div>
 		<?php echo $this->getChildHtml('completelook')?>
 		</div>
 		</div>
-		 </div>
         <div class="clearer"></div>
         <!-- Will not call container2 which include the wrapper and wrapper bottom. These blocks are added above -->
         <?php //if ($_product->isSaleable() && $this->hasOptions()):?>
@@ -168,5 +172,6 @@
 
     <div class="product-collateral">
         <?php echo $this->getChildHtml('product_additional_data') ?>
+    </div>
     </div>
 </div>

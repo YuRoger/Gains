@@ -40,6 +40,7 @@ Default layout, loads most of the pages
                <!--   <action method="addCheckoutLink"></action>-->
             </block>
         </reference>
+        <!-- 
         <reference name="left">
             <block type="checkout/cart_sidebar" name="cart_sidebar" template="checkout/cart/sidebar.phtml" before="-">
                 <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/sidebar/default.phtml</template></action>
@@ -50,6 +51,7 @@ Default layout, loads most of the pages
                 </block>
             </block>
         </reference>
+         -->
         <reference name="head">
             <block type="core/template" name="optional_zip_countries" as="optional_zip_countries" template="directory/js/optional_zip_countries.phtml" />
         </reference>
@@ -66,8 +68,8 @@ Default layout, loads most of the pages
                 <crumbInfo><label>Home</label><title>Home</title><link>/</link></crumbInfo>
             </action>
             <action method="addCrumb">
-                <crumbName>Shoppingcart</crumbName>
-                <crumbInfo><label>Shoppingcart</label><title>Shopping Cart</title></crumbInfo>
+                <crumbName>My Bag</crumbName>
+                <crumbInfo><label>My Bag</label><title>My Bag</title></crumbInfo>
             </action>
         </reference>
         <!-- Mage_Checkout -->

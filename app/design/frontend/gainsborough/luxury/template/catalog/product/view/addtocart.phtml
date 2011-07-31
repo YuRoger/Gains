@@ -24,18 +24,212 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+
 <?php $_product = $this->getProduct(); ?>
-<?php $buttonTitle = $this->__('Add to Cart'); ?>
+<?php $_coreHelper = $this->helper('core');?>
+<?php $_taxHelper  = $this->helper('tax');?>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $buttonTitle = $this->__('Add to Bag'); ?>
+<?php $_simplePricesTax = ($_taxHelper->displayPriceIncludingTax() || $_taxHelper->displayBothPrices());?>
+
 <?php if($_product->isSaleable()): ?>
     <div class="gains-add-to-cart">
         <?php if(!$_product->isGrouped()): ?>
         <label for="qty"><?php echo $this->__('Qty:') ?></label>
         <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
-        <?php endif; ?>
-        
+        <?php endif; ?>        
     </div>
-    <div class="add-to-cart"> 
-    <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><?php echo $buttonTitle ?></span></button>
+	<div class="add-to-cart"> 
+    
+     <?php if($this->isQuiltPromotion()):?>
+      <?php $_quiltcover = $this->fetchQuiltCoverProduct()?>
+      <?php $_cushionproduct = $this->fetchCushionProduct()?>
+      <?php if(($_quiltcover != null) && ($_cushionproduct != null)):?>
+      <!-- display two products -->
+      <button type="button" id="inline" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="promotionScreenTwo.submit(this)"><span><?php echo $buttonTitle ?></span></button>
+      <?php else:?>
+      <!-- display one product -->
+       <button type="button" id="inline" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="promotionScreen.submit(this)"><span><?php echo $buttonTitle ?></span></button>
+      <?php endif;?>
+     <?php else:?>
+     <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><?php echo $buttonTitle ?></span></button>
+    <?php endif;?>
     </div>
-        <?php echo $this->getChildHtml('', true, true) ?>
+
+    <?php echo $this->getChildHtml('', true, true) ?>
 <?php endif; ?>
+<?php ?>
+ <?php if($this->isQuiltPromotion()):?>
+<div style="display: none;">
+		<div id="promotion" style="width:500px;height:250px;overflow:auto;">
+			<div class="gains-promotion-pop-up">
+				<div class="promotion-image">
+				<?php $_quiltcover = $this->fetchQuiltCoverProduct();?>
+      			<?php $_cushionproduct = $this->fetchCushionProduct();?>
+				 <?php if($_cushionproduct != null):?>
+				  	<a title="<?php echo $this->htmlEscape($_cushionproduct->getSmallImageLabel())?>">
+						<img src="<?php echo $this->helper('catalog/image')->init($_cushionproduct, 'small_image'); ?>" width="200" height="200" alt="<?php echo $this->htmlEscape($this->getImageLabel($_cushionproduct, 'small_image')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_cushionproduct, 'small_image')) ?>" />
+				  	</a>
+				  <?php $_finalPrice = $_taxHelper->getPrice($_cushionproduct, $_cushionproduct->getFinalPrice()); ?>
+				  <?php $product_id = $_cushionproduct->getId(); ?>
+				 <?php else:?>
+				  	<a title="<?php echo $this->htmlEscape($_quiltcover->getSmallImageLabel())?>">
+						<img src="<?php echo $this->helper('catalog/image')->init($_quiltcover, 'small_image'); ?>" width="200" height="200" alt="<?php echo $this->htmlEscape($this->getImageLabel($_quiltcover, 'small_image')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_quiltcover, 'small_image')) ?>" />
+				  	</a>
+				  	<?php $_finalPrice = $_taxHelper->getPrice($_quiltcover, $_quiltcover->getFinalPrice()); ?>
+				  	 <?php $product_id = $_quiltcover->getId(); ?>
+				 <?php endif;?>
+				</div>
+				<div class="promotion-context">
+				<div class="description">
+				<h2>Why not add matching Euro Pillow covers?</h2>
+				<p>All Gainsborough quilt cover sets coordinate with matching Euro pillow covers. The perfect complement to your bedroom</p>
+				</div>
+				<div class="add-to-cart">
+				<div class="price-box">
+				<span class="price-label"><?php echo $this->__('only') ?></span>
+                <span class="price"">
+                	<!-- Always display final price -->
+                	<?php echo $_coreHelper->currency($_finalPrice,true,false) ?>
+                </span>
+				</div>
+				<div class="add-to-cart-button">
+				<div>
+					<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="addOnePromotionProduct('<?php echo $product_id?>')"><span><?php echo $buttonTitle ?></span></button>
+				</div>
+				<div style="float:right;">
+				<button type="button" title="<?php echo $this->__('No Thanks') ?>" class="button no-thanks" onclick="productAddToCartForm.submit(this)"><span class="no-thanks"><?php echo $this->__('No Thanks') ?></span></button>
+				</div>
+				</div>
+				</div>
+				</div>
+			</div>
+		</div>
+</div>
+<?php if(($_cushionproduct != null) && ($_quiltcover != null)):?>
+<div style="display: none;">
+		<div id="promotion2" style="width:500px;height:300px;overflow:auto;">
+		<div class="gains-promotion-pop-up">
+			<div class="gainstitle"><h2>Why not add co-ordinates while you're at it?</h2></div>
+			<div class="promotion-content">
+			<div class="col">
+				<div class="product-name">
+    			<?php echo $_quiltcover->getName()?>
+				</div>
+				<div>
+					<a title="<?php echo $this->htmlEscape($_quiltcover->getSmallImageLabel())?>">
+						<img src="<?php echo $this->helper('catalog/image')->init($_quiltcover, 'small_image'); ?>" width="120" height="120" alt="<?php echo $this->htmlEscape($this->getImageLabel($_quiltcover, 'small_image')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_quiltcover, 'small_image')) ?>" />
+				  	</a>
+				</div>
+				<div class="add-to-cart">
+					<div class="price-box">
+						<span class="price-label"><?php echo $this->__('only') ?></span>
+                		<span class="price"">
+                		<!-- Always display final price -->
+                		<?php $_quiltfinalPrice = $_taxHelper->getPrice($_quiltcover, $_quiltcover->getFinalPrice()); ?>
+                		<?php echo $_coreHelper->currency($_quiltfinalPrice,true,false) ?>
+                		</span>
+					</div>
+					<div class="add-button">
+						<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="addOnePromotionProduct('<?php echo $_quiltcover->getId()?>')"><span><?php echo $buttonTitle ?></span></button>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+			<div class="product-name">
+				<?php echo $_cushionproduct->getName()?>
+			</div>
+			<div>
+				<a title="<?php echo $this->htmlEscape($_cushionproduct->getSmallImageLabel())?>">
+					<img src="<?php echo $this->helper('catalog/image')->init($_cushionproduct, 'thumbnail'); ?>" width="120" height="120" alt="<?php echo $this->htmlEscape($this->getImageLabel($_cushionproduct, 'thumbnail')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_cushionproduct, 'thumbnail')) ?>" />
+				</a>
+			</div>
+			<div class="add-to-cart">
+					<div class="price-box">
+						<span class="price-label"><?php echo $this->__('only') ?></span>
+                		<span class="price"">
+                			<!-- Always display final price -->
+                			<?php $_cushionfinalPrice = $_taxHelper->getPrice($_cushionproduct, $_cushionproduct->getFinalPrice()); ?>
+                			<?php echo $_coreHelper->currency($_cushionfinalPrice,true,false) ?>
+                		</span>
+					</div>
+					<div class="add-button">
+						<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="addOnePromotionProduct('<?php echo $_cushionproduct->getId()?>')"><span><?php echo $buttonTitle ?></span></button>
+					</div>
+			</div>
+			</div>
+			<div class="col-last">
+			<div class="no-thanks">
+				<button type="button" title="<?php echo $this->__('No Thanks') ?>" class="button no-thanks" onclick="productAddToCartForm.submit(this)"><span class="no-thanks"><?php echo $this->__('No Thanks') ?></span></button>
+			</div>
+			<div class="description">
+				<p>
+				 All Gainsborough quilt cover sets coordinate with matching Euro pillow covers and fashion cushions.
+				<br></br>
+				The perfect complement to your bedroom.
+			</div>
+			
+			<div class="add-to-cart">
+				<div class="add-both-button">
+					<button type="button" title="<?php echo $this->__('ADD BOTH') ?>" class="button btn-cart" onclick="addBothPromotionProduct('<?php  echo $_quiltcover->getId()?>','<?php echo $_cushionproduct->getId()?>')"><span class="add-both"><?php echo $this->__('ADD BOTH') ?></span></button>
+				</div>
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endif;?>
+<?php endif;?>
+<script type="text/javascript">
+
+var promotionScreen = new VarienForm('product_addtocart_form');
+promotionScreen.submit = function ()
+{
+	 if (this.validator.validate())
+	 {
+		var form = this.form;
+		jQuery.fancybox({
+			'onCleanup': function(){productAddToCartForm.submit(this);},
+			'transitionIn'		: 'fade',
+			'transitionOut'		: 'fade',
+			'href': '#promotion',
+			'hideOnOverlayClick': false,
+			'type': 'inline',
+			'titleShow': false
+		});
+	 }
+}
+
+var promotionScreenTwo = new VarienForm('product_addtocart_form');
+promotionScreenTwo.submit = function ()
+{
+	 if (this.validator.validate())
+	 {
+		var form = this.form;
+		jQuery.fancybox({
+			'onCleanup': function(){productAddToCartForm.submit(this);},
+			'transitionIn'		: 'fade',
+			'transitionOut'		: 'fade',
+			'href': '#promotion2',
+			'hideOnOverlayClick': false,
+			'type': 'inline',
+			'titleShow': false
+		});
+	 }
+}
+
+function addOnePromotionProduct(product_id)
+{
+	var id = product_id;
+	jQuery('[name=related_product]').val(product_id);
+	productAddToCartForm.submit(this);
+};
+
+function addBothPromotionProduct(product_id1, product_id2)
+{
+	jQuery('[name=related_product]').val(product_id1);
+	jQuery('[name=related_product2]').val(product_id2);
+	productAddToCartForm.submit(this);
+};
+</script>

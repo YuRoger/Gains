@@ -8,41 +8,37 @@
  */
 class Gains_Checkout_Model_Cart extends Mage_Checkout_Model_Cart
 {
-	public function getBedlinenProduct ()
+	public function getProductsByCategoryId($id)
 	{
-		return  array("BlackBerry 8100 Pearl","HTC Touch Diamond","Samsung MM-A900M Ace","AT&T 8525 PDA","Sony Ericsson W810i");
+		$category=Mage::getModel('catalog/category')->load($id);
+		$result = $category->getProductCollection();
+		/*
+		Mage::Log("getSize");
+		Mage::Log($result->getSize());
+		Mage::Log("getProductCount");
+		Mage::Log($category->getProductCount());
+		*/
+		return $result;
 	}
-	public function getQuiltProduct ()
-	{
-		return  array("ECCO Womens Golf Flexor Golf Shoe","Nine West Women's Lucero Pump","Steven by Steve Madden Pryme Pump");
-	}
-	public function getCushionProduct ()
-	{
-		return  array("Chair");
-	}
-	public function getPillowProduct ()
-	{
-		return  array("Couch");
+	public function getQtyByProductName($prodcutName){
+		foreach ($this->getItems() as $item){
+			Mage::log("getQtyByProductId invoke foreach");
+			if ($item->getProduct()->getName()==$prodcutName){
+				Mage::log($item->getQty());
+				return $item->getQty();
+			}
+		}
+		return 0;
 	}
 	//$product can be 
 	//quilt
 	//bedlinen 
-	//cushion
-	//pillow
 
-	public function getSpecialQty($product)
+	public function getSpecialTotalQtyAmount($categoryID)
 	{	
-		$specialProduct;
-		if($product=="bedlinen"){
-			$specialProduct=$this->getBedlinenProduct();
-		}else if($product=="quilt"){
-			$specialProduct=$this->getQuiltProduct();
-		}else if($product=="cushion"){
-			$specialProduct=$this->getCushionProduct();
-		}else if($product=="pillow"){
-			$specialProduct=$this->getPillowProduct();
-		}
-		$num=0;
+		$specialProduct=$this->getProductsByCategoryId($categoryID);
+		$totalNum=0;
+		$totalAmount=0.0;
 		Mage::log("containsCategory invoke");
 		foreach ($this->getItems() as $item){
 			Mage::log("containsCategory invoke foreach");
@@ -50,21 +46,20 @@ class Gains_Checkout_Model_Cart extends Mage_Checkout_Model_Cart
 				Mage::log("item->getQty()");
 				Mage::log($item->getQty());
 				Mage::log($item->getProduct()->getName());
-				$num+=$item->getQty();
+				$totalNum+=$item->getQty();
+				$price = $item->getDiscountCalculationPrice();
+				if($price == null)
+					$price=$item->getCalculationPrice();
+				$totalAmount+=$item->getQty()*$price;
 			}
 		}
-		return $num;
+		return array($totalNum,$totalAmount);
 	}
-	private function isItemInArray($item, $productArr)
+	public function isItemInArray($item, $productCollection)
 	{
-		for($i=0; $i< count($productArr);$i++)
-		{
-			if(strcmp($item->getProduct()->getName(),$productArr[$i])==0)
-			{
-				return true;
-			}			
-		}
-		return false;
+//		Mage::Log("isItemInArray");		
+		$productArr=$productCollection->getItems();
+		return array_key_exists($item->getProduct()->getId(),$productArr);
 	}
 
 }

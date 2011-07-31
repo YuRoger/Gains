@@ -14,6 +14,7 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
      */
     public function process(Mage_Sales_Model_Quote_Item_Abstract $item)
     {
+
         $item->setDiscountAmount(0);
         $item->setBaseDiscountAmount(0);
         $item->setDiscountPercent(0);
@@ -30,10 +31,15 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
 		$this->applyGainsDiscount($item);
 
 		if($this->isFirstPurchase()){
+            $cart=Mage::getSingleton('checkout/cart');
+            $freePillowCategory=35;
+		    $freeCushionCategory=34;
+            $freePillowCollection=$cart->getProductsByCategoryId($freePillowCategory);
+		    $freeCushionCollection=$cart->getProductsByCategoryId($freeCushionCategory);
 	        $qty = $item->getQty();
-	        $discountAmount    += ($qty*$itemPrice - $item->getDiscountAmount()) * Gains_SalesRule_Model_Validator::DISCOUNT_PERCENT/100;
+	        $discountAmount += ($qty*$itemPrice - $item->getDiscountAmount()) * Gains_SalesRule_Model_Validator::DISCOUNT_PERCENT/100;
 	        $baseDiscountAmount += ($qty*$baseItemPrice - $item->getBaseDiscountAmount()) * Gains_SalesRule_Model_Validator::DISCOUNT_PERCENT/100;
-			if($item->getProduct()->getName()==Gains_SalesRule_Model_Validator::FREE_CUSHION || $item->getProduct()->getName()==Gains_SalesRule_Model_Validator::FREE_PILLOW){
+			if($cart->isItemInArray($item,$freePillowCollection)|| $cart->isItemInArray($item,$freeCushionCollection)){
 				$gainsDiscountAmount=$item ->getDiscountAmount();
 				$gainsBaseDiscountAmount=$item ->getBaseDiscountAmount();
 		        $item->setDiscountAmount($gainsDiscountAmount+$discountAmount);
@@ -41,12 +47,10 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
 			}else{
 				$item->setDiscountAmount($discountAmount);
 			    $item->setBaseDiscountAmount($baseDiscountAmount);
+                $item->setDiscountDesc("First Purchase");
 			}
 
         }
-
-
-
 
         $appliedRuleIds = array();
         foreach ($this->_getRules() as $rule) {
@@ -223,7 +227,7 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
         return $this;
     }
 	/**
-	 * 
+	 *
 	 * Decide whether this is the first purchase
 	 */
 	private function isFirstPurchase()
@@ -233,7 +237,7 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
 		if($customerId){
 				$orders=Mage::getModel('sales/order')->getCollection()
 					->addAttributeToSelect( 'entity_id' )
-					->addAttributeToFilter('customer_id',$customerId)// only load customer's  
+					->addAttributeToFilter('customer_id',$customerId)// only load customer's
 					->addAttributeToSort('created_at')
 					->load();
 				if(count($orders)>0){
@@ -245,8 +249,8 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
 			//do not give discount percent to unsign-in  user
 			$result=false;
 		}
-		
-		
+
+
 		Mage::log("Gains_SalesRule_Model_Validator invoked");
 		/*
 		Mage::log("_____________");
@@ -277,6 +281,7 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
 		$cartCushion=$cart->getSpecialTotalQtyAmount($freeCushionCategory);
 		$freeCushionQty=min($cartCushion[0],intval($bedlinen[1]/300));
 		if($cart->isItemInArray($item,$freeCushionCollection)){
+            $item->setDiscountDesc("Free Cushion");
 			$discountAmount += $itemPrice*$freeCushionQty;
 			$baseDiscountAmount += $baseItemPrice*$freeCushionQty;
 		}
@@ -291,6 +296,7 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
 		Mage::Log("freePillowQty");
 		Mage::Log($freePillowQty);
 		if($cart->isItemInArray($item,$freePillowCollection)){
+            $item->setDiscountDesc("Free Pillow");
 			Mage::Log("itemPrice");
 			Mage::Log($itemPrice);
 			$discountAmount += $itemPrice*$freePillowQty;

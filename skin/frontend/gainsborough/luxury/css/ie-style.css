@@ -1,0 +1,9 @@
+
+.form-search input.input-text { float:left; width:193px; border-color:#BDBFC1;color:#949798;margin-right:5px;}
+.footer-newsletter {float:right;height:20px;margin-top:-20px;width:326px;}
+/* facebook like */
+.fb_like {	float:left;	margin-top:-18px;margin-left:540px;}
+.footer li.first{background:url(../images/bkg_pipe1.gif) 100% 50% no-repeat; padding:0 7px 0 0; font-size:10.5px;}
+.footer li { display:inline; background:url(../images/bkg_pipe1.gif) 100% 50% no-repeat; padding:0 7px 0 7px; font-size:10.5px;}
+.footer li.last { background:none !important; padding-right:0 !important; }
+.gains-add-to-links .button.button span {color:#5ca2b0;padding:3px 5px 3px 5px;}

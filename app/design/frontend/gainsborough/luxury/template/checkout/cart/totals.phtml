@@ -31,28 +31,28 @@
  * @see Mage_Checkout_Block_Cart_Totals
  */
 ?>
-	<?php
 
+<?php
 		//'code' => string 'grand_total' 
 		//'code' => string 'discount' (length=8)
 		// 'code' => string 'subtotal'
-	/*
+/*
 		echo $this->getTotals();
 		echo sizeof($this->getTotals());
 		foreach($this->getTotals() as $total) {
 			  $newData = $total->getData();
-			  //var_dump($newData);
+var_dump($newData);
 			  //echo " : ";
 			  //echo $newData->getValue();
 			echo $total->_getData("title");
+            echo $total->_getData("title");
 			echo " : ";
 			echo $total->_getData("value")."\n";
 
-		}
-		*/
-	?>
-<table cellspacing="0" id="shopping-cart-totals-table" style="position:relative;left:58%">
-	<?php
+		}*/
+
+
+            $left="58%";
 			$subtotal=0;
 			$discount=0;
 			$grandtotal=0;
@@ -62,12 +62,25 @@
 			if($total->_getData("code")=="grand_total"){
 				$grandtotal=$total->_getData("value");
 			}else if($total->_getData("code")=="discount"){
+                $discount_detail=$total->getAddress()->getDiscountDescription();
+                $discount_detail=ltrim($discount_detail,",");
+                $discount_detail_array=explode(",",$discount_detail);
+                $discount_count=count($discount_detail_array);
+                if($discount_count==1){
+                    $left="50%";
+                }else if($discount_count==2){
+                    $left="35%";
+                }else if($discount_count==3){
+                    $left="30%";
+                }
 				$discount=$total->_getData("value");
 			}else if($total->_getData("code")=="subtotal"){
 				$subtotal=$total->_getData("value");
 			}
 		}
 	?>
+<table cellspacing="0" id="shopping-cart-totals-table" style="position:relative;left:<?php echo $left?>">
+
     <tfoot>
 		<tr>
 		<td class="a-right" colspan="1">
@@ -88,9 +101,10 @@
 		</tr>
 		<?php if($discount!=0):?>
 		<tr style="color:#82C7DB">
-			<td class="a-right" colspan="1">DISCOUNT:</td>
+			<td class="a-right" colspan="1">DISCOUNT:<?php echo "($discount_detail)" ?></td>
 			<td class="a-right" >
 			&nbsp;&nbsp;
+
 			<?php echo $store->formatPrice(-$discount)?>
 			</td>
 		</tr>

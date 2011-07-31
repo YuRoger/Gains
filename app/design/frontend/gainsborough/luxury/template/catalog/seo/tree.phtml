@@ -30,8 +30,11 @@
  */
 ?>
 <?php $_items = $this->getCollection(); ?>
-
-
+		<div id="left-image">
+			<img src="<?php echo $this->getSkinUrl()?>/images/gains/login.jpg" width="400" height="475"/>
+		</div>
+<div id="sitemap-content">
+	<div id="title">Site Map</div>
 <?php if($_items->getSize()): ?>
     <ul class="sitemap">
         <?php foreach ($_items as $_item): ?>
@@ -43,3 +46,4 @@
         <?php echo $this->__('There are no %s available.', $this->getItemsTitle()); ?>
     </p>
 <?php endif ?>
+</div>

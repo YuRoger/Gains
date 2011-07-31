@@ -12,11 +12,11 @@ class Gains_Checkout_Block_Links extends Mage_Checkout_Block_Links
 			$totalAmount  = $this->helper('checkout/cart')->getQuote()->getGrandTotal();
             if( $count >0 ) 
             {
-                $text = $this->__('My Cart ($%.2f)',$totalAmount  );
+                $text = $this->__('my bag ($%.2f)',$totalAmount  );
             } 
             else 
             {
-                $text = $this->__('My Cart');
+                $text = $this->__('my bag');
             }
 
             $parentBlock->addLink($text, 'checkout/cart', $text, true, array(), 50, null, 'class="top-link-cart"');

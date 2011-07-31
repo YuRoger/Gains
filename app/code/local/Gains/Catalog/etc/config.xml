@@ -8,6 +8,9 @@
     <global>
     <blocks>
     <catalog>
+    		<rewrite>
+    			<product_view>Gains_Catalog_Block_Product_View</product_view>
+    		</rewrite>
         	<rewrite>
         		<product_featured>Gains_Catalog_Block_Product_Featured</product_featured>
         	</rewrite>

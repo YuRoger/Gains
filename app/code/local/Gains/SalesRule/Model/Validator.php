@@ -279,8 +279,8 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
 		Mage::Log($bedlinen);
 		Mage::Log(intval($bedlinen[1]/300));
 		$cartCushion=$cart->getSpecialTotalQtyAmount($freeCushionCategory);
-		$freeCushionQty=min($cartCushion[0],intval($bedlinen[1]/300));
-		if($cart->isItemInArray($item,$freeCushionCollection)){
+		$freeCushionQty=min($cartCushion[0],intval($bedlinen[1]-300)>0);
+		if($cart->isItemInArray($item,$freeCushionCollection) && $freeCushionQty>0){
             $item->setDiscountDesc("Free Cushion");
 			$discountAmount += $itemPrice*$freeCushionQty;
 			$baseDiscountAmount += $baseItemPrice*$freeCushionQty;
@@ -292,10 +292,10 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
 		Mage::Log("quilt");
 		Mage::Log($quilt);
 		$cartPillow=$cart->getSpecialTotalQtyAmount($freePillowCategory);
-		$freePillowQty=min($cartPillow[0],intval($quilt[1]/300));
+		$freePillowQty=min($cartPillow[0],intval($quilt[1]-300)>0);
 		Mage::Log("freePillowQty");
 		Mage::Log($freePillowQty);
-		if($cart->isItemInArray($item,$freePillowCollection)){
+		if($cart->isItemInArray($item,$freePillowCollection)&& $freePillowQty>0){
             $item->setDiscountDesc("Free Pillow");
 			Mage::Log("itemPrice");
 			Mage::Log($itemPrice);

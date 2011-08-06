@@ -29,7 +29,7 @@
     <fieldset>
     <input type="hidden" name="remove" id="remove-coupone" value="0"/>
     <?php if(!strlen($this->getCouponCode())): ?>
-    <div class="left" style="padding-bottom:5px;"><?php echo $this->__('To redeem your discount enter your code here: ') ?><input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>" style="width:150px"/>&nbsp;<input onclick="discountForm.submit(false)" type="image" src="<?php echo $this->getSkinUrl();?>images/gains/go-button-subscription.jpg"  value="<?php echo $this->__('Apply Coupon') ?>">
+    <div class="left" style="padding-bottom:5px;"><?php echo $this->__('To redeem your discount enter your code here: ') ?><input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>" style="width:150px"/>&nbsp;<input onclick="discountForm.submit(false)" type="image" src="<?php echo $this->getSkinUrl();?>images/gains/search but.png"  value="<?php echo $this->__('Apply Coupon') ?>">
 	 </input>
 	</div>
     <?php else: ?>

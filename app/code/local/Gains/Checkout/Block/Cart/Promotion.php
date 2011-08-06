@@ -25,4 +25,23 @@ class Gains_Checkout_Block_Cart_Promotion extends Mage_Checkout_Block_Cart_Abstr
 		$quiltAmount=$cartModel->getSpecialTotalQtyAmount(4);
 		return $quiltAmount[0]>0;
 	}
+
+    	/**
+	Decide is there buy bedlinen product more than 300
+	*/
+	public function overThresholdBedlinen()
+	{
+		$cartModel=$this->_getCheckoutCart();
+		$bedlinenAmount=$cartModel->getSpecialTotalQtyAmount(11);
+		return 	$bedlinenAmount[1]>300;
+	}
+		/**
+	Decide is there buy quilt product more than 300
+	*/
+	public function overThresholdQuilt()
+	{
+		$cartModel=$this->_getCheckoutCart();
+		$quiltAmount=$cartModel->getSpecialTotalQtyAmount(4);
+		return $quiltAmount[1]>300;
+	}
 }

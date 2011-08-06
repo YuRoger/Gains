@@ -98,7 +98,7 @@ ul,ol         { list-style:none; }
 .page-popup { background:#fff; padding:25px 30px; text-align:left; }
 .main-container {}
 .main-top{ height:22px; }
-.main {min-height:350px; }
+.main {min-height:350px; margin-top:20px;}
 .main-bottom{height:22px;}
 .main-container-bottom {height:5px;border-top:1px solid #BFC3C4;}
 
@@ -176,7 +176,7 @@ p.control input.radio { margin-right:6px; }
 .form-list li { margin:0 0 6px; }
 .form-list label { float:left; color:#555; font-weight:bold; position:relative; z-index:0; }
 .form-list label.required {}
-.form-list label.required em { float:right; font-style:normal; color:#eb340a; position:absolute; top:0; right:-7px; }
+.form-list label.required em { float:right; font-style:normal; color:#5CA2B0; position:absolute; top:0; right:-7px; }
 .form-list li.control label { float:none; }
 .form-list li.control input.radio,
 .form-list li.control input.checkbox { margin-top:-1px; margin-right:4px; }
@@ -512,34 +512,39 @@ tr.summary-details-excluded { font-style:italic; }
 #nav li ul span {white-space:normal; }
 
 /* 0 Level */
-#nav li { float:left; margin:1px 6px 0px 1px; padding:3px 0px 0 0px; border-right: 1px solid gray}
+#nav li { float:left; margin:1px 6px 0px 6px; padding:3px 0px 0 0px; border-right: 1px solid #BFC3C4}
+#nav li.first{margin:1px 6px 0px 1px;}
 #nav li.last { border-right:0px;margin:1px 0px 0px 1px;}
-#nav li.cms-last { border-left: 1px solid gray;border-right: 0px;margin:1px 0px 0px 1px;padding-left:7px;}
+#nav li.cms-last { border-left: 1px solid #BFC3C4;border-right: 0px;margin:1px 0px 0px 1px;padding-left:7px;}
 #nav li.active a { color:#C2C2C2; }
 #nav a { float:left; padding-right:9px; color:#C2C2C2; }
 #nav li.over a,
 #nav a:hover { color:#B5DEEB; }
 #nav li.over{}
-#nav li.active { margin:1px 0px 0px 1px;  }
+#nav li.active { margin:1px 6px 0px 6px;  }
 #nav li.last.over { margin:1px 0px 0px 1px;  }
 #nav li.cms-last.over { margin:1px 0px 0px 1px;  }
-#nav a.over span { color:#B5DEEB; }
+#nav a.over span { color:#5CA2B0; }
 #nav a span { color:#6B6D70; }
 
 /* 1st Level */
+#nav ul li.first.over {padding:0 0 3px 0; margin:1px 6px 0 1px;}
+#nav ul li.first.active.over {padding:0 0 3px 0; margin:0px;}
+#nav ul li.active,
+#nav ul li.over { float:none; border-bottom:1px solid #575963; background:none; margin:0; padding:0; padding-bottom:3px; text-transform:none; border-right:none;}
 #nav ul li,
 #nav ul li.active,
-#nav ul li.over { float:none; border-bottom:1px solid #575963;; background:none; margin:0; padding:0; padding-bottom:1px; text-transform:none; border-right:none;}
+#nav ul li.over { float:none; border-bottom:1px solid #575963; background:none; margin:0; padding:0; padding-bottom:3px; text-transform:none; border-right:none;}
 #nav ul li.parent { background:url(../images/bkg_nav_parent.gif) no-repeat 100% 50%; }
 #nav ul li.last { padding-bottom:0; }
-#nav ul li.active { margin:0; border-bottom:1px solid #575963;; background:none; }
+#nav ul li.active { margin:0; border-bottom:1px solid #575963; }
 #nav ul a,
 #nav ul a:hover { float:none; padding:0; background:none; }
 #nav ul li a { font-weight:normal !important;}
-#nav ul li a span{ color:#DCDCDC;}
+#nav ul li a span{ }
 /* 2nd Level */
 #nav ul,
-#nav div { position:absolute; width:15em; top:22px; left:-10000px; border-right:1px solid #575963; border-left:1px solid #575963; background:#9194a1; font-size:11px; }
+#nav div { position:absolute; width:15em; top:22px; left:-10000px; border-right:1px solid #575963; border-left:1px solid #575963; background:#DCDCDC; font-size:11px; }
 #nav div ul { position:static; width:auto; border:none; padding:0; }
 
 /* 3rd+ Level */
@@ -706,7 +711,7 @@ tr.summary-details-excluded { font-style:italic; }
 /* Category Page ========================================================================= */
 .category-title { margin:0 0 7px; }
 .category-title h1 { padding:3px 0; color:#5b9400; font-size:1.6em; font-weight:bold; line-height:1.25; }
-.category-image { width:100%; overflow:hidden; margin:0 0 10px; text-align:center; }
+.category-image { width:100%; overflow:hidden; margin:0 0 20px; text-align:center; }
 .category-image img {}
 .category-description { margin:0 0 10px; background: #56585f; color: #dedede; padding-left: 5px;}
 .category-products {}
@@ -1413,21 +1418,21 @@ f/********** Product Prices > */
 /* Button*/
 .account-login .buttons-div { text-align: right;}
 .account-login .buttons-div div,
-.account-create .buttons-div div{width: 120px; height: 25px; background:#fff url(../images/gains/add-bag-but.png) no-repeat; color: #616161; font:italic 13px/25px Georgia; }
+.account-create .buttons-div div{width: 120px; height: 25px; background:#fff url(../images/gains/add-bag-but.png) no-repeat; color: #616161; font:11px/25px Georgia; }
 .account-create .buttons-div div{margin-left: 0px;}
-.account-login #but-signup{height: 25px; padding-top: 20px;}
+.account-login #but-signup{height: 25px; padding-top: 20px;margin-bottom:10px;}
 .account-login #but-login{height: 25px;}
 
 .account-create .buttons-div{float: left; width: 160px;}
 
 .account-login { min-height: 475px; padding-bottom: 25px; }
 .account-login .login-col2-set .col-1{width: 400px; float: left; padding-right:25px;}
-.account-login .login-col2-set .col-2{width: 475px; float: left}
+.account-login .login-col2-set .col-2{width: 525px; float: left}
 .account-login .content .login-signup-description {height: 80px; padding: 25px 20px 0px 10px; font-style:italic;}
 .account-login .content .login-description {height: 50px;font-style: italic; padding-left: 10px; padding-right: 20px; padding-top: 5px;}
 .account-login .content #apart-div{height: 10px; padding-top:40px;}
 .account-login .form-list input{width: 235px;}
-.account-login .form-list label{width: 235px; text-transform: uppercase; font-weight: normal;}
+.account-login .form-list label{width: 235px; text-transform: uppercase; font-weight: normal;font-size:12px;}
 .account-login li{height: 40px; margin: 0px;}
 .account-login #forget-pass{height: 15px; width: 235px;}
 #forget-pass a{float: right; color: #5CA2B0; font-style: italic; text-decoration: none;}
@@ -1435,11 +1440,11 @@ f/********** Product Prices > */
 
 .account-create #left-image{width: 400px; height: 475px; float: left; }
 .account-create .fieldset{width: 475px; float: left; margin: 0px;}
-.account-create #form-validate label{text-transform: uppercase; font-weight: normal;}
+.account-create #form-validate label{text-transform: uppercase; font-weight: normal;font-size:12px;}
 .account-create .fieldset li {margin: 0px;}
 .account-create .fieldset .name-firstname {height: 40px;}
 .account-create .fieldset .name-lastname {height: 40px;}
-.account-create .fieldset .control {height: 40px; padding-bottom: 50px}
+.account-create .fieldset .control {height: 40px; padding: 27px 0 28px 0;}
 .account-create .fieldset .field{height: 40px;}
 .account-create .fieldset .field-outline{height: 40px; vertical-align: middle}
 .account-create .fieldset input[type=text]{width: 235px;}
@@ -1468,13 +1473,13 @@ f/********** Product Prices > */
 #contact-form form h6{font-size: 14px; font-weight: normal; text-align: left;  width: 383px; line-height: 1.15; margin-bottom:0px; padding-left: 142px}
 #contact-form form ul{width: 275px; margin-left: 142px; margin-top: 10px;}
 #contact-form form li{margin: 0px;}
-#contact-form form label{ font-size: 12px;}
+#contact-form form label{ font-size: 11px;}
 #contact-form form .field {width: 275px; height: 40px;}
 #contact-form form #telephon-div {width: 275px; height: 40px;}
 #contact-form form textarea{width: 235px; height: 70px;}
 
 #contact-form .buttons-div { text-align: left; margin-left: 142px; padding-top: 15px;}
-#contact-form .buttons-div div {width: 120px; height: 25px; background:#fff url(../images/gains/add-bag-but.png) no-repeat; font:italic 13px/25px Georgia; }
+#contact-form .buttons-div div {width: 120px; height: 25px; background:#fff url(../images/gains/add-bag-but.png) no-repeat; font:11px/25px Georgia; }
 
 #contact-form ul li .input-box div{float: right; width: 1px}
 #contact-form ul li .input-box {width: 245px}
@@ -1686,8 +1691,8 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 .footer .f-right { width:429px; }
 
 .footer ul { display:inline;}
-.footer li.first{background:url(../images/bkg_pipe1.gif) 100% 50% no-repeat; padding:0 10px 0 0; font-size:11px;}
-.footer li { display:inline; background:url(../images/bkg_pipe1.gif) 100% 50% no-repeat; padding:0 10px 0 10px; font-size:11px;}
+.footer li.first{background:url(../images/gains/bottom-footer-line.jpg) 100% 50% no-repeat; padding:0 10px 0 0; font-size:11px;}
+.footer li { display:inline; background:url(../images/gains/bottom-footer-line.jpg) 100% 50% no-repeat; padding:0 10px 0 10px; font-size:11px;}
 .footer li.last { background:none !important; padding-right:0 !important; }
 .footer .bugs { margin:0; color:#666; }
 .footer .bugs a { font-weight:bold; color:#444; }

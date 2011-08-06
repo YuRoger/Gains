@@ -27,8 +27,8 @@
 <?php if ($this->isPossibleOnepageCheckout()):?>
 <div style="float:left;width:355px">To add international postage please proceed to Checkout.</div>
 <?php if ($this->isDisabled()):?>
-<div style="background-color:#82C7DB;height:30px;width:115px;float:right" align="center"><span style="position: relative;top:20%;font-weight:bold;color:#D9DDE3">Checkout<span></div>
+<div style="background:url('<?php echo $this->getSkinUrl();?>/images/gains/Long_shopping_cart_buttons.jpg') no-repeat;height:30px;width:115px;float:right" align="center"><span style="position: relative;top:20%;font-weight:bold;">Checkout</span></div>
 <?php else: ?>
-<div style="background-color:#82C7DB;height:30px;width:115px;float:right;" align="center"><a href="<?php echo $this->getCheckoutUrl()?>" style="position: relative;top:20%;font-weight:bold;color:#D9DDE3">Checkout</a></div>
+<div style="background:url('<?php echo $this->getSkinUrl();?>/images/gains/Long_shopping_cart_buttons.jpg') no-repeat;height:30px;width:115px;float:right;" align="center"><a href="<?php echo $this->getCheckoutUrl()?>" style="position: relative;top:20%;font-weight:bold;">Checkout</a></div>
 <?php endif?>
 <?php endif?>

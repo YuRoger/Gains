@@ -1,28 +1,77 @@
 <div style="width:400px;" id="AdPromotion">
+<?php
+        $quilts = Mage::getModel('catalog/category')
+            ->setStoreId(Mage::app()->getStore()->getId())
+            ->load(4);
+        $bedlinen =  Mage::getModel('catalog/category')
+            ->setStoreId(Mage::app()->getStore()->getId())
+            ->load(11);
+        $winterSpecial= Mage::getModel('catalog/category')
+            ->setStoreId(Mage::app()->getStore()->getId())
+            ->load(5);
+?>
 
-<?php if($this->containsBedlinen() && $this->containsQuilt()):?>
-<a href="http://127.0.0.1/xampp/pdt_workspace/magento/index.php/checkout/cart/">
-<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Both.jpg"  id="AdBoth"/>
+<?php if($this->overThresholdBedlinen() && $this->containsBedlinen()):?>
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Advertisements - Congrats - BEDLINEN.jpg"  id="congratBedlinen"/>
+<?php
+    /*$category = Mage::getModel('catalog/category')
+            ->setStoreId(Mage::app()->getStore()->getId())
+            ->load(34);
+    Mage::register('current_category', $category);*/
+
+    Mage::getSingleton('catalog/layer')->setCurrentCategory(34);
+    echo $this->getChildHtml('giftListBedlinen');
+?>
+<div style="height:25px;width:400px;"></div>
+<?php endif;?>
+<?php
+if($this->overThresholdQuilt() && $this->containsQuilt()):?>
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Advertisements - Congrats - QUILTS.jpg"  id="congratQuilt"/>
+<?php
+   /* $category = Mage::getModel('catalog/category')
+            ->setStoreId(Mage::app()->getStore()->getId())
+            ->load(35);
+    Mage::register('current_category', $category);
+*/
+    Mage::getSingleton('catalog/layer')->setCurrentCategory(35);
+    echo $this->getChildHtml('giftListQuilt');
+?>
+<div style="height:25px;width:400px;"></div>
+<?php endif;?>
+<?php if($this->containsBedlinen() && $this->containsQuilt() && !$this->overThresholdQuilt() && !$this->overThresholdBedlinen()):?>
+
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Both1.jpg"  id="AdBoth1"/>
+<a href=<?php echo $url = $bedlinen->getUrl();?>>
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Both_bedlinen.jpg" id="AdBothBedlinen"/>
 </a>
-
-<?php elseif($this->containsQuilt()):?>
-<a href="http://127.0.0.1/xampp/pdt_workspace/magento/index.php/checkout/cart/">
+<a href=<?php echo $url = $quilts->getUrl();?>>
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Both_quilts.jpg" id="AdBothQuilts"/>
+</a>
+<?php elseif($this->containsQuilt() && !$this->overThresholdQuilt()):?>
+<a href=<?php echo $url = $quilts->getUrl();?>>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Quilts.jpg" id="AdFreePillow"/>
 </a>
 
-<?php elseif($this->containsBedlinen()):?>
-<a href="http://127.0.0.1/xampp/pdt_workspace/magento/index.php/checkout/cart/">
+<?php elseif($this->containsBedlinen() && !$this->overThresholdBedlinen()):?>
+<a href=<?php echo $url = $bedlinen->getUrl();?>>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Bedlinen.jpg" id="AdFreeCushion"/>
 </a>
 
-<?php else:?>
-<a href="http://127.0.0.1/xampp/pdt_workspace/magento/index.php/checkout/cart/">
-<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_General.jpg" id="AdDefault"/>
+<?php elseif(!$this->containsBedlinen() && !$this->containsQuilt()):?>
+
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Both1.jpg"  id="AdDefault1"/>
+<a href=<?php echo $url = $bedlinen->getUrl();?>>
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Both_bedlinen.jpg" id="AdDefaultBedlinen"/>
+</a>
+<a href=<?php echo $url = $quilts->getUrl();?>>
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Both_quilts.jpg" id="AdDefaultQuilts"/>
 </a>
 <?php endif;?>
-<div style="height:50px;width:400px;"></div>
-<a href="http://127.0.0.1/xampp/pdt_workspace/magento/index.php/checkout/cart/">
-<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Thin.jpg" id="Thin"/>
-</a>
-<div style="height:50px;width:400px;"></div>
 </div>
+<div style="height:20px;width:400px;"></div>
+<a href=<?php echo $url = $winterSpecial->getUrl();?>>
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Winter Specials.jpg" id="Thin"/>
+</a>
+<div style="height:10px;width:400px;"></div>
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Secure Shopping.jpg" id="secureshop"/>
+<div style="height:10px;width:400px;"></div>

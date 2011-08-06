@@ -103,6 +103,10 @@ Default layout, loads most of the pages
                 </block>
                 <!-- zy cart promotion -->
                 <block type="checkout/cart_promotion" name="checkout.cart.promotionblock"  as="promotion" template="checkout/cart/promotion.phtml">
+                    <block type="catalog/product_list" name="giftListBedlinen" template="checkout/cart/listBedlinen.phtml" as="giftListBedlinen">
+                    </block>
+                    <block type="catalog/product_list" name="giftListQuilt" template="checkout/cart/listQuilt.phtml" as="giftListQuilt">
+                    </block>
                 </block>
                 <!-- zy cart promotion -->
                 <block type="checkout/cart_coupon" name="checkout.cart.coupon" as="coupon" template="checkout/cart/coupon.phtml"/>

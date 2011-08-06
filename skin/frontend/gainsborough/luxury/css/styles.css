@@ -1849,12 +1849,12 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 /*gain cart css*/
 .shopping-cart-collaterals .col2-set .gaincartcol-1{width:400px;  float:left; }
 .shopping-cart-collaterals .col2-set .gaincartcol-2{width:475px;  float:right; }
-.gaincartsummary{width:475px;  height:50px; background-color:rgb(71,76,82);}
-.gains-cart-item td{background-color:#82C7DB; width:254px;}
-.gains-cart-item td .button span{background-color:#82C7DB;padding:3px 5px 3px 5px}
+.gaincartsummary{width:475px;  height:50px; background-color:#DCDCDC;}
+.gains-cart-item td{width:254px;}
+.gains-cart-item td .button div{background:url(../images/gains/Long_shopping_cart_buttons.jpg) no-repeat;padding:3px 5px 3px 5px}
 .gains-shopping-cart-data-table { width:100%; }
-.gains-shopping-cart-data-table tr{  border-bottom:1px solid #474C52;  }
-.gains-shopping-cart-data-table th {  border-bottom:1px solid #474C52; padding:3px 8px; }
+.gains-shopping-cart-data-table tr{  border-bottom:1px solid #D9DDE3;  }
+.gains-shopping-cart-data-table th {  border-bottom:1px solid #D9DDE3; padding:3px 8px; }
 .gains-shopping-cart-data-table td { padding:3px 8px; }
 
 .gains-shopping-cart-data-table thead,
@@ -1864,7 +1864,7 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 .gains-shopping-cart-data-table tfoot tr { }
 .gains-shopping-cart-data-table tbody th { padding:3px 8px; font-size:11px; font-weight:bold; text-transform:none; white-space:normal; }
 .gains-shopping-cart-data-table tbody th,
-.gains-shopping-cart-data-table tbody td { border-bottom:1px solid #474C52; }
+.gains-shopping-cart-data-table tbody td { border-bottom:1px solid #D9DDE3; }
 .gains-shopping-cart-data-table tbody td  h4 a{color: #C2C2C2;}
 .gains-shopping-cart-data-table tfoot strong { font-size:14px; }
 .gains-add-to-cart {float:right;margin-top:-35px;}
@@ -1910,3 +1910,20 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 #advice-validate-custom-month.validation-advice {float:right;}
 #advice-validate-custom-day.validation-advice {float:right;}
 .footer-link {padding-top:5px;}
+
+.gains-gift-grid { position:relative;}
+.gains-gift-grid.last { border-bottom:0; }
+.gains-gift-grid li.item { float:left;padding: 5px 16px 10px 16px; background: #DCDCDC;}
+.gains-gift-grid li.item.last{float:left;padding: 5px 17px 10px 17px; background: #DCDCDC;}
+.gains-gift-grid li.item.first{float:left;padding: 5px 17px 10px 17px; background: #DCDCDC;}
+.gains-gift-grid .product-image { display:block; width:100px; height:100px; border:1px solid #ddd; border-width:1px 1px 1px 0; margin:0 0 10px; }
+.gains-gift-grid.first .product-image { border-top:0; }
+.gains-gift-grid li.last .product-image { border-right:0; }
+.gains-gift-grid .product-name { font-size:12px; margin-top:10px; height:25px; text-align:center }
+.gains-gift-grid .product-name a { text-decoration:none; }
+.gains-gift-grid .product-name a:hover { text-decoration:none; }
+.gains-gift-grid .price-box { margin:0px; }
+.gains-gift-grid .availability { line-height:21px; }
+.gains-gift-grid .actions { position:relative; bottom:-10px; }
+.gains-gift-grid .actions .btn-cart div {background-color: #82C7DB; width:100px;height:20px}
+.gains-gift-grid-product-image {width: 100px;}

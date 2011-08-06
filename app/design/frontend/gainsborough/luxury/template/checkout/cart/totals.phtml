@@ -65,28 +65,20 @@ var_dump($newData);
                 $discount_detail=$total->getAddress()->getDiscountDescription();
                 $discount_detail=ltrim($discount_detail,",");
                 $discount_detail_array=explode(",",$discount_detail);
-                $discount_count=count($discount_detail_array);
-                if($discount_count==1){
-                    $left="50%";
-                }else if($discount_count==2){
-                    $left="35%";
-                }else if($discount_count==3){
-                    $left="30%";
-                }
 				$discount=$total->_getData("value");
 			}else if($total->_getData("code")=="subtotal"){
 				$subtotal=$total->_getData("value");
 			}
 		}
 	?>
-<table cellspacing="0" id="shopping-cart-totals-table" style="position:relative;left:<?php echo $left?>">
+<table cellspacing="0" id="shopping-cart-totals-table" style="float:left">
 
     <tfoot>
 		<tr>
-		<td class="a-right" colspan="1">
+		<td class="a-left" colspan="1">
 			<strong>TOTAL (inc GST):</strong>
 		</td>
-		<td class="a-right">
+		<td class="a-left">
 			&nbsp;&nbsp;
 			<strong><?php echo $store->formatPrice($grandtotal)?></strong>
 		</td>
@@ -94,15 +86,15 @@ var_dump($newData);
     </tfoot>
     <tbody>
 		<tr>
-			<td class="a-right" colspan="1">SUBTOTAL:</td>
-			<td class="a-right">
+			<td class="a-left" colspan="1">SUBTOTAL:</td>
+			<td class="a-left">
 			&nbsp;&nbsp;<?php echo $store->formatPrice($subtotal)?>
 			</td>
 		</tr>
 		<?php if($discount!=0):?>
 		<tr style="color:#82C7DB">
-			<td class="a-right" colspan="1">DISCOUNT:<?php echo "($discount_detail)" ?></td>
-			<td class="a-right" >
+			<td class="a-left" colspan="1">DISCOUNT:<?php echo "($discount_detail)" ?></td>
+			<td class="a-left" >
 			&nbsp;&nbsp;
 
 			<?php echo $store->formatPrice(-$discount)?>

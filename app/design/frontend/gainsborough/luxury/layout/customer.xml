@@ -115,7 +115,16 @@ Layout for customer log out page
         <!-- Mage_Customer -->
         <remove name="right"/>
         <remove name="left"/>
-
+		<reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbName>Home</crumbName>
+                <crumbInfo><label>Home</label><title>Home</title><link>/</link></crumbInfo>
+            </action>
+            <action method="addCrumb">
+                <crumbName>Logout</crumbName>
+                <crumbInfo><label>Logout</label><title>Log Out</title></crumbInfo>
+            </action>
+        </reference>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>
@@ -163,7 +172,7 @@ New customer registration
         <label>Customer Forgot Password Form</label>
         <remove name="right"/>
         <remove name="left"/>
-
+        
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
             <action method="setHeaderTitle" translate="title" module="customer"><title>Password forgotten</title></action>
@@ -171,6 +180,16 @@ New customer registration
         <reference name="content">
             <!--<block type="core/template" name="forgotPassword" template="customer/form/forgotpassword.phtml"/>-->
             <block type="customer/account_forgotpassword" name="forgotPassword" template="customer/form/forgotpassword.phtml"/>
+        </reference>
+        <reference name="breadcrumbs">
+	    <action method="addCrumb">
+                <crumbName>Home</crumbName>
+                <crumbInfo><label>Home</label><title>Home</title><link>/</link></crumbInfo>
+            </action>
+            <action method="addCrumb">
+                <crumbName>forget your password</crumbName>
+                <crumbInfo><label>forget your password</label><title>forget your password</title></crumbInfo>
+            </action>
         </reference>
     </customer_account_forgotpassword>
 

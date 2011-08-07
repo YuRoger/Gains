@@ -98,7 +98,7 @@ ul,ol         { list-style:none; }
 .page-popup { background:#fff; padding:25px 30px; text-align:left; }
 .main-container {}
 .main-top{ height:22px; }
-.main {min-height:350px; margin-top:20px;}
+.main {min-height:350px; padding-top:20px;}
 .main-bottom{height:22px;}
 .main-container-bottom {height:5px;border-top:1px solid #BFC3C4;}
 
@@ -820,9 +820,9 @@ tr.summary-details-excluded { font-style:italic; }
 .old-price .price { font-size:13px; text-decoration:line-through; }
 
 /* Special price */
-.special-price { margin-top:-18px; }
-.special-price .price-label { font-size:11px; font-weight:bold; text-transform:uppercase; white-space:nowrap; color:#000; }
-.special-price .price { font-size:14px; color:#82C7DB;padding-left:93px;}
+.special-price { margin-top:2px;}
+.special-price .price-label { font-size:11px; font-weight:bold; white-space:nowrap; color:#5CA2B0; }
+.special-price .price { font-size:14px; color:#5CA2B0;}
 
 /* Minimal price (as low as) */
 .minimal-price { margin:0; }
@@ -960,7 +960,7 @@ f/********** Product Prices > */
 .product-view .product-shop .product-options-bottom .paypal-logo { float:left; }
 
 /* Product Options */
-.product-options { margin:20px 0 0; position:relative;width:340px; }
+.product-options { margin:10px 0 0; position:relative;width:340px; }
 .product-options dt { padding:10px 0 0; font-weight:normal; }
 .product-options dt label { font-weight:bold; }
 .product-options dt label.required em { color:#eb340a; margin-left:5px; }
@@ -1500,12 +1500,12 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 
 
 /* Forget Password */
-#forget-pass-div{width: 475px; float: left}
-#forget-pass-title { background: #474a51; width: 475px; height: 50px; text-align: center; margin-bottom: 25px;
-font-size: 18px; font-weight: bold; color: white; height: 50px; line-height: 50px;}
+#forget-pass-div{width: 525px; float: left}
+#forget-pass-title { background: #DCDCDC; width: 525px; height: 50px; text-align: center; margin-bottom: 25px;
+font-size: 16px; font-weight: bold; height: 50px; line-height: 50px;}
 .fieldset p{color: white; font-size:14px;}
-#forget-pass-div .buttons-div div{color: #616161; margin-left: 10px; text-align: center;width: 160px; height: 25px; background: #7dcbd9; color: #616161; font:italic 13px/25px Georgia; }
-#forget-pass-div .buttons-div {width: 160px; float: left;}
+#forget-pass-div .buttons-div div{ margin-left: 10px; text-align: center;width: 120px; height: 25px;  font:12px/25px Georgia; background:#fff url(../images/gains/add-bag-but.png) no-repeat;}
+#forget-pass-div .buttons-div {width: 120px; float: left;}
 #forget-pass-div .buttons-div a{text-decoration: none}
 .form-list li label{ }
 #forget-pass-div #right-button {float:right}
@@ -1848,8 +1848,8 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 
 /*gain cart css*/
 .shopping-cart-collaterals .col2-set .gaincartcol-1{width:400px;  float:left; }
-.shopping-cart-collaterals .col2-set .gaincartcol-2{width:475px;  float:right; }
-.gaincartsummary{width:475px;  height:50px; background-color:#DCDCDC;}
+.shopping-cart-collaterals .col2-set .gaincartcol-2{width:525px;  float:right; }
+.gaincartsummary{width:525px;  height:50px; background-color:#DCDCDC;}
 .gains-cart-item td{width:254px;}
 .gains-cart-item td .button div{background:url(../images/gains/Long_shopping_cart_buttons.jpg) no-repeat;padding:3px 5px 3px 5px}
 .gains-shopping-cart-data-table { width:100%; }
@@ -1925,5 +1925,7 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 .gains-gift-grid .price-box { margin:0px; }
 .gains-gift-grid .availability { line-height:21px; }
 .gains-gift-grid .actions { position:relative; bottom:-10px; }
-.gains-gift-grid .actions .btn-cart div {background-color: #82C7DB; width:100px;height:20px}
+.gains-gift-grid .actions .btn-cart div {background:#fff url(../images/gains/add-bag-but.png) no-repeat; width:100px;height:20px}
 .gains-gift-grid-product-image {width: 100px;}
+
+.gains-cart-item button.button {width:160px;}

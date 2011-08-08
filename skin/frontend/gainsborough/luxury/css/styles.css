@@ -1851,7 +1851,7 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 .shopping-cart-collaterals .col2-set .gaincartcol-2{width:525px;  float:right; }
 .gaincartsummary{width:525px;  height:50px; background-color:#DCDCDC;}
 .gains-cart-item td{width:254px;}
-.gains-cart-item td .button div{background:url(../images/gains/Long_shopping_cart_buttons.jpg) no-repeat;padding:3px 5px 3px 5px}
+.gains-cart-item td .button div{background:url(../images/gains/Long_shopping_cart_buttons.jpg) no-repeat;width:160px;vertical-align:middle;line-height:25px;height:25px}
 .gains-shopping-cart-data-table { width:100%; }
 .gains-shopping-cart-data-table tr{  border-bottom:1px solid #D9DDE3;  }
 .gains-shopping-cart-data-table th {  border-bottom:1px solid #D9DDE3; padding:3px 8px; }
@@ -1926,6 +1926,6 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 .gains-gift-grid .price-box { margin:0px; }
 .gains-gift-grid .availability { line-height:21px; }
 .gains-gift-grid .actions { position:relative; bottom:-10px; }
-.gains-gift-grid .actions .btn-cart div {background:#fff url(../images/gains/add-bag-but.png) no-repeat; width:100px;height:20px}
+.gains-gift-grid .actions .btn-cart div {background:#fff url(../images/gains/add-bag-but.png) no-repeat; vertical-align:middle;width:100px;height:20px;line-height:20px;}
 .gains-gift-grid-product-image {width: 100px;}
 .gains-cart-item button.button {width:160px;}

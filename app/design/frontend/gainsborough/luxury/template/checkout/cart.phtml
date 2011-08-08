@@ -72,11 +72,11 @@
 					<tr class="gains-cart-item">
 						<td colspan="3" class="a-left">
 							<?php if($this->getContinueShoppingUrl()): ?>
-								<button class="button continue-shopping" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')" type="button"><div><span><?php echo $this->__('CONTINUE SHOPPING') ?></span></div></button>
+								<button class="button continue-shopping" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')" type="button"><div><?php echo $this->__('CONTINUE SHOPPING') ?></div></button>
 							<?php endif; ?>
 						</td>
 						<td colspan="3" class="a-right">
-							<button class="button" type="submit"><div><span><?php echo $this->__('UPDATE SHOPPING CART') ?></span></div></button>
+							<button class="button" type="submit"><div><?php echo $this->__('UPDATE SHOPPING CART') ?></div></button>
 						</td>
 					</tr>
 				</tfoot>
@@ -102,10 +102,10 @@
 		</div>
 	<div class="gaincartcol-2">
 		<?php echo $this->getChildHtml('coupon') ?>
-		<div style="height:10px;width:475px;"></div>
-		<div class="shopping-cart-totals" style="float:right">
+		<div style="height:10px;width:525px;"></div>
+		<div class="shopping-cart-totals">
 			<?php echo $this->getChildHtml('totals'); ?>
-			<div style="height:10px;width:475px;"></div>
+			<div style="height:10px;width:525px;"></div>
 			<?php if(!$this->hasError()): ?>
 				<?php echo $this->getChildHtml('methods') ?>
 			<?php endif; ?>

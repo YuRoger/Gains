@@ -1921,11 +1921,11 @@ font-size: 18px; font-weight: normal; letter-spacing: 1px;color: white; height: 
 .gains-gift-grid li.last .product-image { border-right:0; }
 .gains-gift-grid .product-name { font-size:12px; margin-top:10px; height:25px; text-align:center }
 .gains-gift-grid .product-name a { text-decoration:none; }
+
 .gains-gift-grid .product-name a:hover { text-decoration:none; }
 .gains-gift-grid .price-box { margin:0px; }
 .gains-gift-grid .availability { line-height:21px; }
 .gains-gift-grid .actions { position:relative; bottom:-10px; }
 .gains-gift-grid .actions .btn-cart div {background:#fff url(../images/gains/add-bag-but.png) no-repeat; width:100px;height:20px}
 .gains-gift-grid-product-image {width: 100px;}
-
 .gains-cart-item button.button {width:160px;}

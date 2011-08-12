@@ -44,4 +44,22 @@ class Gains_Checkout_Block_Cart_Promotion extends Mage_Checkout_Block_Cart_Abstr
 		$quiltAmount=$cartModel->getSpecialTotalQtyAmount(4);
 		return $quiltAmount[1]>300;
 	}
+    /**
+	Decide is there any Gift Cushion
+	*/
+	public function containsGiftCushion()
+	{
+		$cartModel=$this->_getCheckoutCart();
+		$bedlinenAmount=$cartModel->getSpecialTotalQtyAmount(34);
+		return 	$bedlinenAmount[0]>0;
+	}
+    /**
+	Decide is there any Gift Cushion
+	*/
+    public function containsGiftPillow()
+	{
+		$cartModel=$this->_getCheckoutCart();
+		$bedlinenAmount=$cartModel->getSpecialTotalQtyAmount(35);
+		return 	$bedlinenAmount[0]>0;
+	}
 }

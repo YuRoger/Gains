@@ -8,7 +8,14 @@ class Gains_Catalog_Block_Product_View extends Mage_Catalog_Block_Product_View
 		return $value;
 	}
 	
-	/*
+	public function isComingSoon()
+	{
+		$product = $this->getProduct();
+		$value = $product->getData('iscomingsoon');
+		return $value;
+	}
+	
+	/* 
 	 * get Quilt cover product object from the current product.
 	 * if id is "", return null
 	 * */

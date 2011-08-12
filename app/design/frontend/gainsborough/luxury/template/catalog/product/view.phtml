@@ -48,8 +48,12 @@
         </div>
 		<div class="product-name">
                 <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
-                <?php if ($_product->isAvailable()): ?>
-   		 <p class="gains-availability in-stock"><?php echo $this->__('In Stock') ?></p>
+            <?php if ($_product->isAvailable()): ?>
+   		 	<?php if($this->isComingSoon()):?>
+   		 			<p class="gains-availability in-stock"><?php echo $this->__('Coming soon') ?></p>
+   		 	<?php else:?>
+   		 		 	<p class="gains-availability in-stock"><?php echo $this->__('In Stock') ?></p>
+   		 	<?php endif;?>
 			<?php else: ?>
    			 <p class="gains-availability out-of-stock"><?php echo $this->__('Sold Out') ?></p>
 			<?php endif; ?>
@@ -92,15 +96,19 @@
         <?php echo $this->getChildHtml('info_tabs') ?>
         </div>
         <div>
+         <?php if(!$this->isComingSoon()):?>
         <?php echo $this->getChildHtml('product_options_wrapper') ?>
-  
+  		<?php endif;?>
         <!-- this is for configurable product -->
+        <?php if(!$this->isComingSoon()):?>
         <?php if ($this->hasOptions()):?>
         	<?php echo $this->getChildHtml('addtocart') ?>
         	<?php echo $this->getChildHtml('product_type_data') ?>
         <?php endif;?>
+        <?php endif;?>
         <!-- this is for simple product -->
         <?php if (!$this->hasOptions()):?>
+          <?php if(!$this->isComingSoon()):?>
                 <div class="add-to-box">
                     <?php if($_product->isSaleable()): ?>
                         <?php echo $this->getChildHtml('addtocart') ?>
@@ -110,6 +118,7 @@
                     <?php endif; ?>
                     <?php echo $this->getChildHtml('product_type_data') ?>
                 </div>
+                <?php endif;?>
             <?php endif; ?>
    
 		<?php //echo $this->getChildHtml('product_options_wrapper_bottom') ?>

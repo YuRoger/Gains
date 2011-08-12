@@ -11,7 +11,7 @@
             ->load(5);
 ?>
 
-<?php if($this->overThresholdBedlinen() && $this->containsBedlinen()):?>
+<?php if($this->overThresholdBedlinen() && $this->containsBedlinen() && !$this->containsGiftCushion()):?>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Advertisements - Congrats - BEDLINEN.jpg"  id="congratBedlinen"/>
 <?php
     /*$category = Mage::getModel('catalog/category')
@@ -21,11 +21,12 @@
 
     Mage::getSingleton('catalog/layer')->setCurrentCategory(34);
     echo $this->getChildHtml('giftListBedlinen');
+    $showGiftListBedlinen=true;
 ?>
 <div style="height:25px;width:400px;"></div>
 <?php endif;?>
 <?php
-if($this->overThresholdQuilt() && $this->containsQuilt()):?>
+if($this->overThresholdQuilt() && $this->containsQuilt() && !$this->containsGiftPillow()):?>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Advertisements - Congrats - QUILTS.jpg"  id="congratQuilt"/>
 <?php
    /* $category = Mage::getModel('catalog/category')
@@ -35,7 +36,12 @@ if($this->overThresholdQuilt() && $this->containsQuilt()):?>
 */
     Mage::getSingleton('catalog/layer')->setCurrentCategory(35);
     echo $this->getChildHtml('giftListQuilt');
+    $showGiftListQuilt=true;
 ?>
+<div style="height:25px;width:400px;"></div>
+<?php endif;?>
+<?php if(! $showGiftListQuilt && !$showGiftListBedlinen):?>
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_General.jpg" id="AdDefaultGeneral"/>
 <div style="height:25px;width:400px;"></div>
 <?php endif;?>
 <?php if($this->containsBedlinen() && $this->containsQuilt() && !$this->overThresholdQuilt() && !$this->overThresholdBedlinen()):?>

@@ -320,6 +320,16 @@ One page checkout main layout
 
     <checkout_onepage_index translate="label">
         <label>One Page Checkout</label>
+         <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbName>Home</crumbName>
+                <crumbInfo><label>Home</label><title>Home</title><link>/</link></crumbInfo>
+            </action>
+            <action method="addCrumb">
+                <crumbName>Checkout</crumbName>
+                <crumbInfo><label>Checkout</label><title>Checkout</title></crumbInfo>
+            </action>
+        </reference>
         <!-- Mage_Checkout -->
         <remove name="right"/>
 

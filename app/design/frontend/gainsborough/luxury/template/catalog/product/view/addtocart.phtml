@@ -61,20 +61,20 @@
 <?php ?>
  <?php if($this->isQuiltPromotion()):?>
 <div style="display: none;">
-		<div id="promotion" style="width:500px;height:250px;overflow:auto;">
+		<div id="promotion" style="width:634px;height:334px;overflow:auto;">
 			<div class="gains-promotion-pop-up">
 				<div class="promotion-image">
 				<?php $_quiltcover = $this->fetchQuiltCoverProduct();?>
       			<?php $_cushionproduct = $this->fetchCushionProduct();?>
 				 <?php if($_cushionproduct != null):?>
 				  	<a title="<?php echo $this->htmlEscape($_cushionproduct->getSmallImageLabel())?>">
-						<img src="<?php echo $this->helper('catalog/image')->init($_cushionproduct, 'small_image'); ?>" width="200" height="200" alt="<?php echo $this->htmlEscape($this->getImageLabel($_cushionproduct, 'small_image')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_cushionproduct, 'small_image')) ?>" />
+						<img src="<?php echo $this->helper('catalog/image')->init($_cushionproduct, 'thumbnail'); ?>" width="300" height="300" alt="<?php echo $this->htmlEscape($this->getImageLabel($_cushionproduct, 'thumbnail')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_cushionproduct, 'thumbnail')) ?>" />
 				  	</a>
 				  <?php $_finalPrice = $_taxHelper->getPrice($_cushionproduct, $_cushionproduct->getFinalPrice()); ?>
 				  <?php $product_id = $_cushionproduct->getId(); ?>
 				 <?php else:?>
 				  	<a title="<?php echo $this->htmlEscape($_quiltcover->getSmallImageLabel())?>">
-						<img src="<?php echo $this->helper('catalog/image')->init($_quiltcover, 'small_image'); ?>" width="200" height="200" alt="<?php echo $this->htmlEscape($this->getImageLabel($_quiltcover, 'small_image')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_quiltcover, 'small_image')) ?>" />
+						<img src="<?php echo $this->helper('catalog/image')->init($_quiltcover, 'thumbnail'); ?>" width="300" height="300" alt="<?php echo $this->htmlEscape($this->getImageLabel($_quiltcover, 'thumbnail')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_quiltcover, 'thumbnail')) ?>" />
 				  	</a>
 				  	<?php $_finalPrice = $_taxHelper->getPrice($_quiltcover, $_quiltcover->getFinalPrice()); ?>
 				  	 <?php $product_id = $_quiltcover->getId(); ?>
@@ -97,8 +97,10 @@
 				<div>
 					<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="addOnePromotionProduct('<?php echo $product_id?>')"><span><?php echo $buttonTitle ?></span></button>
 				</div>
-				<div style="float:right;">
-				<button type="button" title="<?php echo $this->__('No Thanks') ?>" class="button no-thanks" onclick="productAddToCartForm.submit(this)"><span class="no-thanks"><?php echo $this->__('No Thanks') ?></span></button>
+				</div>
+				<div class="no-thanks">
+				<div>
+				<button type="button" title="<?php echo $this->__('No Thanks') ?>" class="button" onclick="productAddToCartForm.submit(this)"><div><div style="padding-top:5px;">No Thanks</div></div></button>
 				</div>
 				</div>
 				</div>
@@ -108,18 +110,18 @@
 </div>
 <?php if(($_cushionproduct != null) && ($_quiltcover != null)):?>
 <div style="display: none;">
-		<div id="promotion2" style="width:500px;height:300px;overflow:auto;">
+		<div id="promotion2" style="width:634px;height:334px;overflow:auto;">
 		<div class="gains-promotion-pop-up">
 			<div class="gainstitle"><h2>Why not add co-ordinates while you're at it?</h2></div>
 			<div class="promotion-content">
 			<div class="col">
-				<div class="product-name">
-    			<?php echo $_quiltcover->getName()?>
-				</div>
 				<div>
 					<a title="<?php echo $this->htmlEscape($_quiltcover->getSmallImageLabel())?>">
-						<img src="<?php echo $this->helper('catalog/image')->init($_quiltcover, 'small_image'); ?>" width="120" height="120" alt="<?php echo $this->htmlEscape($this->getImageLabel($_quiltcover, 'small_image')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_quiltcover, 'small_image')) ?>" />
+						<img src="<?php echo $this->helper('catalog/image')->init($_quiltcover, 'thumbnail'); ?>" width="160" height="160" alt="<?php echo $this->htmlEscape($this->getImageLabel($_quiltcover, 'thumbnail')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_quiltcover, 'thumbnail')) ?>" />
 				  	</a>
+				</div>
+				<div class="product-name">
+    			<?php echo $_quiltcover->getName()?>
 				</div>
 				<div class="add-to-cart">
 					<div class="price-box">
@@ -136,13 +138,13 @@
 				</div>
 			</div>
 			<div class="col">
-			<div class="product-name">
-				<?php echo $_cushionproduct->getName()?>
-			</div>
 			<div>
 				<a title="<?php echo $this->htmlEscape($_cushionproduct->getSmallImageLabel())?>">
-					<img src="<?php echo $this->helper('catalog/image')->init($_cushionproduct, 'thumbnail'); ?>" width="120" height="120" alt="<?php echo $this->htmlEscape($this->getImageLabel($_cushionproduct, 'thumbnail')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_cushionproduct, 'thumbnail')) ?>" />
+					<img src="<?php echo $this->helper('catalog/image')->init($_cushionproduct, 'thumbnail'); ?>" width="160" height="160" alt="<?php echo $this->htmlEscape($this->getImageLabel($_cushionproduct, 'thumbnail')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_cushionproduct, 'thumbnail')) ?>" />
 				</a>
+			</div>
+			<div class="product-name">
+				<?php echo $_cushionproduct->getName()?>
 			</div>
 			<div class="add-to-cart">
 					<div class="price-box">
@@ -159,16 +161,15 @@
 			</div>
 			</div>
 			<div class="col-last">
-			<div class="no-thanks">
-				<button type="button" title="<?php echo $this->__('No Thanks') ?>" class="button no-thanks" onclick="productAddToCartForm.submit(this)"><span class="no-thanks"><?php echo $this->__('No Thanks') ?></span></button>
-			</div>
 			<div class="description">
 				<p>
 				 All Gainsborough quilt cover sets coordinate with matching Euro pillow covers and fashion cushions.
 				<br></br>
 				The perfect complement to your bedroom.
 			</div>
-			
+			<div class="no-thanks">
+				<button type="button" title="<?php echo $this->__('No Thanks') ?>" class="button no-thanks" onclick="productAddToCartForm.submit(this)"><div><div style="padding-top:5px;">No Thanks</div></div></button>
+			</div>
 			<div class="add-to-cart">
 				<div class="add-both-button">
 					<button type="button" title="<?php echo $this->__('ADD BOTH') ?>" class="button btn-cart" onclick="addBothPromotionProduct('<?php  echo $_quiltcover->getId()?>','<?php echo $_cushionproduct->getId()?>')"><span class="add-both"><?php echo $this->__('ADD BOTH') ?></span></button>
@@ -196,7 +197,11 @@ promotionScreen.submit = function ()
 			'href': '#promotion',
 			'hideOnOverlayClick': false,
 			'type': 'inline',
-			'titleShow': false
+			'titleShow': false,
+			'autoDimensions':false,
+			'width':634,
+			'height':354,
+			
 		});
 	 }
 }
@@ -214,7 +219,10 @@ promotionScreenTwo.submit = function ()
 			'href': '#promotion2',
 			'hideOnOverlayClick': false,
 			'type': 'inline',
-			'titleShow': false
+			'titleShow': false,
+			'autoDimensions':false,
+			'width':634,
+			'height':354,
 		});
 	 }
 }

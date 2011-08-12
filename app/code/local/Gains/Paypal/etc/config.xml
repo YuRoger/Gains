@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Gains_Checkout>
+			<version>0.1.0</version>
+		</Gains_Checkout>
+	</modules>
+	<global>
+		<models>
+			<paypal>
+				<rewrite>
+					<ipn>Gains_Paypal_Model_Ipn</ipn>
+				</rewrite>
+			</paypal>
+		</models>
+	</global>
+</config>

@@ -49,7 +49,7 @@
         <?php endif ?>
             <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>" >
 				<div class="gains-gift-grid-product-image">
-                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" ><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(100,100); ?>"  alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'thumbnail'), null, true) ?>" ><img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize(100,100); ?>"  alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'thumbnail'), null, true) ?>" /></a>
 				</div>
                 <div class="actions">
                     <?php if($_product->isSaleable()): ?>

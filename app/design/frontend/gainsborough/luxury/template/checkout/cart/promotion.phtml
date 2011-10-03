@@ -9,6 +9,12 @@
         $winterSpecial= Mage::getModel('catalog/category')
             ->setStoreId(Mage::app()->getStore()->getId())
             ->load(5);
+        $pillows =   Mage::getModel('catalog/category')
+            ->setStoreId(Mage::app()->getStore()->getId())
+            ->load(22);
+        $cushions =   Mage::getModel('catalog/category')
+            ->setStoreId(Mage::app()->getStore()->getId())
+            ->load(24);
 ?>
 
 <?php if($this->overThresholdBedlinen() && $this->containsBedlinen() && !$this->containsGiftCushion()):?>
@@ -26,7 +32,7 @@
 <div style="height:25px;width:400px;"></div>
 <?php endif;?>
 <?php
-if($this->overThresholdQuilt() && $this->containsQuilt() && !$this->containsGiftPillow()):?>
+if($this->overThresholdQuilt() && $this->containsQuilt() && !$this->containsGiftPillow() && !$this->containsBedlinen()):?>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Advertisements - Congrats - QUILTS.jpg"  id="congratQuilt"/>
 <?php
    /* $category = Mage::getModel('catalog/category')
@@ -40,7 +46,7 @@ if($this->overThresholdQuilt() && $this->containsQuilt() && !$this->containsGift
 ?>
 <div style="height:25px;width:400px;"></div>
 <?php endif;?>
-<?php if(! $showGiftListQuilt && !$showGiftListBedlinen):?>
+<?php if(!$showGiftListQuilt && !$showGiftListBedlinen && !$this->containsQuilt() && !$this->containsBedlinen()):?>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_General.jpg" id="AdDefaultGeneral"/>
 <div style="height:25px;width:400px;"></div>
 <?php endif;?>

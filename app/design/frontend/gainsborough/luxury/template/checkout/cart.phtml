@@ -72,11 +72,11 @@
 					<tr class="gains-cart-item">
 						<td colspan="3" class="a-left">
 							<?php if($this->getContinueShoppingUrl()): ?>
-								<button class="button continue-shopping" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')" type="button"><div><?php echo $this->__('CONTINUE SHOPPING') ?></div></button>
+								<button class="button continue-shopping" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')" type="button"><div><span style="height:20px;  width:120px; font:11px Georgia, Verdana, Arial, sans-serif; text-transform:uppercase; text-align:center; white-space:nowrap; color:#555; "><?php echo $this->__('CONTINUE SHOPPING') ?></span></div></button>
 							<?php endif; ?>
 						</td>
 						<td colspan="3" class="a-right">
-							<button class="button" type="submit"><div><?php echo $this->__('UPDATE SHOPPING CART') ?></div></button>
+							<button class="button" type="submit"><div><span style="height:20px;  width:120px; font:11px Georgia, Verdana, Arial, sans-serif; text-transform:uppercase; text-align:center; white-space:nowrap; color:#555; "><?php echo $this->__('UPDATE SHOPPING CART') ?></span></div></button>
 						</td>
 					</tr>
 				</tfoot>
@@ -97,7 +97,9 @@
     <div class="col2-set">
         <div class="gaincartcol-1">
 			<div id="Repeditive">
+                <a href="<?php echo $this->getUrl();?>quilts-pillows/pillows.html">
 				<img src="<?php echo $this->getSkinUrl();?>images/gains/Pillow Advertisement.jpg"/>
+                </a>
 			</div>
 		</div>
 	<div class="gaincartcol-2">

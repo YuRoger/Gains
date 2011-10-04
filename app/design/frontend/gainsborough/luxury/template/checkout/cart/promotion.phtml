@@ -17,7 +17,9 @@
             ->load(24);
 ?>
 
-<?php if($this->overThresholdBedlinen() && $this->containsBedlinen() && !$this->containsGiftCushion()):?>
+<?php
+//show gift cushion list
+if($this->overThresholdBedlinen() && $this->containsBedlinen() && !$this->containsGiftCushion()):?>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Advertisements - Congrats - BEDLINEN.jpg"  id="congratBedlinen"/>
 <?php
     /*$category = Mage::getModel('catalog/category')
@@ -32,7 +34,8 @@
 <div style="height:25px;width:400px;"></div>
 <?php endif;?>
 <?php
-if($this->overThresholdQuilt() && $this->containsQuilt() && !$this->containsGiftPillow() && !$this->containsBedlinen()):?>
+//show gift cushion pillow list
+if($this->overThresholdQuilt() && $this->containsQuilt() && !$this->containsGiftPillow()):?>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Advertisements - Congrats - QUILTS.jpg"  id="congratQuilt"/>
 <?php
    /* $category = Mage::getModel('catalog/category')

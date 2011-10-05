@@ -24,18 +24,17 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div id="left-image">
-			<?php echo $this->__('Your shopping bag is empty. Click <a href="%s">here</a> to continue shopping.', $this->getContinueShoppingUrl()) ?></p>
-</div>
-<!--
+		<div id="left-image">
+			<img src="<?php echo $this->getSkinUrl()?>/images/login.jpg" width="400" height="475"/>
+		</div>
+
 <div id="noitem-div">
-<div id="noitem-title">
-    <?php //echo $this->__('Shopping Cart is Empty') ?>
+<div id="noitem-title" style="color:#ffffff;">
+    <?php echo $this->__('Shopping Cart is Empty') ?>
 </div>
 <div class="cart-empty">
-    <?php //echo $this->getMessagesBlock()->getGroupedHtml() ?>
-    <p><?php //echo $this->__('You have no items in your shopping cart.') ?></p>
-    <p><?php //echo $this->__('Click <a href="%s">here</a> to continue shopping.', $this->getContinueShoppingUrl()) ?></p>
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <p><?php echo $this->__('You have no items in your shopping cart.') ?></p>
+    <p><?php echo $this->__('Click <a style="color:"#5CA2B0" href="%s">here</a> to continue shopping.', $this->getContinueShoppingUrl()) ?></p>
 </div>
 </div>
--->

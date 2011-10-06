@@ -1,11 +1,15 @@
+
 <div style="width:400px;" id="AdPromotion">
 <?php
         $quilts = Mage::getModel('catalog/category')
             ->setStoreId(Mage::app()->getStore()->getId())
-            ->load(4);
+            ->load(21);
         $bedlinen =  Mage::getModel('catalog/category')
             ->setStoreId(Mage::app()->getStore()->getId())
-            ->load(11);
+            ->load(48);
+        $quiltCovers =  Mage::getModel('catalog/category')
+            ->setStoreId(Mage::app()->getStore()->getId())
+            ->load(4);
         $winterSpecial= Mage::getModel('catalog/category')
             ->setStoreId(Mage::app()->getStore()->getId())
             ->load(5);
@@ -17,9 +21,7 @@
             ->load(24);
 ?>
 
-<?php
-//show gift cushion list
-if($this->overThresholdBedlinen() && $this->containsBedlinen() && !$this->containsGiftCushion()):?>
+<?php if($this->overThresholdBedlinen() && $this->containsBedlinen() && !$this->containsGiftCushion()):?>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Advertisements - Congrats - BEDLINEN.jpg"  id="congratBedlinen"/>
 <?php
     /*$category = Mage::getModel('catalog/category')
@@ -34,7 +36,6 @@ if($this->overThresholdBedlinen() && $this->containsBedlinen() && !$this->contai
 <div style="height:25px;width:400px;"></div>
 <?php endif;?>
 <?php
-//show gift cushion pillow list
 if($this->overThresholdQuilt() && $this->containsQuilt() && !$this->containsGiftPillow()):?>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Advertisements - Congrats - QUILTS.jpg"  id="congratQuilt"/>
 <?php
@@ -49,38 +50,41 @@ if($this->overThresholdQuilt() && $this->containsQuilt() && !$this->containsGift
 ?>
 <div style="height:25px;width:400px;"></div>
 <?php endif;?>
-<?php if(!$showGiftListQuilt && !$showGiftListBedlinen && !$this->containsQuilt() && !$this->containsBedlinen()):?>
-<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_General.jpg" id="AdDefaultGeneral"/>
-<div style="height:25px;width:400px;"></div>
-<?php endif;?>
-<?php if($this->containsBedlinen() && $this->containsQuilt() && !$this->overThresholdQuilt() && !$this->overThresholdBedlinen()):?>
 
+<?php if($this->containsBedlinen() && $this->containsQuilt() && !$this->overThresholdQuilt() && !$this->overThresholdBedlinen()):?>
+<?php $promBoth=true ?>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Both1.jpg"  id="AdBoth1"/>
-<a href=<?php echo $url = $bedlinen->getUrl();?>>
+<a href=<?php echo $url = $quiltCovers->getUrl();?>>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Both_bedlinen.jpg" id="AdBothBedlinen"/>
 </a>
 <a href=<?php echo $url = $quilts->getUrl();?>>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Both_quilts.jpg" id="AdBothQuilts"/>
 </a>
 <?php elseif($this->containsQuilt() && !$this->overThresholdQuilt()):?>
+<?php $promQuilt=true ?>
 <a href=<?php echo $url = $quilts->getUrl();?>>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Quilts.jpg" id="AdFreePillow"/>
 </a>
 
 <?php elseif($this->containsBedlinen() && !$this->overThresholdBedlinen()):?>
-<a href=<?php echo $url = $bedlinen->getUrl();?>>
+<?php $promBedlinen=true ?>
+<a href=<?php echo $url = $quiltCovers->getUrl();?>>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Bedlinen.jpg" id="AdFreeCushion"/>
 </a>
 
 <?php elseif(!$this->containsBedlinen() && !$this->containsQuilt()):?>
-
+<?php $promBoth2=true ?>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Both1.jpg"  id="AdDefault1"/>
-<a href=<?php echo $url = $bedlinen->getUrl();?>>
+<a href=<?php echo $url = $quiltCovers->getUrl();?>>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Both_bedlinen.jpg" id="AdDefaultBedlinen"/>
 </a>
 <a href=<?php echo $url = $quilts->getUrl();?>>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_Both_quilts.jpg" id="AdDefaultQuilts"/>
 </a>
+<?php endif;?>
+<?php if(!$showGiftListQuilt && !$showGiftListBedlinen && !$promBoth && !$promQuilt && !$promBedlinen && !$promBoth2 ):?>
+<img src="<?php echo $this->getSkinUrl();?>images/gains/Promotion_General.jpg" id="AdDefaultGeneral"/>
+<div style="height:25px;width:400px;"></div>
 <?php endif;?>
 </div>
 <div style="height:20px;width:400px;"></div>

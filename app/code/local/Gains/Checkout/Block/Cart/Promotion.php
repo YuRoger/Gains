@@ -1,19 +1,19 @@
 <?php
 class Gains_Checkout_Block_Cart_Promotion extends Mage_Checkout_Block_Cart_Abstract
 {
-	
+
 	private function _getCheckoutCart()
 	{
 		return Mage::getSingleton('checkout/cart');
 	}
-	
+
 	/**
 	Decide is there any bedlinen product in cart, based on BEDLINEN_CATEGORY_ID
 	*/
 	public function containsBedlinen()
 	{
 		$cartModel=$this->_getCheckoutCart();
-		$bedlinenAmount=$cartModel->getSpecialTotalQtyAmount(11);
+		$bedlinenAmount=$cartModel->getSpecialTotalQtyAmount(48);
 		return 	$bedlinenAmount[0]>0;
 	}
 		/**
@@ -22,7 +22,7 @@ class Gains_Checkout_Block_Cart_Promotion extends Mage_Checkout_Block_Cart_Abstr
 	public function containsQuilt()
 	{
 		$cartModel=$this->_getCheckoutCart();
-		$quiltAmount=$cartModel->getSpecialTotalQtyAmount(4);
+		$quiltAmount=$cartModel->getSpecialTotalQtyAmount(21);
 		return $quiltAmount[0]>0;
 	}
 
@@ -32,7 +32,7 @@ class Gains_Checkout_Block_Cart_Promotion extends Mage_Checkout_Block_Cart_Abstr
 	public function overThresholdBedlinen()
 	{
 		$cartModel=$this->_getCheckoutCart();
-		$bedlinenAmount=$cartModel->getSpecialTotalQtyAmount(11);
+		$bedlinenAmount=$cartModel->getSpecialTotalQtyAmount(48);
 		return 	$bedlinenAmount[1]>300;
 	}
 		/**
@@ -41,7 +41,7 @@ class Gains_Checkout_Block_Cart_Promotion extends Mage_Checkout_Block_Cart_Abstr
 	public function overThresholdQuilt()
 	{
 		$cartModel=$this->_getCheckoutCart();
-		$quiltAmount=$cartModel->getSpecialTotalQtyAmount(4);
+		$quiltAmount=$cartModel->getSpecialTotalQtyAmount(21);
 		return $quiltAmount[1]>300;
 	}
     /**

@@ -33,7 +33,7 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
 		if($this->isFirstPurchase()){
             $cart=Mage::getSingleton('checkout/cart');
             $freePillowCategory=35;
-		    $freeCushionCategory=34;
+            $freeCushionCategory=34;
             $freePillowCollection=$cart->getProductsByCategoryId($freePillowCategory);
 		    $freeCushionCollection=$cart->getProductsByCategoryId($freeCushionCategory);
 	        $qty = $item->getQty();
@@ -235,16 +235,21 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
 		$result=false;
 		$customerId = Mage::getSingleton('customer/session')->getCustomerId();
 		if($customerId){
-				$orders=Mage::getModel('sales/order')->getCollection()
-					->addAttributeToSelect( 'entity_id' )
-					->addAttributeToFilter('customer_id',$customerId)// only load customer's
-					->addAttributeToSort('created_at')
-					->load();
-				if(count($orders)>0){
-					$result=false;
-				}else{
-					$result=true;
-				}
+            $groupId= Mage::getSingleton('customer/session')->getCustomer()->getGroupId();
+            #staff group will not have first purchase discount
+            if($groupId==4){
+                return false;
+            }
+	    	$orders=Mage::getModel('sales/order')->getCollection()
+			    ->addAttributeToSelect( 'entity_id' )
+			    ->addAttributeToFilter('customer_id',$customerId)// only load customer's
+				->addAttributeToSort('created_at')
+				->load();
+			if(count($orders)>0){
+				$result=false;
+			}else{
+				$result=true;
+			}
 		}else{
 			//do not give discount percent to unsign-in  user
 			$result=false;
@@ -261,8 +266,8 @@ class Gains_SalesRule_Model_Validator extends Mage_SalesRule_Model_Validator
 		return $result;
 	}
 	public function applyGainsDiscount($item){
-		$bedlinenCategory=11;
-		$quiltCategory=4;
+		$bedlinenCategory=48;
+		$quiltCategory=21;
 		$freePillowCategory=35;
 		$freeCushionCategory=34;
 		$itemPrice  = $this->_getItemPrice($item);

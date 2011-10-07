@@ -9,9 +9,6 @@
         $quiltCovers =  Mage::getModel('catalog/category')
             ->setStoreId(Mage::app()->getStore()->getId())
             ->load(4);
-        $winterSpecial= Mage::getModel('catalog/category')
-            ->setStoreId(Mage::app()->getStore()->getId())
-            ->load(5);
         $pillows =   Mage::getModel('catalog/category')
             ->setStoreId(Mage::app()->getStore()->getId())
             ->load(22);
@@ -77,9 +74,8 @@ if($this->overThresholdQuilt() && $this->containsQuilt() && !$this->containsGift
 <?php endif;?>
 </div>
 <div style="height:20px;width:400px;"></div>
-<a href=<?php echo $url = $winterSpecial->getUrl();?>>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Winter Specials.jpg" id="Thin"/>
-</a>
+
 <div style="height:10px;width:400px;"></div>
 <img src="<?php echo $this->getSkinUrl();?>images/gains/Secure Shopping.jpg" id="secureshop"/>
 <div style="height:10px;width:400px;"></div>
